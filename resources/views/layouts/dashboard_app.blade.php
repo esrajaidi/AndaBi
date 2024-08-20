@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>{{ config('مصرف الأندلس', ' لوحة تحكم منظومة الاسماء المحظور المحلية') }}</title>
+        <title>{{ config('مصرف الأندلس', ' لوحة تحكمANDA BI Report') }}</title>
         <!-- Main Styles -->
         <link href="{{ asset('assets/styles/style.min.css') }}" rel="stylesheet">
     
@@ -133,7 +133,7 @@
     <div class="fixed-navbar">
         <div class="pull-left">
             <button type="button" class="menu-mobile-button glyphicon glyphicon-menu-hamburger js__menu_mobile"></button>
-            <h1 class="page-title">منظومة الاسماء المحظور المحلية  / @yield('title')</h1>
+            <h1 class="page-title">ANDA BI Report  / @yield('title')</h1>
             <!-- /.page-title -->
         </div>
         <!-- /.pull-left -->

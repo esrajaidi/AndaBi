@@ -29,7 +29,7 @@
                 <form method="POST" action="{{ route('login/login') }}">
                     @csrf
 
-                    <div class="title"> منظومة الاسماء المحظور المحلية</div>
+                    <div class="title">ANDA BI Report</div>
                     <!-- /.title -->
                     <div class="frm-title">{{ __('login.Login') }}</div>
                     <img src="{{ asset('assets/images/anda_logo.png') }}" alt="">
