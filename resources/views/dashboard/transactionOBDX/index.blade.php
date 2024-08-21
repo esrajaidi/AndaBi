@@ -2,6 +2,17 @@
 @extends('layouts.dashboard_app')
 @section('title', 'Transaction OBDX')
 @section('content')
+<style>
+  .btn-export {
+    background: green !important;
+    border: none !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    line-height: 26px !important;
+    padding: 8px 25px!important;
+    font-weight: 500   !important;
+  }
+  </style>
 <div class="row small-spacing">
     <div class="col-xs-12">
       <div class="box-content">
@@ -116,7 +127,15 @@ $(document).ready(function(){
             processing: true,
             serverSide: false,
             searching: false,
-
+            dom: "Blfrtip",
+        buttons: [
+                  {
+                    extend: 'excel',
+                    text: 'تصدير اكسل',
+                    className: 'btn-export'
+                },
+  
+                ],
             ajax: {
               url: "{{ route('transaction_o_b_d_x_e_s') }}",
               data:{brn:brn,

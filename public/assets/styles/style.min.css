@@ -50,14 +50,14 @@ input {
 a {
   text-decoration:none!important;
   outline:none;
-  color:#0182bf
+  color:#304ffe
 }
 a:active,
 a:focus,
 a:hover {
   text-decoration:none!important;
   outline:none;
-  color:#0182bf
+  color:#1e3ded
 }
 button,
 input {
@@ -146,7 +146,7 @@ label {
   color:#435966
 }
 .fa-hover:hover {
-  background:#0182bf;
+  background:#304ffe;
   color:#ffffff
 }
 .fa-hover:hover .fa,
@@ -519,21 +519,21 @@ h4 strong {
   margin-left:8px
 }
 .btn-primary {
-  background:#0182bf
+  background:#304ffe
 }
 .btn-primary:active,
 .btn-primary:focus,
 .btn-primary:hover {
-  background:#0182bf!important
+  background:#1e3ded!important
 }
 .btn-primary.btn-bordered {
-  border-color:#0182bf;
-  color:#0182bf
+  border-color:#304ffe;
+  color:#304ffe
 }
 .btn-primary.btn-bordered:active,
 .btn-primary.btn-bordered:focus,
 .btn-primary.btn-bordered:hover {
-  border-color:#0182bf;
+  border-color:#1e3ded;
   color:#ffffff
 }
 .btn-success {
@@ -689,7 +689,7 @@ h4 strong {
   background-color:#71b6f9!important
 }
 .bg-primary {
-  background-color:#0182bf!important
+  background-color:#304ffe!important
 }
 .bg-success {
   background-color:#00bf4f!important
@@ -803,7 +803,7 @@ h4 strong {
 .table>thead>tr.primary>th,
 .table>thead>tr>td.primary,
 .table>thead>tr>th.primary {
-  background:#0182bf
+  background:#304ffe
 }
 .table>tbody>tr.danger>td,
 .table>tbody>tr.danger>th,
@@ -890,7 +890,7 @@ h4 strong {
   z-index:20;
   right:0px;
   padding:0px 20px 0px 80px;
-  background:#0182bf;
+  background:#304ffe;
   color:#ffffff
 }
 .fixed-navbar .searchform {
@@ -1017,7 +1017,7 @@ h4 strong {
   white-space:nowrap;
   overflow:hidden;
   color:#ffffff;
-  background:#0182bf;
+  background:#1e3ded;
   font-weight:500
 }
 .header .logo .ico {
@@ -1126,7 +1126,7 @@ h4 strong {
   width:25px
 }
 .user .control-list a:hover {
-  color:#0182bf
+  color:#304ffe
 }
 .user .name {
   color:#435966;
@@ -1143,7 +1143,7 @@ h4 strong {
 }
 @media (min-width:1025px) {
   .user .name a:hover {
-    color:#0182bf
+    color:#304ffe
   }
 }
 .user .position {
@@ -1197,15 +1197,15 @@ h4 strong {
 }
 @media (min-width:1025px) {
   .navigation .menu a:hover {
-    color:#0182bf
+    color:#304ffe
   }
   .navigation .menu a:hover i {
-    color:#0182bf
+    color:#304ffe
   }
 }
 .navigation .menu a.active,
 .navigation .menu a.current {
-  color:#0182bf
+  color:#304ffe
 }
 .navigation .menu a i {
   color:#212121;
@@ -1257,14 +1257,14 @@ h4 strong {
   -ms-transform:rotate(-180deg)
 }
 .navigation .menu>li.current>a {
-  background:#0182bf;
+  background:#304ffe;
   color:#ffffff
 }
 .navigation .menu>li.current>a>i {
   color:#ffffff
 }
 .navigation .menu>li.current .current>a {
-  color:#0182bf
+  color:#304ffe
 }
 .navigation .menu>li.current .sub-menu {
   display:block
@@ -1332,7 +1332,7 @@ h4 strong {
     height:75px;
     font-size:0;
     line-height:80px;
-    color:#0182bf;
+    color:#1e3ded;
     background:transparent
   }
   .menu-active .header .logo:first-letter {
@@ -1345,7 +1345,7 @@ h4 strong {
     top:0;
     width:75px;
     height:75px;
-    background:#0182bf;
+    background:#1e3ded;
     z-index:-2
   }
   .menu-active .header .logo:after {
@@ -1406,7 +1406,7 @@ h4 strong {
   }
   .menu-active .navigation .menu>li:hover>a {
     width:260px;
-    background:#0182bf;
+    background:#304ffe;
     color:#ffffff;
     padding-left:90px
   }
@@ -1456,7 +1456,7 @@ h4 strong {
   cursor:pointer;
   font-size:19px;
   line-height:75px;
-  color:white
+  color:#021cac
 }
 @media (min-width:1025px) {
   .fixed-navbar .ico-item:hover {
@@ -1582,7 +1582,7 @@ h4 strong {
   text-align:center
 }
 .fixed-navbar .ico-item.toggle-hover .toggle-content .read-more:hover {
-  color:#0182bf
+  color:#304ffe
 }
 .fixed-navbar .ico-item.toggle-hover.active .toggle-content {
   opacity:1;
@@ -1609,7 +1609,7 @@ h4 strong {
 }
 @media (min-width:1025px) {
   .footer a:hover {
-    color:#0182bf
+    color:#304ffe
   }
 }
 .box-content {
@@ -1727,7 +1727,7 @@ h4 strong {
 }
 @media (min-width:1025px) {
   .box-content .dropdown.js__drop_down .sub-menu a:hover {
-    color:#0182bf
+    color:#304ffe
   }
 }
 .box-content .dropdown.js__drop_down .sub-menu .split {
@@ -1967,7 +1967,7 @@ h4 strong {
 }
 .fc .fc-event,
 .fc .fc-event-dot {
-  background:#0182bf;
+  background:#304ffe;
   transition:none;
   -moz-transition:none;
   -webkit-transition:none
@@ -2095,7 +2095,7 @@ h4 strong {
   margin-bottom:18px!important
 }
 .dataTables_wrapper .dataTable .group {
-  background-color:#0182bf!important;
+  background-color:#304ffe!important;
   color:#ffffff!important
 }
 .dataTables_wrapper .dataTables_scrollBody .dataTable {
@@ -2115,7 +2115,7 @@ h4 strong {
 }
 table.focus-on tbody tr.focused td,
 table.focus-on tbody tr.focused th {
-  background:#0182bf!important;
+  background:#304ffe!important;
   color:#ffffff!important
 }
 .dropcap,
@@ -2219,7 +2219,7 @@ table.focus-on tbody tr.focused th {
   -webkit-transition:all 0.4s ease
 }
 .inbox-list .name {
-  color:#0182bf;
+  color:#304ffe;
   margin:0px;
   transition:all 0.4s ease;
   -moz-transition:all 0.4s ease;
@@ -2235,7 +2235,7 @@ table.focus-on tbody tr.focused th {
 }
 @media (min-width:1025px) {
   .inbox-list .name:hover {
-    color:#0182bf
+    color:#1e3ded
   }
 }
 .inbox-list .text {
@@ -2282,7 +2282,7 @@ table.focus-on tbody tr.focused th {
   font-size:20px;
   line-height:75px;
   color:#ffffff;
-  background:#0182bf
+  background:#306ffe
 }
 .morris-chart-detail-list {
   margin-top:10px
@@ -2315,7 +2315,7 @@ table.focus-on tbody tr.focused th {
 }
 .notice-blue {
   color:#ffffff;
-  background:#0182bf
+  background:#304ffe
 }
 .notice-purple {
   color:#ffffff;
@@ -2390,7 +2390,7 @@ table.focus-on tbody tr.focused th {
 }
 @media (min-width:1025px) {
   .notice-list .name:hover {
-    color:#0182bf
+    color:#304ffe
   }
 }
 .notice-list .time {
@@ -2507,7 +2507,7 @@ table.focus-on tbody tr.focused th {
   display:block
 }
 .notice-popup .notice-read-more:hover {
-  color:#0182bf
+  color:#304ffe
 }
 #message-popup {
   right:60px
@@ -2622,7 +2622,7 @@ table.focus-on tbody tr.focused th {
   -webkit-transition:all 0.4s ease
 }
 .radio.primary label:after {
-  background:#0182bf
+  background:#304ffe
 }
 .radio.success label:after {
   background:#00bf4f
@@ -2646,7 +2646,7 @@ table.focus-on tbody tr.focused th {
   background:#212121
 }
 .radio.primary input[type=radio]:checked+label:before {
-  border-color:#0182bf
+  border-color:#304ffe
 }
 .radio.success input[type=radio]:checked+label:before {
   border-color:#00bf4f
@@ -2712,7 +2712,7 @@ table.focus-on tbody tr.focused th {
 }
 @media (min-width:1025px) {
   .searchform .button-search:hover {
-    color:#0182bf
+    color:#304ffe
   }
 }
 .statistics-box {
@@ -2808,8 +2808,8 @@ table.focus-on tbody tr.focused th {
   -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.3)
 }
 .switch.primary input[type=checkbox]:checked+label:before {
-  background:#0182bf;
-  border-color:#0182bf
+  background:#304ffe;
+  border-color:#304ffe
 }
 .switch.success input[type=checkbox]:checked+label:before {
   background:#00bf4f;
@@ -3064,11 +3064,11 @@ table.focus-on tbody tr.focused th {
   color:#444
 }
 .box.box-solid.box-primary {
-  border:1px solid #0182bf
+  border:1px solid #304ffe
 }
 .box.box-solid.box-primary>.box-header {
   color:#ffffff;
-  background-color:#0182bf
+  background-color:#304ffe
 }
 .box.box-solid.box-primary>.box-header .btn,
 .box.box-solid.box-primary>.box-header a {
@@ -3259,7 +3259,7 @@ table.focus-on tbody tr.focused th {
 }
 .box-body .nav li.active a {
   background:#ffffff;
-  color:#0182bf
+  color:#304ffe
 }
 .box-body .nav a {
   padding:13px 0;
@@ -3270,7 +3270,7 @@ table.focus-on tbody tr.focused th {
 }
 .box-body .nav a:hover {
   background:#ffffff;
-  color:#0182bf
+  color:#304ffe
 }
 .box-body .nav .fa {
   display:inline-block;
@@ -3343,7 +3343,7 @@ table.focus-on tbody tr.focused th {
   background:#f5f7fa
 }
 .mailbox-messages .unread>td:first-of-type {
-  border-left:5px solid #0182bf
+  border-left:5px solid #304ffe
 }
 .mailbox-messages .unread .mailbox-subject span {
   color:#212121
@@ -3554,7 +3554,7 @@ table.focus-on tbody tr.focused th {
   border-left:3px solid #999
 }
 .frm-single .frm-input .frm-inp:focus {
-  border-color:#0182bf;
+  border-color:#304ffe;
   padding-left:10px
 }
 .frm-single .frm-input .frm-inp:focus+.frm-ico {
@@ -3594,7 +3594,7 @@ table.focus-on tbody tr.focused th {
   width:100%;
   height:36px;
   border:none;
-  background:#0182bf;
+  background:#304ffe;
   color:#ffffff;
   margin-bottom:15px
 }
@@ -3609,7 +3609,7 @@ table.focus-on tbody tr.focused th {
 }
 @media (min-width:1025px) {
   .frm-single .frm-submit:hover {
-    background:#0182bf
+    background:#1e3ded
   }
 }
 .frm-single .frm-submit i {
@@ -3970,7 +3970,7 @@ table.focus-on tbody tr.focused th {
   background:#00aeff
 }
 .profile-avatar .btn-inbox {
-  background:#0182bf
+  background:#304ffe
 }
 .profile-friends-list li {
   margin-bottom:10px
@@ -4136,7 +4136,7 @@ table.focus-on tbody tr.focused th {
 .pricing-table .col-first .thead {
   border:1px solid #e9eaeb;
   background:none;
-  color:#0182bf;
+  color:#304ffe;
   text-transform:uppercase;
   font-size:18px;
   font-weight:700;
@@ -4148,7 +4148,7 @@ table.focus-on tbody tr.focused th {
 .pricing-table .thead {
   height:110px;
   padding:13px;
-  background:#0182bf;
+  background:#304ffe;
   color:#fff;
   vertical-align:middle
 }
@@ -4160,7 +4160,7 @@ table.focus-on tbody tr.focused th {
   white-space:nowrap
 }
 .pricing-table .thead.bg-main-2 {
-  background-color:#0182bf
+  background-color:#304ffe
 }
 .pricing-table .thead.bg-blue-1 {
   background-color:#2444f9
@@ -4169,7 +4169,7 @@ table.focus-on tbody tr.focused th {
   background-color:#1e3def
 }
 .pricing-table .thead.bg-blue-3 {
-  background-color:#0182bf
+  background-color:#304ffe
 }
 .pricing-table .price {
   display:inline-block;
@@ -4229,7 +4229,7 @@ table.focus-on tbody tr.focused th {
   line-height:48px
 }
 .pricing-table .td .fa-check {
-  color:#0182bf;
+  color:#304ffe;
   font-size:24px;
   line-height:48px
 }
@@ -4264,11 +4264,11 @@ table.focus-on tbody tr.focused th {
   height:110px
 }
 .pricing-table .col-featured .td .btn-order {
-  background:#0182bf
+  background:#304ffe
 }
 @media (min-width:1025px) {
   .pricing-table .td .btn-order:hover {
-    background:#0182bf
+    background:#304ffe
   }
   .pricing-table .col:hover:before {
     opacity:1
@@ -4482,11 +4482,11 @@ table.focus-on tbody tr.focused th {
 }
 @media (min-width:1025px) {
   .isotope-filter .filter-controls a:hover {
-    color:#0182bf
+    color:#304ffe
   }
 }
 .isotope-filter .filter-controls .js__active {
-  color:#0182bf
+  color:#304ffe
 }
 .modal-content {
   padding:0 15px;

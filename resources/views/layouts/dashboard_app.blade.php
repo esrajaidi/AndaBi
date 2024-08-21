@@ -9,9 +9,8 @@
         <meta name="author" content="">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ config('مصرف الأندلس', ' لوحة تحكمANDA BI Report') }}</title>
-        <!-- Main Styles -->
         <link href="{{ asset('assets/styles/style.min.css') }}" rel="stylesheet">
-    
+
         <!-- mCustomScrollbar -->
         <link href="{{ asset('assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css') }}" rel="stylesheet">
 
@@ -20,7 +19,7 @@
 
         <!-- Sweet Alert -->
         <link href="{{ asset('assets/plugin/sweet-alert/sweetalert.css') }}" rel="stylesheet">
-        
+
         <!-- Percent Circle -->
         <link href="{{ asset('assets/plugin/percircle/css/percircle.css') }}" rel="stylesheet">
 
@@ -33,8 +32,7 @@
         <link href="{{ asset('assets/plugin/fullcalendar/fullcalendar.print.css') }}" rel="stylesheet">
 
         	<!-- Data Tables -->
-	    <link rel="stylesheet" href="{{ asset('assets/plugin/datatables/media/css/dataTables.bootstrap.min.css') }}" >
-	    <link rel="stylesheet" href="{{ asset('assets/plugin/datatables/extensions/Responsive/css/responsive.bootstrap.min.css') }}" >
+        <!-- Data Tables -->
 
 
         <!-- RTL -->
@@ -369,9 +367,11 @@
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
         <script src="{{ asset('assets/scripts/jquery.min.js') }}" ></script>
         <script src="{{ asset('assets/scripts/modernizr.min.js') }}" ></script>
-         <script src="{{ asset('assets//bootstrap/js/bootstrap.min.js') }}" ></script>
+         <script src="{{ asset('assets/plugin/bootstrap/js/bootstrap.min.js') }}" ></script>
          <script src="{{ asset('assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js') }}" ></script>
          <script src="{{ asset('assets/plugin/nprogress/nprogress.js') }}" ></script>
          <script src="{{ asset('assets/plugin/sweet-alert/sweetalert.min.js') }}" ></script>
@@ -383,23 +383,26 @@
 
 
         <!-- Data Tables -->
-        <script src="{{ asset('assets/plugin/datatables/media/js/jquery.dataTables.min.js') }}" ></script>
-        <script src="{{ asset('assets/plugin/datatables/media/js/dataTables.bootstrap.min.js') }}" ></script>
-        <script src="{{ asset('assets/plugin/datatables/extensions/Responsive/js/dataTables.responsive.min.js') }}" ></script>
-        <script src="{{ asset('assets/plugin/datatables/extensions/Responsive/js/responsive.bootstrap.min.js') }}" ></script>
-        <script src="{{ asset('assets/scripts/datatables.demo.min.js') }}" ></script>
+        <script src="{{asset('assets/plugin/datatables/js/jquery.dataTables.min.js')}}"></script>
+        <script src="{{asset('assets/plugin/datatables/js/dataTables.bootstrap4.min.js')}}"></script>
+        <script src="{{asset('assets/plugin/datatables/js/dataTables.buttons.min.js')}}"></script>
+        <script src="{{asset('assets/plugin/datatables/js/buttons.flash.min.js')}}"></script>
+        <script src="{{asset('assets/plugin/datatables/js/jszip.min.js')}}"></script>
+        <script src="{{asset('assets/plugin/datatables/js/pdfmake.min.js')}}"></script>
+        <script src="{{asset('assets/plugin/datatables/js/vfs_fonts.js')}}"></script>
+        <script src="{{asset('assets/plugin/datatables/js/buttons.html5.min.js')}}"></script>
+        <script src="{{asset('assets/plugin/datatables/js/buttons.print.min.js')}}"></script>
         <!-- Percent Circle -->
         <script src="{{ asset('assets/plugin/percircle/js/percircle.js') }}" ></script>
 
-    
-    
+
+
         <!-- FullCalendar -->
         <script src="{{ asset('assets/plugin/moment/moment.js') }}" ></script>
         <script src="{{ asset('assets/plugin/fullcalendar/fullcalendar.min.js') }}" ></script>
         <script src="{{ asset('assets/scripts/fullcalendar.init.js') }}" ></script>
         <script src="{{ asset('assets/scripts/main.min.js') }}" ></script>
 
-    
 
     </body>
 </html>
