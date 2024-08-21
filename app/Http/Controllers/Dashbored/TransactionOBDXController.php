@@ -144,8 +144,8 @@ class TransactionOBDXController extends Controller
     protected function generatePdf($data) 
     {
         $fileName="transactionOBDX_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
-
-        $pdf = Pdf::loadView('dashboard.transactionOBDX.transactions_pdf_bybranche', ['data' => $data]);
+        $title='Transaction OBDX Report Branche';
+        $pdf = Pdf::loadView('dashboard.report.transactions_pdf_bybranche', ['data' => $data ,'title'=>$title]);
         
         return $pdf->download($fileName);
     }
@@ -203,9 +203,10 @@ class TransactionOBDXController extends Controller
      protected function generatePdfALL($data) 
      {
         $fileName="transactionOBDX_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
- 
-         $pdf = Pdf::loadView('dashboard.transactionOBDX.transactions_pdf', ['data' => $data]);
-         
+        $title='Transaction OBDX ';
+
+         $pdf = Pdf::loadView('dashboard.report.transactions_pdf', ['data' => $data ,'title'=>$title]);
+
          return $pdf->download($fileName);
      }
  

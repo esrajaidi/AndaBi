@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Transaction OBDX Report Branche</title>
+    <title>{{$title}}</title>
     <style>
         table { width: 100%; border-collapse: collapse; }
         th, td { border: 1px solid #ddd; padding: 8px; }
@@ -11,7 +11,7 @@
     </style>
 </head>
 <body>
-    <h1>Transactions Report</h1>
+    <h1>{{$title}}</h1>
     <table>
         <thead>
             <tr>
