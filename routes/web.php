@@ -72,12 +72,10 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('sms_messages/createbyexcel', [App\Http\Controllers\Dashbored\SMSMessagesController::class, 'storebyexcel'])->name('sms_messages/store_by_excel');
         Route::get('sms_messages/sendagain/{id}', [App\Http\Controllers\Dashbored\SMSMessagesController::class, 'sendagain'])->name('sms_messages/send_again');
 
+        Route::get('transaction_o_b_d_x_e_s', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'index'])->name('transaction_o_b_d_x_e_s');
+        Route::get('transaction_o_b_d_x_e_s/uplode', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'uplode'])->name('transaction_o_b_d_x_e_s/uplode');
+        Route::post('transaction_o_b_d_x_e_s/uplode', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'storeUplode'])->name('transaction_o_b_d_x_e_s/store_uplode');
 
-
-        // Route::get('local_block_lists/uplode', [App\Http\Controllers\Dashbored\LocalBlockListsController::class, 'uplode'])->name('local_block_lists/uplode');
-        // Route::post('local_block_lists/uplode', [App\Http\Controllers\Dashbored\LocalBlockListsController::class, 'storeUplode'])->name('local_block_lists/store_uplode');
-
-        // Route::get('local_block_lists', [App\Http\Controllers\Dashbored\LocalBlockListsController::class, 'index'])->name('local_block_lists');
 
         // Route::get('local_block_lists/create', [App\Http\Controllers\Dashbored\LocalBlockListsController::class, 'create'])->name('local_block_lists/create');
         // Route::post('local_block_lists/create', [App\Http\Controllers\Dashbored\LocalBlockListsController::class, 'store'])->name('local_block_lists/store');

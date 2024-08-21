@@ -19,4 +19,5 @@ class Branche extends Model
     {
         return $this->hasOne(User::class);
     }
+    
 }

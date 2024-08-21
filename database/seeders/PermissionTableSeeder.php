@@ -35,7 +35,7 @@ class PermissionTableSeeder extends Seeder
            'sms-messages',//14
            'send-sms-messages' ,//15
            'bulk-send-sms-messages', //16
-
+'laravel-logger'
 
          ];
 
