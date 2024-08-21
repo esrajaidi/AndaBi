@@ -110,7 +110,7 @@ $(document).ready(function(){
                 // Update the HTML elements with the counts
                 $('#total').text("اجمالي الحركات : " + totalRecords); // Total records
                 $('#totalAmount').text("عدد الحركات بعد التصفية : " + filteredRecords); // Filtered records
-                $('#totalLcyAmount').text(" LCY Amount: " + totalLcyAmount.toFixed(2));
+                $('#totalLcyAmount').text(" LCY Amount: " + totalLcyAmount.toFixed(2) +"دينار");
 
                 },
             processing: true,
