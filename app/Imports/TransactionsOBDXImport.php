@@ -5,6 +5,7 @@ namespace App\Imports;
 use App\Models\TransactionOBDX;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithStartRow;
+use jeremykenedy\LaravelLogger\App\Http\Traits\ActivityLogger;
 
 class TransactionsOBDXImport implements ToModel,WithStartRow
 {
@@ -20,7 +21,15 @@ class TransactionsOBDXImport implements ToModel,WithStartRow
 
         // Check if the `trn_ref_no` already exists
         if (TransactionOBDX::where('entry_sr_no', $entry_sr_no)->exists()) {
+
+            ActivityLogger::activity("لم يتم ادخال  لوجود entry_sr_no  مسبقا");
+
             // Skip this row as it already exists
+            return null;
+        }
+        if ($row[3] !='IC109012601') {
+          
+            ActivityLogger::activity("the entry ac_no is ".$row[3]."not  IC109012601" );
             return null;
         }
           // Convert the date columns from Excel to the format that Laravel expects

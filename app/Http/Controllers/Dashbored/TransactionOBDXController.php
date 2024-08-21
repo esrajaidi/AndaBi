@@ -128,6 +128,7 @@ class TransactionOBDXController extends Controller
 
 
         if ($reportType === 'pdf') {
+
             return $this->generatePdf($data);
         } elseif ($reportType === 'excel') {
             return $this->generateExcel($data);
@@ -145,6 +146,8 @@ class TransactionOBDXController extends Controller
     {
         $fileName="transactionOBDX_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
         $title='Transaction OBDX Report Branche';
+        ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
+
         $pdf = Pdf::loadView('dashboard.report.transactions_pdf_bybranche', ['data' => $data ,'title'=>$title]);
         
         return $pdf->download($fileName);
@@ -155,6 +158,7 @@ class TransactionOBDXController extends Controller
    
 
         $fileName="transactionOBDX_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
+        ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
         return Excel::download(new \App\Exports\TransactionsByBranche($data), $fileName);
     }
@@ -204,6 +208,7 @@ class TransactionOBDXController extends Controller
      {
         $fileName="transactionOBDX_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
         $title='Transaction OBDX ';
+        ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
          $pdf = Pdf::loadView('dashboard.report.transactions_pdf', ['data' => $data ,'title'=>$title]);
 
@@ -215,7 +220,8 @@ class TransactionOBDXController extends Controller
     
  
          $fileName="transactionOBDX_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
- 
+         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
+
          return Excel::download(new \App\Exports\Transactions($data), $fileName);
      }
 }
