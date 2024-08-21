@@ -126,8 +126,6 @@ class TransactionOBDXController extends Controller
                 $data = $query->get();
 
 
-        
-
 
         if ($reportType === 'pdf') {
             return $this->generatePdf($data);
@@ -135,21 +133,17 @@ class TransactionOBDXController extends Controller
             return $this->generateExcel($data);
         }
 
-
-
-
-
-         
-        return view('dashboard.transactionOBDX.report')
+        return view('dashboard.transactionOBDX.report_bybranche')
         ->with('data',$data)
-        ->with('branches',$branches);
+        ->with('branches',$branches)
+        ->with('branches_id',$branches_id);
  
         
     }
 
     protected function generatePdf($data) 
     {
-        $fileName="transactions_pdf_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
+        $fileName="transactionOBDX_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
 
         $pdf = Pdf::loadView('dashboard.transactionOBDX.transactions_pdf_bybranche', ['data' => $data]);
         
@@ -160,12 +154,67 @@ class TransactionOBDXController extends Controller
     {       
    
 
-        $fileName="transactions_pdf_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
+        $fileName="transactionOBDX_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
 
-        return Excel::download(new \App\Exports\TransactionsPDFByBranche($data), $fileName);
+        return Excel::download(new \App\Exports\TransactionsByBranche($data), $fileName);
     }
     /**
      * Show the form for editing the specified resource.
      */
 
+
+     public function generateReportViewAll(Request $request)
+     { 
+         
+ 
+             $reportType = $request->input('report_type');
+             $query = DB::table('transaction_o_b_d_x_e_s')
+             ->select(DB::raw('
+                 DATE_FORMAT(trn_date, "%Y-%m") as month_year,
+                 SUM(lcy_amount) as total_amount,
+                 COUNT(id) as total_transactions
+             '))
+             
+             ->groupBy(DB::raw('DATE_FORMAT(trn_date, "%Y-%m")'))
+             ->orderBy(DB::raw('DATE_FORMAT(trn_date, "%Y-%m")'), 'asc');
+         
+         $data = $query->get();
+ 
+ 
+         
+ 
+ 
+         if ($reportType === 'pdf') {
+             return $this->generatePdfALL($data);
+         } elseif ($reportType === 'excel') {
+             return $this->generateExcelALL($data);
+         }
+ 
+ 
+ 
+ 
+ 
+          
+         return view('dashboard.transactionOBDX.report')
+         ->with('data',$data);
+  
+         
+     }
+     protected function generatePdfALL($data) 
+     {
+        $fileName="transactionOBDX_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
+ 
+         $pdf = Pdf::loadView('dashboard.transactionOBDX.transactions_pdf', ['data' => $data]);
+         
+         return $pdf->download($fileName);
+     }
+ 
+     protected function generateExcelALL($data) 
+     {       
+    
+ 
+         $fileName="transactionOBDX_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
+ 
+         return Excel::download(new \App\Exports\Transactions($data), $fileName);
+     }
 }

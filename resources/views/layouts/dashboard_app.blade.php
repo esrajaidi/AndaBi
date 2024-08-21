@@ -113,15 +113,18 @@
               
                     <ul class="sub-menu js__content" style="background-color: white;">
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_o_b_d_x_e_s') }}">Transaction OBDX  عرض كافة  </span></a>
-                        </a>
+                                <a class="waves-effect" href="{{ route('transaction_o_b_d_x_e_s') }}">Transaction OBDX  عرض كافة  </span></a>
+                            </a>
                         </li>
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_o_b_d_x_e_s/report') }}">Transaction OBDX Report Branche</span></a>
-                        </a>
+                                <a class="waves-effect" href="{{ route('transaction_o_b_d_x_e_s/report/branche') }}">Transaction OBDX Report Branche</span></a>
+                            </a>
                         </li>
                     
-
+                        <li>
+                            <a class="waves-effect" href="{{ route('transaction_o_b_d_x_e_s/report') }}">Transaction OBDX Report </span></a>
+                        </a>
+                    </li
                  
                     </ul>
                 </li>

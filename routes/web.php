@@ -75,8 +75,9 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_o_b_d_x_e_s', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'index'])->name('transaction_o_b_d_x_e_s');
         Route::get('transaction_o_b_d_x_e_s/uplode', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'uplode'])->name('transaction_o_b_d_x_e_s/uplode');
         Route::post('transaction_o_b_d_x_e_s/uplode', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'storeUplode'])->name('transaction_o_b_d_x_e_s/store_uplode');
-        Route::get('transaction_o_b_d_x_e_s/report', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'generateReportView'])->name('transaction_o_b_d_x_e_s/report');
+        Route::get('transaction_o_b_d_x_e_s/report/branche', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'generateReportView'])->name('transaction_o_b_d_x_e_s/report/branche');
 
+        Route::get('transaction_o_b_d_x_e_s/report/', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'generateReportViewAll'])->name('transaction_o_b_d_x_e_s/report');
 
         // Route::get('local_block_lists/create', [App\Http\Controllers\Dashbored\LocalBlockListsController::class, 'create'])->name('local_block_lists/create');
         // Route::post('local_block_lists/create', [App\Http\Controllers\Dashbored\LocalBlockListsController::class, 'store'])->name('local_block_lists/store');

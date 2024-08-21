@@ -8,7 +8,7 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithColumnFormatting;
 use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 
-class TransactionsPDFByBranche implements FromCollection, WithHeadings, WithColumnFormatting
+class Transactions implements FromCollection, WithHeadings, WithColumnFormatting
 {
     protected $data;
 
@@ -26,7 +26,6 @@ class TransactionsPDFByBranche implements FromCollection, WithHeadings, WithColu
     {
         return [
             'Month-Year',
-            'Branch',
             'Total Amount',
             'Total Transactions',
         ];
@@ -35,7 +34,7 @@ class TransactionsPDFByBranche implements FromCollection, WithHeadings, WithColu
     public function columnFormats(): array
     {
         return [
-            'C' => '#,##0.00', // Format for Total Amount (Column C)
+            'B' => '#,##0.00', // Format for Total Amount (Column C)
                     ];
     }
 }
