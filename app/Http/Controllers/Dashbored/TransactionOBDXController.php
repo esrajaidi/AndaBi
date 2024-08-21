@@ -17,6 +17,7 @@ use jeremykenedy\LaravelLogger\App\Http\Traits\ActivityLogger;
 use Maatwebsite\Excel\Facades\Excel;
 use RealRashid\SweetAlert\Facades\Alert;
 use Yajra\DataTables\Facades\DataTables;;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class TransactionOBDXController extends Controller
 {
@@ -99,32 +100,72 @@ class TransactionOBDXController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TransactionOBDX $transactionOBDX)
-    {
-        //
+    public function generateReportView(Request $request)
+    { 
+        $branches = Branche::where('active', 1)->where('branche_number','!=','100')
+        ->get();
+
+            $reportType = $request->input('report_type');
+            $branches_id = $request->input('branches_id');
+       
+            $query = DB::table('transaction_o_b_d_x_e_s')
+            ->select(DB::raw('
+                DATE_FORMAT(trn_date, "%Y-%m") as month_year,
+                brn,
+                SUM(lcy_amount) as total_amount,
+                COUNT(id) as total_transactions
+            '))
+            ->when($branches_id, function ($query, $branches_id) {
+                return $query->where('brn', $branches_id);
+            })
+            ->groupBy(DB::raw('DATE_FORMAT(trn_date, "%Y-%m")'), 'brn')
+            ->orderBy(DB::raw('DATE_FORMAT(trn_date, "%Y-%m")'), 'asc')
+            ->orderBy('brn', 'asc');
+
+            // Optional: order by branch
+                $data = $query->get();
+
+
+        
+
+
+        if ($reportType === 'pdf') {
+            return $this->generatePdf($data);
+        } elseif ($reportType === 'excel') {
+            return $this->generateExcel($data);
+        }
+
+
+
+
+
+         
+        return view('dashboard.transactionOBDX.report')
+        ->with('data',$data)
+        ->with('branches',$branches);
+ 
+        
     }
 
+    protected function generatePdf($data) 
+    {
+        $fileName="transactions_pdf_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
+
+        $pdf = Pdf::loadView('dashboard.transactionOBDX.transactions_pdf_bybranche', ['data' => $data]);
+        
+        return $pdf->download($fileName);
+    }
+
+    protected function generateExcel($data) 
+    {       
+   
+
+        $fileName="transactions_pdf_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
+
+        return Excel::download(new \App\Exports\TransactionsPDFByBranche($data), $fileName);
+    }
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TransactionOBDX $transactionOBDX)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, TransactionOBDX $transactionOBDX)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(TransactionOBDX $transactionOBDX)
-    {
-        //
-    }
 }

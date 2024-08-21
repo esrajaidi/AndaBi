@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'TransactionOBDX')
+@section('title', 'Transaction OBDX')
 @section('content')
 <div class="row small-spacing">
     <div class="col-xs-12">
