@@ -76,16 +76,15 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_o_b_d_x_e_s/uplode', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'uplode'])->name('transaction_o_b_d_x_e_s/uplode');
         Route::post('transaction_o_b_d_x_e_s/uplode', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'storeUplode'])->name('transaction_o_b_d_x_e_s/store_uplode');
         Route::get('transaction_o_b_d_x_e_s/report/branche', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'generateReportView'])->name('transaction_o_b_d_x_e_s/report/branche');
-
         Route::get('transaction_o_b_d_x_e_s/report/', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'generateReportViewAll'])->name('transaction_o_b_d_x_e_s/report');
 
-        // Route::get('local_block_lists/create', [App\Http\Controllers\Dashbored\LocalBlockListsController::class, 'create'])->name('local_block_lists/create');
-        // Route::post('local_block_lists/create', [App\Http\Controllers\Dashbored\LocalBlockListsController::class, 'store'])->name('local_block_lists/store');
+        // Route::get('transaction_p_o_s', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'index'])->name('transaction_p_o_s');
+        // Route::get('transaction_p_o_s/uplode', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'uplode'])->name('transaction_p_o_s/uplode');
+        // Route::post('transaction_p_o_s/uplode', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'storeUplode'])->name('transaction_p_o_s/store_uplode');
+        // Route::get('transaction_p_o_s/report/branche', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'generateReportView'])->name('transaction_p_o_s/report/branche');
+        // Route::get('transaction_p_o_s/report/', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'generateReportViewAll'])->name('transaction_p_o_s/report');
 
-        // Route::get('local_block_lists/edit/{id}', [App\Http\Controllers\Dashbored\LocalBlockListsController::class, 'edit'])->name('local_block_lists/edit');
-        // Route::POST('local_block_lists/edit/{id}', [App\Http\Controllers\Dashbored\LocalBlockListsController::class, 'update'])->name('local_block_lists/update');
-        // Route::get('local_block_lists/export', [App\Http\Controllers\Dashbored\LocalBlockListsController::class, 'export'])->name('local_block_lists/export');
-        // Route::get('local_block_lists/print', [App\Http\Controllers\Dashbored\LocalBlockListsController::class, 'print'])->name('local_block_lists.print');
+
         Route::get('logger/activity', [App\Http\Controllers\Dashbored\ActivityLogController::class, 'index'])->name('logger/activity');
 
 });
