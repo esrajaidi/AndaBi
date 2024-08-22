@@ -24,7 +24,6 @@ class TransactionOBDXController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('permission:local_block_lists', ['only' => ['local_block_lists']]);
 
 
     }
