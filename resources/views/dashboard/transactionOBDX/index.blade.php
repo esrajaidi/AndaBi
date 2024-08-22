@@ -62,9 +62,12 @@
         </div>
         <div class="row">
             <button type="button" class="btn btn-primary" id="total">اجمالي الحركات  : 0</button>
-            <button type="button" class="btn btn-info" id="totalAmount">اجمالي العمولة : 0</button>
-            <button type="button" class="btn btn-warning" id="totalLcyAmount"> LCY Amount : 0</button>
+            <button type="button" class="btn btn-secondary" id="totaldebit">اجمالي الحركات   Debit: 0</button>
+            <button type="button" class="btn btn-success" id="totalcredit">اجمالي الحركات   Credit: 0</button>
 
+            <button type="button" class="btn btn-info" id="filteredRecords">اجمالي الحركات بعد التصفية  : 0</button>
+            <button type="button" class="btn btn-warning" id="totalLcyAmount"> LCY Amount : 0</button>
+             
            </div>
 <br>
 <br>
@@ -110,17 +113,34 @@ $(document).ready(function(){
                 "initComplete": function(settings, json) {
                     var api = this.api();
                     var totalLcyAmount = api
-                        .column(10, { search: 'applied' }) // 
+                        .rows()
                         .data()
-                        .reduce(function(a, b) {
-                            return parseFloat(a) + parseFloat(b);
+                        .reduce(function(acc, row) {
+                            var amount = parseFloat(row['lcy_amount']); // Adjust index for Column 10
+                            var type = row['drcr']; // Adjust index for Column 6
+                        
+                            if (type === 'D') {
+                              
+                                return acc - amount;
+                            } else if (type === 'C') {
+                                return acc + amount;
+                            }
+                            return acc;
                         }, 0);
-
+                        var totaldebit = table.column(6).data().filter(function(value) {
+                          return value === 'D';
+                      }).length;
+                      var totalcredit = table.column(6).data().filter(function(value) {
+                          return value === 'C';
+                      }).length;
                     var totalRecords = json.recordsTotal; // This should be available in the server response
                     filteredRecords= json.recordsFiltered
                 // Update the HTML elements with the counts
                 $('#total').text("اجمالي الحركات : " + totalRecords); // Total records
-                $('#totalAmount').text("عدد الحركات بعد التصفية : " + filteredRecords); // Filtered records
+                $('#totaldebit').text("اجمالي الحركات Debit: " + totaldebit); // Total totaldebit
+                $('#totalcredit').text("اجمالي الحركات Credit: " + totalcredit); // Total totalcredit
+
+                $('#filteredRecords').text("عدد الحركات بعد التصفية : " + filteredRecords); // Filtered records
                 $('#totalLcyAmount').text(" LCY Amount: " + totalLcyAmount.toFixed(2) +"دينار");
 
                 },
