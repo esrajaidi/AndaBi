@@ -26,7 +26,10 @@ class Transactions implements FromCollection, WithHeadings, WithColumnFormatting
     {
         return [
             'Month-Year',
+            'Total Credit',
+            'Total Debits',
             'Total Amount',
+            
             'Total Transactions',
         ];
     }

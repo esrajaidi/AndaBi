@@ -108,25 +108,17 @@ class TransactionOBDXController extends Controller
             $reportType = $request->input('report_type');
             $branches_id = $request->input('branches_id');
        
-            // $query = DB::table('transaction_o_b_d_x_e_s')
-            // ->select(DB::raw('
-            //     DATE_FORMAT(trn_date, "%Y-%m") as month_year,
-            //     brn,
-            //     SUM(lcy_amount) as total_amount,
-            //     COUNT(id) as total_transactions
-            // '))
-            // ->when($branches_id, function ($query, $branches_id) {
-            //     return $query->where('brn', $branches_id);
-            // })
-            // ->groupBy(DB::raw('DATE_FORMAT(trn_date, "%Y-%m")'), 'brn')
-            // ->orderBy(DB::raw('DATE_FORMAT(trn_date, "%Y-%m")'), 'asc')
-            // ->orderBy('brn', 'asc');
+       
             $query = DB::table('transaction_o_b_d_x_e_s')
             ->select(DB::raw('
                 DATE_FORMAT(trn_date, "%Y-%m") as month_year,
                 brn,
+                
+                SUM(CASE WHEN drcr = "C" THEN lcy_amount ELSE 0 END) as total_credits,
+                SUM(CASE WHEN drcr = "D" THEN lcy_amount ELSE 0 END) as total_debits,
                 SUM(CASE WHEN drcr = "C" THEN lcy_amount ELSE 0 END) -
                 SUM(CASE WHEN drcr = "D" THEN lcy_amount ELSE 0 END) as total_amount,
+
                 COUNT(id) as total_transactions
             '))
             ->when($branches_id, function ($query, $branches_id) {
@@ -189,6 +181,9 @@ class TransactionOBDXController extends Controller
              $query = DB::table('transaction_o_b_d_x_e_s')
              ->select(DB::raw('
                  DATE_FORMAT(trn_date, "%Y-%m") as month_year,
+                SUM(CASE WHEN drcr = "C" THEN lcy_amount ELSE 0 END) as total_credits,
+                SUM(CASE WHEN drcr = "D" THEN lcy_amount ELSE 0 END) as total_debits,
+
                  SUM(CASE WHEN drcr = "C" THEN lcy_amount ELSE 0 END) -
                  SUM(CASE WHEN drcr = "D" THEN lcy_amount ELSE 0 END) as total_amount,
 

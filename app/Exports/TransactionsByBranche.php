@@ -27,8 +27,11 @@ class TransactionsByBranche implements FromCollection, WithHeadings, WithColumnF
         return [
             'Month-Year',
             'Branch',
+            'Total Credit',
+            'Total Debits',
             'Total Amount',
             'Total Transactions',
+
         ];
     }
 
