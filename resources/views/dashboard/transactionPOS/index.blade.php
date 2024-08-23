@@ -69,12 +69,9 @@
           </div>
           <br>
             <div class="row">
-            {{-- <button type="button" class="btn btn-warning" id="creditAmount">  Credit : 0</button> --}}
-
-            {{-- <button type="button" class="btn btn-danger" id="debitAmount">  Debit : 0</button> --}}
-
-            {{-- <button type="button" class="btn btn-dark" id="totalLcyAmount">  Amount : 0</button> --}}
-             
+              <button type="button" class="btn btn-warning mt-3" id="totalAmount">Total Amount: 0</button>
+              <button type="button" class="btn btn-danger mt-3" id="netAmount">Net Amount: 0</button>
+              <button type="button" class="btn btn-dark mt-3" id="amount">Amount: 0</button>
            </div>
 <br>
 <br>
@@ -91,9 +88,10 @@
                 <th>Branch Number</th>
 
                 <th>Branch Name</th>
-                <th>Net Amount</th>
                 <th>Processing Date</th>
                 <th>Total Amount</th>
+                <th>Net Amount</th>
+
                 <th>Transaction No</th>
                 <th>File Name</th>
             </tr>
@@ -115,39 +113,27 @@ $(document).ready(function(){
             var table = $('#transaction_POS_tbl').DataTable({
                 "initComplete": function(settings, json) {
                     var api = this.api();
-                    // Initialize sums
-                    // var totalDebits = 0;
-                    // var totalCredits = 0;
+                    
 
-                    // // Calculate the total debits and credits
-                    // api.rows().data().each(function(row) {
-                    //     var amount = parseFloat(row['lcy_amount']); // Column 10
-                    //     var type = row['drcr']; // Column 6
+              // Calculate the total sum for the specified column
+              var totalAmount = api.column(8).data().reduce(function(a, b) {
+                  return (parseFloat(a) || 0) + (parseFloat(b) || 0);
+              }, 0);
+              var netAmount = api.column(9).data().reduce(function(a, b) {
+                  return (parseFloat(a) || 0) + (parseFloat(b) || 0);
+              }, 0);
 
-                    //     if (type === 'D') {
-                    //         totalDebits += amount;
-                    //     } else if (type === 'C') {
-                    //         totalCredits += amount;
-                    //     }
-                    // });
-                                            
-                    // var difference = totalDebits - totalCredits;
-                    // var totaldebit = table.column(6).data().filter(function(value) {
-                    //       return value === 'D';
-                    //   }).length;
-                    //   var totalcredit = table.column(6).data().filter(function(value) {
-                    //       return value === 'C';
-                    //   }).length;
-                    var totalRecords = json.recordsTotal; // This should be available in the server response
+
+              var percentage = 0.25; // 25% expressed as a decimal
+              var total = (totalAmount - netAmount) * percentage;                 
+               var totalRecords = json.recordsTotal; // This should be available in the server response
                       filteredRecords= json.recordsFiltered
                 $('#total').text("الحركات:" + totalRecords); // Total records
-                // $('#totaldebit').text(" الحركات Debit:" + totaldebit); // Total totaldebit
-                // $('#totalcredit').text(" الحركات Credit:" + totalcredit); // Total totalcredit
 
                 $('#filteredRecords').text(" الحركات  التصفية: " + filteredRecords); // Filtered records
-                // $('#debitAmount').text("Debit:" + totalDebits.toFixed(2) +"LYD");
-                // $('#creditAmount').text("Credit:" + totalCredits.toFixed(2) +"LYD");
-                // $('#totalLcyAmount').text("Amount:" + difference.toFixed(2) +"LYD");
+                $('#totalAmount').text("Total Amount:" + totalAmount.toFixed(2) +"LYD");
+                $('#netAmount').text("Net Amount:" + netAmount.toFixed(2) +"LYD");
+                $('#amount').text("Amount:" + total.toFixed(2) +"LYD");
 
                 },
             processing: true,
@@ -185,9 +171,10 @@ $(document).ready(function(){
                     {data: 'bank_name', name: 'bank_name'},
                     {data: 'branch_number', name: 'branch_number'},
                     {data: 'branch_name', name: 'branch_name'},
-                    {data: 'net_amount', name: 'net_amount'},
                     {data: 'processing_date', name: 'processing_date'},
                     {data: 'total_amount', name: 'total_amount'},
+                    {data: 'net_amount', name: 'net_amount'},
+
                     {data: 'trx_no', name: 'trx_no'},
                     {data: 'file_name', name: 'file_name'},
                      
