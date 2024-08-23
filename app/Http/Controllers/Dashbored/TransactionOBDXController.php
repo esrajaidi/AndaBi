@@ -89,7 +89,7 @@ class TransactionOBDXController extends Controller
             return redirect('transaction_o_b_d_x_e_s');
         } catch (\Exception $e) {
             Alert::warning($e->getMessage());
-            ActivityLogger::activity( $e->getMessage()."فشل تحميل ملف قوائم الحظر المحلية");
+            ActivityLogger::activity( $e->getMessage().' فشل   تحميل ملف Transactions OBDX  ');
 
             return redirect()->back();
         }

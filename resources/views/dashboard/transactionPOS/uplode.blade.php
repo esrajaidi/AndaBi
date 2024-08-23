@@ -1,11 +1,11 @@
 @extends('layouts.dashboard_app')
-@section('title', 'OBDX تحميل ملف ')
+@section('title', ' POS تحميل ملف ')
 
 
 @section('content')
 <div class="container-fluid">
     <div class="pull-right">
-        <a class="btn btn-primary" href="{{ route('transaction_o_b_d_x_e_s') }}"> الرجوع  </a>
+        <a class="btn btn-primary" href="{{ route('transaction_p_o_s') }}"> الرجوع  </a>
     </div>
     
 </div>
@@ -19,7 +19,7 @@
             <!-- /.box-title -->
             
             <div class="card-content">
-                <form  method="post" action="{{ route('transaction_o_b_d_x_e_s/store_uplode') }}"  enctype="multipart/form-data">
+                <form  method="post" action="{{ route('transaction_p_o_s/store_uplode') }}"  enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">

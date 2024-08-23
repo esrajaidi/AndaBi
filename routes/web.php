@@ -78,11 +78,11 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_o_b_d_x_e_s/report/branche', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'generateReportView'])->name('transaction_o_b_d_x_e_s/report/branche');
         Route::get('transaction_o_b_d_x_e_s/report/', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'generateReportViewAll'])->name('transaction_o_b_d_x_e_s/report');
 
-        // Route::get('transaction_p_o_s', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'index'])->name('transaction_p_o_s');
-        // Route::get('transaction_p_o_s/uplode', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'uplode'])->name('transaction_p_o_s/uplode');
-        // Route::post('transaction_p_o_s/uplode', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'storeUplode'])->name('transaction_p_o_s/store_uplode');
-        // Route::get('transaction_p_o_s/report/branche', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'generateReportView'])->name('transaction_p_o_s/report/branche');
-        // Route::get('transaction_p_o_s/report/', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'generateReportViewAll'])->name('transaction_p_o_s/report');
+        Route::get('transaction_p_o_s', [App\Http\Controllers\Dashbored\TransactionPOSController::class, 'index'])->name('transaction_p_o_s');
+        Route::get('transaction_p_o_s/uplode', [App\Http\Controllers\Dashbored\TransactionPOSController::class, 'uplode'])->name('transaction_p_o_s/uplode');
+        Route::post('transaction_p_o_s/uplode', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'storeUplode'])->name('transaction_p_o_s/store_uplode');
+        Route::get('transaction_p_o_s/report/branche', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'generateReportView'])->name('transaction_p_o_s/report/branche');
+        Route::get('transaction_p_o_s/report/', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'generateReportViewAll'])->name('transaction_p_o_s/report');
 
 
         Route::get('logger/activity', [App\Http\Controllers\Dashbored\ActivityLogController::class, 'index'])->name('logger/activity');

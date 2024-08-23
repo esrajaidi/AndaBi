@@ -12,7 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transaction_p_o_s', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('merchant_no')->unique();
+            $table->string('merchant_name');
+            $table->string('banking_account_no');
+            $table->string('bank_name');
+            $table->string('branch_name');
+            $table->string('branch_number');
+            $table->decimal('net_amount', 15, 2);
+            $table->date('processing_date');
+            $table->decimal('total_amount', 15, 2);
+            $table->string('trx_no');
+            $table->string('file_name');
             $table->timestamps();
         });
     }
