@@ -29,7 +29,7 @@
             <div class="col-md-3">
                         <div class="form-group">
                         <label>الفرع</label>
-                        <select type="text" name="brn" id="brn"
+                        <select type="text" name="branch_number" id="branch_number"
                                                 class="form-control">
                                                 <option label="اختر فرع "></option>
                                                 @forelse ($branches as $branche)
@@ -61,21 +61,21 @@
 
         </div>
         <div class="row">
-            {{-- <button type="button" class="btn btn-primary" id="total">اجمالي الحركات  : 0</button>
-            <button type="button" class="btn btn-secondary" id="totaldebit">اجمالي الحركات   Debit: 0</button>
-            <button type="button" class="btn btn-success" id="totalcredit">اجمالي الحركات   Credit: 0</button>
+            <button type="button" class="btn btn-primary" id="total">اجمالي الحركات  : 0</button>
+            {{-- <button type="button" class="btn btn-secondary" id="totaldebit">اجمالي الحركات   Debit: 0</button> --}}
+            {{-- <button type="button" class="btn btn-success" id="totalcredit">اجمالي الحركات   Credit: 0</button> --}}
 
             <button type="button" class="btn btn-info" id="filteredRecords">اجمالي الحركات بعد التصفية  : 0</button>
           </div>
           <br>
             <div class="row">
-            <button type="button" class="btn btn-warning" id="creditAmount">  Credit : 0</button>
+            {{-- <button type="button" class="btn btn-warning" id="creditAmount">  Credit : 0</button> --}}
 
-            <button type="button" class="btn btn-danger" id="debitAmount">  Debit : 0</button>
+            {{-- <button type="button" class="btn btn-danger" id="debitAmount">  Debit : 0</button> --}}
 
-            <button type="button" class="btn btn-dark" id="totalLcyAmount">  Amount : 0</button>
+            {{-- <button type="button" class="btn btn-dark" id="totalLcyAmount">  Amount : 0</button> --}}
              
-           </div> --}}
+           </div>
 <br>
 <br>
 
@@ -110,47 +110,46 @@
 
 $(document).ready(function(){
   fill_datatable();
-          function fill_datatable(brn='')
+          function fill_datatable(branch_number='')
           {
             var table = $('#transaction_POS_tbl').DataTable({
-                // "initComplete": function(settings, json) {
-                //     var api = this.api();
+                "initComplete": function(settings, json) {
+                    var api = this.api();
+                    // Initialize sums
+                    // var totalDebits = 0;
+                    // var totalCredits = 0;
 
-                //     // Initialize sums
-                //     var totalDebits = 0;
-                //     var totalCredits = 0;
+                    // // Calculate the total debits and credits
+                    // api.rows().data().each(function(row) {
+                    //     var amount = parseFloat(row['lcy_amount']); // Column 10
+                    //     var type = row['drcr']; // Column 6
 
-                //     // Calculate the total debits and credits
-                //     api.rows().data().each(function(row) {
-                //         var amount = parseFloat(row['lcy_amount']); // Column 10
-                //         var type = row['drcr']; // Column 6
-
-                //         if (type === 'D') {
-                //             totalDebits += amount;
-                //         } else if (type === 'C') {
-                //             totalCredits += amount;
-                //         }
-                //     });
+                    //     if (type === 'D') {
+                    //         totalDebits += amount;
+                    //     } else if (type === 'C') {
+                    //         totalCredits += amount;
+                    //     }
+                    // });
                                             
-                //     var difference = totalDebits - totalCredits;
-                //     var totaldebit = table.column(6).data().filter(function(value) {
-                //           return value === 'D';
-                //       }).length;
-                //       var totalcredit = table.column(6).data().filter(function(value) {
-                //           return value === 'C';
-                //       }).length;
-                //     var totalRecords = json.recordsTotal; // This should be available in the server response
-                //       filteredRecords= json.recordsFiltered
-                // $('#total').text("الحركات:" + totalRecords); // Total records
+                    // var difference = totalDebits - totalCredits;
+                    // var totaldebit = table.column(6).data().filter(function(value) {
+                    //       return value === 'D';
+                    //   }).length;
+                    //   var totalcredit = table.column(6).data().filter(function(value) {
+                    //       return value === 'C';
+                    //   }).length;
+                    var totalRecords = json.recordsTotal; // This should be available in the server response
+                      filteredRecords= json.recordsFiltered
+                $('#total').text("الحركات:" + totalRecords); // Total records
                 // $('#totaldebit').text(" الحركات Debit:" + totaldebit); // Total totaldebit
                 // $('#totalcredit').text(" الحركات Credit:" + totalcredit); // Total totalcredit
 
-                // $('#filteredRecords').text(" الحركات  التصفية: " + filteredRecords); // Filtered records
+                $('#filteredRecords').text(" الحركات  التصفية: " + filteredRecords); // Filtered records
                 // $('#debitAmount').text("Debit:" + totalDebits.toFixed(2) +"LYD");
                 // $('#creditAmount').text("Credit:" + totalCredits.toFixed(2) +"LYD");
                 // $('#totalLcyAmount').text("Amount:" + difference.toFixed(2) +"LYD");
 
-                // },
+                },
             processing: true,
             serverSide: false,
             searching: false,
@@ -165,7 +164,7 @@ $(document).ready(function(){
                 ],
             ajax: {
               url: "{{ route('transaction_p_o_s') }}",
-              data:{brn:brn,
+              data:{branch_number:branch_number,
               }
 
             },
@@ -202,7 +201,7 @@ $(document).ready(function(){
 
        
         $('#reset').click(function(){
-            $('#brn').val('');
+            $('#branch_number').val('');
             $('#transaction_POS_tbl').DataTable().destroy();
         fill_datatable();
          });
@@ -214,13 +213,13 @@ $(document).ready(function(){
 
 
          $('#filter').click(function(){
-        var brn = $('#brn').val();
+        var branch_number = $('#branch_number').val();
 
 
 
 
             $('#transaction_POS_tbl').DataTable().destroy();
-            fill_datatable(brn)
+            fill_datatable(branch_number)
 
 
     });

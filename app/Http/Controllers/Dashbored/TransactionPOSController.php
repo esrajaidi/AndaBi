@@ -38,9 +38,9 @@ class TransactionPOSController extends Controller
             return Datatables::of($data)
             ->addIndexColumn()
             ->filter(function ($instance) use ($request) {
-        if (!empty($request->brn)) {
+        if (!empty($request->branch_number)) {
             $instance->collection = $instance->collection->filter(function ($row) use ($request) {
-            return Str::contains($row['brn'], $request->get('brn')) ? true : false;
+            return Str::contains($row['branch_number'], $request->get('branch_number')) ? true : false;
             });
          }
 
