@@ -174,19 +174,66 @@ class TransactionPOSController extends Controller
         return Excel::download(new \App\Exports\TransactionsPOSByBranche($data), $fileName);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, TransactionPOS $transactionPOS)
+    public function generateReportViewAll(Request $request)
+    { 
+        
+    
+
+            $reportType = $request->input('report_type');
+            $query = DB::table('transaction_p_o_s')
+            ->select(
+               
+                DB::raw('DATE_FORMAT(processing_date, "%Y-%m") as month_year'),
+                DB::raw('SUM(total_amount) as total_amount_sum'),
+                DB::raw('SUM(net_amount) as net_amount_sum'),
+            
+                DB::raw('SUM((total_amount - net_amount) * 0.25) as total_branch_amount')
+            )
+              
+            ->groupBy(DB::raw('DATE_FORMAT(processing_date, "%Y-%m")'))
+            ->orderBy(DB::raw('DATE_FORMAT(processing_date, "%Y-%m")'), 'asc');
+          
+        
+        $data = $query->get();
+
+
+        
+
+
+        if ($reportType === 'pdf') {
+            return $this->generatePdfALL($data);
+        } elseif ($reportType === 'excel') {
+            return $this->generateExcelALL($data);
+        }
+
+
+
+
+
+         
+        return view('dashboard.transactionPOS.report')
+        ->with('data',$data);
+ 
+        
+    }
+    protected function generatePdfALL($data) 
     {
-        //
+       $fileName="transactionPOS_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
+       $title='Transaction POS ';
+       ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
+
+        $pdf = Pdf::loadView('dashboard.report.transactions_POS_pdf', ['data' => $data ,'title'=>$title]);
+
+        return $pdf->download($fileName);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(TransactionPOS $transactionPOS)
-    {
-        //
+    protected function generateExcelALL($data) 
+    {       
+   
+
+        $fileName="transactionPOS_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
+        ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
+
+        return Excel::download(new \App\Exports\Transactions($data), $fileName);
     }
 }
