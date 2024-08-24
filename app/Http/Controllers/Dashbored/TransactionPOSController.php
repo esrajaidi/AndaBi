@@ -234,6 +234,6 @@ class TransactionPOSController extends Controller
         $fileName="transactionPOS_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
-        return Excel::download(new \App\Exports\Transactions($data), $fileName);
+        return Excel::download(new \App\Exports\TransactionsPOS($data), $fileName);
     }
 }
