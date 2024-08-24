@@ -62,8 +62,6 @@
         </div>
         <div class="row">
             <button type="button" class="btn btn-primary" id="total">اجمالي الحركات  : 0</button>
-            {{-- <button type="button" class="btn btn-secondary" id="totaldebit">اجمالي الحركات   Debit: 0</button> --}}
-            {{-- <button type="button" class="btn btn-success" id="totalcredit">اجمالي الحركات   Credit: 0</button> --}}
 
             <button type="button" class="btn btn-info" id="filteredRecords">اجمالي الحركات بعد التصفية  : 0</button>
           </div>
