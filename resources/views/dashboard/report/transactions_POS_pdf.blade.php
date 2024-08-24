@@ -14,27 +14,25 @@
     <table>
         <thead>
             <tr>
-                <th>Branch Number</th>
-                        <th>Month-Year</th>
-                        <th>Total Amount</th>
-                        <th>Net Amount</th>
-                        <th>Total Branch Amount</th>
+                <th>Month-Year</th>
+                <th>Total Amount</th>
+                <th>Net Amount</th>
+                <th>Total Branch Amount</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($data as $row)
             <tr>
-                <td>{{ $row->branch_number }}</td>
                 <td>{{ $row->month_year }}</td>
                 <td>{{ number_format($row->total_amount_sum, 2) }}</td>
                 <td>{{ number_format($row->net_amount_sum, 2) }}</td>
             <td>{{ number_format($row->total_branch_amount, 2) }}</td>
             </tr>
-@endforeach
+            @endforeach
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="2"><strong>TOTAL</strong></td>
+                <td colspan="1"><strong>TOTAL</strong></td>
                 <td>{{ number_format($data->sum('total_amount_sum'),2) }} LYD</td>
                 <td>{{ number_format($data->sum('net_amount_sum'),2) }} LYD</td>
 
