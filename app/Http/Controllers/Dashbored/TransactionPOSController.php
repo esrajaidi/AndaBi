@@ -110,20 +110,68 @@ class TransactionPOSController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(TransactionPOS $transactionPOS)
-    {
-        //
+    public function generateReportView(Request $request)
+    { 
+        $branches = Branche::where('active', 1)->where('branche_number','!=','100')
+        ->get();
+
+            $reportType = $request->input('report_type');
+            $branches_id = $request->input('branches_id');
+            $query = DB::table('transaction_p_o_s')
+            ->select(
+                'branch_number',
+                DB::raw('DATE_FORMAT(processing_date, "%Y-%m") as month_year'),
+                DB::raw('SUM(total_amount) as total_amount_sum'),
+                DB::raw('SUM(net_amount) as net_amount_sum'),
+            
+                DB::raw('SUM((total_amount - net_amount) * 0.25) as total_branch_amount')
+            )
+               ->when($branches_id, function ($query, $branches_id) {
+                return $query->where('branch_number', $branches_id);
+            })
+            ->groupBy('branch_number', 'month_year')
+            ->orderBy('branch_number', 'asc');
+
+    
+       
+                $data = $query->get();
+
+
+
+        if ($reportType === 'pdf') {
+
+            return $this->generatePdf($data);
+        } elseif ($reportType === 'excel') {
+            return $this->generateExcel($data);
+        }
+
+        return view('dashboard.transactionPOS.report_bybranche')
+        ->with('data',$data)
+        ->with('branches',$branches)
+        ->with('branches_id',$branches_id);
+ 
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(TransactionPOS $transactionPOS)
+    protected function generatePdf($data) 
     {
-        //
+        $fileName="transactionPOS_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
+        $title='Transaction POS Report Branche';
+        ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
+
+        $pdf = Pdf::loadView('dashboard.report.transactions_POS_bybranche', ['data' => $data ,'title'=>$title]);
+        
+        return $pdf->download($fileName);
+    }
+
+    protected function generateExcel($data) 
+    {       
+   
+
+        $fileName="transactionPOS_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
+        ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
+
+        return Excel::download(new \App\Exports\TransactionsPOSByBranche($data), $fileName);
     }
 
     /**

@@ -8,7 +8,7 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithColumnFormatting;
 use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 
-class TransactionsByBranche implements FromCollection, WithHeadings, WithColumnFormatting
+class TransactionsPOSByBranche implements FromCollection, WithHeadings, WithColumnFormatting
 {
     protected $data;
 
@@ -27,10 +27,9 @@ class TransactionsByBranche implements FromCollection, WithHeadings, WithColumnF
         return [
             'Month-Year',
             'Branch',
-            'Total Credit',
-            'Total Debits',
             'Total Amount',
-            'Total Transactions',
+            'Net Amount',
+            'Total Branch Amount'
 
         ];
     }
