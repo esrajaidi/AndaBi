@@ -28,7 +28,7 @@ class TransactionsPOS implements FromCollection, WithHeadings, WithColumnFormatt
             'Month-Year',
             'Total Amount',
             'Net Amount',
-            'Total Branch Amount'
+            'Total Fees'
 
         ];
     }

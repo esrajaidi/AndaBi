@@ -17,7 +17,7 @@
                 <th>Month-Year</th>
                 <th>Total Amount</th>
                 <th>Net Amount</th>
-                <th>Total Branch Amount</th>
+                <th>Total Fees</th>
             </tr>
         </thead>
         <tbody>

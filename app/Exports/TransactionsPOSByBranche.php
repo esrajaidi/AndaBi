@@ -29,7 +29,7 @@ class TransactionsPOSByBranche implements FromCollection, WithHeadings, WithColu
             'Branch',
             'Total Amount',
             'Net Amount',
-            'Total Branch Amount'
+            'Total Fees'
 
         ];
     }

@@ -5,7 +5,7 @@
 <div class="row small-spacing">
     <div class="col-lg-12 col-xs-12">
         <div class="box-content ">
-            <h3 ><i class="ico fa fa-list-ul"></i> @yield('title')</h3>
+            <h3 ><i class="ico fa fa fa-building"></i> @yield('title')</h3>
            
             <!-- /.box-title -->
             
@@ -57,7 +57,7 @@
                             <th>Month-Year</th>
                             <th>Total Amount</th>
                             <th>Net Amount</th>
-                            <th>Total Branch Amount</th>
+                            <th>Total Fees</th>
     
                         </tr>
                     </thead>
@@ -75,7 +75,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="2"><strong>الاجمالي</strong></td>
+                            <td colspan="1"><strong>الاجمالي</strong></td>
                             <td>{{ number_format($data->sum('total_amount_sum'),2) }} دينار</td>
                             <td>{{ number_format($data->sum('net_amount_sum'),2) }} دينار</td>
         
