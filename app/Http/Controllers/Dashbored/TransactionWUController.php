@@ -1,13 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Dashbored;
-
-use App\Models\TransactionOBDX;
 use App\Http\Controllers\Controller;
-
-use App\Imports\TransactionsOBDXImport;
+use App\Imports\TransactionsWUImport;
 use App\Models\Branche;
-
+use App\Models\TransactionWU;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +16,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 use Yajra\DataTables\Facades\DataTables;;
 use Barryvdh\DomPDF\Facade\Pdf;
 
-class TransactionOBDXController extends Controller
+class TransactionWUController extends Controller
 {
     public function __construct()
     {
@@ -34,7 +31,7 @@ class TransactionOBDXController extends Controller
 
         $branches= Branche::all();
     if ($request->ajax()) {
-    $data = TransactionOBDX::latest()->get();
+    $data = TransactionWU::latest()->get();
     return Datatables::of($data)
     ->addIndexColumn()
     ->filter(function ($instance) use ($request) {
@@ -49,14 +46,14 @@ class TransactionOBDXController extends Controller
  
     ->make(true);
     }
-       return view('dashboard.transactionOBDX.index')->with('branches',$branches);
+       return view('dashboard.transactionWU.index')->with('branches',$branches);
 }
 
    public function uplode(){
 
 
 
-        return view('dashboard.transactionOBDX.uplode');
+        return view('dashboard.transactionWU.uplode');
 
     }
 
@@ -78,18 +75,19 @@ class TransactionOBDXController extends Controller
             $file = $request->file('file');
             $fileName = $file->getClientOriginalName();
             DB::transaction(function () use ($request,$fileName) {
-                Excel::import(new TransactionsOBDXImport, $request->file('file'));
+                Excel::import(new TransactionsWUImport, $request->file('file'));
                           
             });
             
-            ActivityLogger::activity($fileName.'تمت عملية  تحميل ملف Transactions OBDX  بنجاح');
+            ActivityLogger::activity($fileName.'تمت عملية  تحميل ملف Transactions WU  بنجاح');
 
             Alert::success('تمت عملية  تحميل ملف  بنجاح');
 
-            return redirect('transaction_o_b_d_x_e_s');
+            return redirect('transaction_w_u_s');
         } catch (\Exception $e) {
             Alert::warning($e->getMessage());
-            ActivityLogger::activity( $e->getMessage().' فشل   تحميل ملف Transactions OBDX  ');
+            dd($e->getMessage());
+            ActivityLogger::activity( $e->getMessage().' فشل   تحميل ملف Transactions WU  ');
 
             return redirect()->back();
         }
@@ -108,7 +106,7 @@ class TransactionOBDXController extends Controller
             $branches_id = $request->input('branches_id');
        
        
-            $query = DB::table('transaction_o_b_d_x_e_s')
+            $query = DB::table('transaction_w_u_s')
             ->select(DB::raw('
                 DATE_FORMAT(trn_date, "%Y-%m") as month_year,
                 brn,
@@ -138,7 +136,7 @@ class TransactionOBDXController extends Controller
             return $this->generateExcel($data);
         }
 
-        return view('dashboard.transactionOBDX.report_bybranche')
+        return view('dashboard.transactionWU.report_bybranche')
         ->with('data',$data)
         ->with('branches',$branches)
         ->with('branches_id',$branches_id);
@@ -149,7 +147,7 @@ class TransactionOBDXController extends Controller
     protected function generatePdf($data) 
     {
         $fileName="transactionOBDX_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
-        $title='Transaction OBDX Report Branche';
+        $title='Transaction WU Report Branche';
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
         $pdf = Pdf::loadView('dashboard.report.transactions_pdf_bybranche', ['data' => $data ,'title'=>$title]);
@@ -177,7 +175,7 @@ class TransactionOBDXController extends Controller
      
  
              $reportType = $request->input('report_type');
-             $query = DB::table('transaction_o_b_d_x_e_s')
+             $query = DB::table('transaction_w_u_s')
              ->select(DB::raw('
                  DATE_FORMAT(trn_date, "%Y-%m") as month_year,
                 SUM(CASE WHEN drcr = "C" THEN lcy_amount ELSE 0 END) as total_credits,
@@ -209,15 +207,15 @@ class TransactionOBDXController extends Controller
  
  
           
-         return view('dashboard.transactionOBDX.report')
+         return view('dashboard.transactionWU.report')
          ->with('data',$data);
   
          
      }
      protected function generatePdfALL($data) 
      {
-        $fileName="transactionOBDX_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
-        $title='Transaction OBDX ';
+        $fileName="transactionWU_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
+        $title='Transaction WU ';
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
          $pdf = Pdf::loadView('dashboard.report.transactions_pdf', ['data' => $data ,'title'=>$title]);
@@ -229,9 +227,10 @@ class TransactionOBDXController extends Controller
      {       
     
  
-         $fileName="transactionOBDX_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
+         $fileName="transactionWU_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
          ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
          return Excel::download(new \App\Exports\Transactions($data), $fileName);
      }
 }
+

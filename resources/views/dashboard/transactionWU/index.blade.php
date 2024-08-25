@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction OBDX')
+@section('title', 'Transaction WU')
 @section('content')
 <style>
   .btn-export {
@@ -16,9 +16,9 @@
 <div class="row small-spacing">
     <div class="col-xs-12">
       <div class="box-content">
-        <h3 ><i class="ico fa fa-list-ul"></i> @yield('title')</h3>
+        <h3 ><i class="ico glyphicon glyphicon-modal-window"></i> @yield('title')</h3>
         <br>
-        <a class="btn btn-success" href="{{ route('transaction_o_b_d_x_e_s/uplode') }}">تحميل ملف  </a>
+        <a class="btn btn-success" href="{{ route('transaction_w_u_s/uplode') }}">تحميل ملف  </a>
 
 
         <br>
@@ -80,7 +80,7 @@
 <br>
 
   <div class="table-responsive">
-    <table class="table table-striped" style="width: 100%" id="transaction_OBDX_tbl">
+    <table class="table table-striped" style="width: 100%" id="transaction_WU_tbl">
         <thead>
             <tr>
                 <th>ID</th>
@@ -116,7 +116,7 @@ $(document).ready(function(){
   fill_datatable();
           function fill_datatable(brn='')
           {
-            var table = $('#transaction_OBDX_tbl').DataTable({
+            var table = $('#transaction_WU_tbl').DataTable({
                 "initComplete": function(settings, json) {
                     var api = this.api();
 
@@ -168,7 +168,7 @@ $(document).ready(function(){
   
                 ],
             ajax: {
-              url: "{{ route('transaction_o_b_d_x_e_s') }}",
+              url: "{{ route('transaction_w_u_s') }}",
               data:{brn:brn,
               }
 
@@ -211,7 +211,7 @@ $(document).ready(function(){
        
         $('#reset').click(function(){
             $('#brn').val('');
-            $('#transaction_OBDX_tbl').DataTable().destroy();
+            $('#transaction_WU_tbl').DataTable().destroy();
         fill_datatable();
          });
 
@@ -227,7 +227,7 @@ $(document).ready(function(){
 
 
 
-            $('#transaction_OBDX_tbl').DataTable().destroy();
+            $('#transaction_WU_tbl').DataTable().destroy();
             fill_datatable(brn)
 
 
