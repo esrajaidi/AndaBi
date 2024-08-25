@@ -146,7 +146,7 @@ class TransactionWUController extends Controller
 
     protected function generatePdf($data) 
     {
-        $fileName="transactionOBDX_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
+        $fileName="transactionWU_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
         $title='Transaction WU Report Branche';
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
@@ -159,7 +159,7 @@ class TransactionWUController extends Controller
     {       
    
 
-        $fileName="transactionOBDX_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
+        $fileName="transactionWU_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
         return Excel::download(new \App\Exports\TransactionsByBranche($data), $fileName);
