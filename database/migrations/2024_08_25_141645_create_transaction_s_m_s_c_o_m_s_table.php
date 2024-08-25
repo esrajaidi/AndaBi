@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transaction_s_m_s', function (Blueprint $table) {
+        Schema::create('transaction_s_m_s_c_o_m_s', function (Blueprint $table) {
             $table->increments('id');
             $table->string('trn_ref_no'); // Transaction Reference Number
             $table->string('event'); // Event
@@ -38,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transaction_s_m_s');
+        Schema::dropIfExists('transaction_s_m_s_c_o_m_s');
     }
 };

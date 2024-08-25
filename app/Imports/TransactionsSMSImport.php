@@ -17,7 +17,7 @@ class TransactionsSMSImport implements ToModel,WithStartRow
     public function model(array $row)
     {
     
-        $entry_sr_no = $row[15];
+      
 
        
         if ($row[3] !='IC109012403') {

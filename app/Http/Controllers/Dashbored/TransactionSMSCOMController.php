@@ -15,8 +15,9 @@ use RealRashid\SweetAlert\Facades\Alert;
 use Yajra\DataTables\Facades\DataTables;;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Imports\TransactionsSMSImport;
+use App\Models\TransactionSMSCOM;
 
-class TransactionSMSController extends Controller
+class TransactionSMSCOMController extends Controller
 {
     public function __construct()
     {
@@ -31,7 +32,7 @@ class TransactionSMSController extends Controller
 
         $branches= Branche::all();
     if ($request->ajax()) {
-    $data = TransactionSMS::latest()->get();
+    $data = TransactionSMSCOM::latest()->get();
     return Datatables::of($data)
     ->addIndexColumn()
     ->filter(function ($instance) use ($request) {
@@ -46,7 +47,7 @@ class TransactionSMSController extends Controller
  
     ->make(true);
     }
-       return view('dashboard.transactionSMS.index')->with('branches',$branches);
+       return view('dashboard.transactionSMSCOM.index')->with('branches',$branches);
 }
 
    public function uplode(){
@@ -79,14 +80,14 @@ class TransactionSMSController extends Controller
                           
             });
             
-            ActivityLogger::activity($fileName.'تمت عملية  تحميل ملف Transactions SMS  بنجاح');
+            ActivityLogger::activity($fileName.'تمت عملية  تحميل ملف Transactions SMS COMPANY    بنجاح');
 
             Alert::success('تمت عملية  تحميل ملف  بنجاح');
 
-            return redirect('transaction_s_m_s');
+            return redirect('transaction_s_m_s_c_o_m_s');
         } catch (\Exception $e) {
             Alert::warning($e->getMessage());
-            ActivityLogger::activity( $e->getMessage().' فشل   تحميل ملف Transactions SMS  ');
+            ActivityLogger::activity( $e->getMessage().' فشل   تحميل ملف Transactions SMS COMPANY  ');
 
             return redirect()->back();
         }
@@ -105,7 +106,7 @@ class TransactionSMSController extends Controller
             $branches_id = $request->input('branches_id');
        
        
-            $query = DB::table('transaction_s_m_s')
+            $query = DB::table('transaction_s_m_s_c_o_m_s')
             ->select(DB::raw('
                 DATE_FORMAT(trn_date, "%Y-%m") as month_year,
                 brn,
@@ -135,7 +136,7 @@ class TransactionSMSController extends Controller
             return $this->generateExcel($data);
         }
 
-        return view('dashboard.transactionSMS.report_bybranche')
+        return view('dashboard.transactionSMSCOM.report_bybranche')
         ->with('data',$data)
         ->with('branches',$branches)
         ->with('branches_id',$branches_id);
@@ -145,8 +146,8 @@ class TransactionSMSController extends Controller
 
     protected function generatePdf($data) 
     {
-        $fileName="TransactionSMS_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
-        $title='Transaction SMS Report Branche';
+        $fileName="TransactionSMSCom_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
+        $title='Transaction SMS COMPANY Report Branche';
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
         $pdf = Pdf::loadView('dashboard.report.transactions_pdf_bybranche', ['data' => $data ,'title'=>$title]);
@@ -158,7 +159,7 @@ class TransactionSMSController extends Controller
     {       
    
 
-        $fileName="TransactionSMS_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
+        $fileName="TransactionSMSCom_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
         return Excel::download(new \App\Exports\TransactionsByBranche($data), $fileName);
@@ -174,7 +175,7 @@ class TransactionSMSController extends Controller
      
  
              $reportType = $request->input('report_type');
-             $query = DB::table('transaction_s_m_s')
+             $query = DB::table('transaction_s_m_s_c_o_m_s')
              ->select(DB::raw('
                  DATE_FORMAT(trn_date, "%Y-%m") as month_year,
                 SUM(CASE WHEN drcr = "C" THEN lcy_amount ELSE 0 END) as total_credits,
@@ -213,8 +214,8 @@ class TransactionSMSController extends Controller
      }
      protected function generatePdfALL($data) 
      {
-        $fileName="TransactionSMS_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
-        $title='Transaction SMS ';
+        $fileName="TransactionSMSCOM_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
+        $title='Transaction SMS COMPANY ';
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
          $pdf = Pdf::loadView('dashboard.report.transactions_pdf', ['data' => $data ,'title'=>$title]);
@@ -226,7 +227,7 @@ class TransactionSMSController extends Controller
      {       
     
  
-         $fileName="TransactionSMS_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
+         $fileName="TransactionSMSCOM_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
          ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
          return Excel::download(new \App\Exports\Transactions($data), $fileName);
