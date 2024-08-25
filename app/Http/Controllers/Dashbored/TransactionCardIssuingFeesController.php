@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashbored;
 use App\Http\Controllers\Controller;
-use App\Imports\TransactionsWUImport;
+use App\Imports\TransactionsCardIssuingFeesImport;
 use App\Models\Branche;
 use App\Models\TransactionCardIssuingFees;
 use App\Models\TransactionWU;
@@ -76,7 +76,7 @@ class TransactionCardIssuingFeesController extends Controller
             $file = $request->file('file');
             $fileName = $file->getClientOriginalName();
             DB::transaction(function () use ($request,$fileName) {
-                Excel::import(new TransactionsWUImport, $request->file('file'));
+                Excel::import(new TransactionsCardIssuingFeesImport, $request->file('file'));
                           
             });
             
@@ -147,7 +147,7 @@ class TransactionCardIssuingFeesController extends Controller
 
     protected function generatePdf($data) 
     {
-        $fileName="transactionWU_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
+        $fileName="transactionCardIssuingFees_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
         $title='Transaction CardIssuingFees Report Branche';
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
@@ -160,7 +160,7 @@ class TransactionCardIssuingFeesController extends Controller
     {       
    
 
-        $fileName="transactionWU_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
+        $fileName="transactionCardIssuingFees_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
         return Excel::download(new \App\Exports\TransactionsByBranche($data), $fileName);
@@ -215,7 +215,7 @@ class TransactionCardIssuingFeesController extends Controller
      }
      protected function generatePdfALL($data) 
      {
-        $fileName="transactionWU_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
+        $fileName="transactionCardIssuingFees_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
         $title='Transaction CardIssuingFees ';
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
@@ -228,7 +228,7 @@ class TransactionCardIssuingFeesController extends Controller
      {       
     
  
-         $fileName="transactionWU_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
+         $fileName="transactionCardIssuingFees_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
          ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
          return Excel::download(new \App\Exports\Transactions($data), $fileName);
