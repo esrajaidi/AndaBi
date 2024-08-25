@@ -104,6 +104,13 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_card_issuing_fees/report/branche', [App\Http\Controllers\Dashbored\TransactionCardIssuingFeesController::class, 'generateReportView'])->name('transaction_card_issuing_fees/report/branche');
         Route::get('transaction_card_issuing_fees/report/', [App\Http\Controllers\Dashbored\TransactionCardIssuingFeesController::class, 'generateReportViewAll'])->name('transaction_card_issuing_fees/report');
 
+        Route::get('transaction_s_m_s', [App\Http\Controllers\Dashbored\TransactionSMSController::class, 'index'])->name('transaction_s_m_s');
+        Route::get('transaction_s_m_s/uplode', [App\Http\Controllers\Dashbored\TransactionSMSController::class, 'uplode'])->name('transaction_s_m_s/uplode');
+        Route::post('transaction_s_m_s/uplode', [App\Http\Controllers\Dashbored\TransactionSMSController::class, 'storeUplode'])->name('transaction_s_m_s/store_uplode');
+        Route::get('transaction_s_m_s/report/branche', [App\Http\Controllers\Dashbored\TransactionSMSController::class, 'generateReportView'])->name('transaction_s_m_s/report/branche');
+        Route::get('transaction_s_m_s/report/', [App\Http\Controllers\Dashbored\TransactionSMSController::class, 'generateReportViewAll'])->name('transaction_s_m_s/report');
+
+        
         Route::get('logger/activity', [App\Http\Controllers\Dashbored\ActivityLogController::class, 'index'])->name('logger/activity');
 
 });

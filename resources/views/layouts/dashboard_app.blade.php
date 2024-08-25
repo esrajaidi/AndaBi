@@ -207,6 +207,28 @@
                  
                     </ul>
                 </li>
+
+                <li class="{{ Request::is('transaction_s_m_s*') ? 'current' : '' }} ">
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-newspaper-o"></i><span>Transaction SMS </span>
+                    </span></a>
+              
+                    <ul class="sub-menu js__content" style="background-color: white;">
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_s_m_s') }}">Transaction SMS  عرض كافة  </span></a>
+                            </a>
+                        </li>
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_s_m_s/report/branche') }}">Transaction SMS Branche</span></a>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="waves-effect" href="{{ route('transaction_s_m_s/report') }}">Transaction SMS Report </span></a>
+                        </a>
+                    </li>
+                 
+                    </ul>
+                </li>
                 @can('laravel-logger')
                 <li class="{{ Request::is('logger/activity') ? 'current' : '' }} ">
                     <a class="waves-effect" href="{{ route('logger/activity') }}"><i class="menu-icon  fa fa-eye"></i><span>مراقبة النظام</span></a>

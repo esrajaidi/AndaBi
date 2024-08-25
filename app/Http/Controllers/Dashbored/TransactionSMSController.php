@@ -1,11 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Dashbored;
-
-use App\Models\TransactionOBDXCom;
 use App\Http\Controllers\Controller;
-use App\Imports\TransactionsOBDXCOMImport;
 use App\Models\Branche;
+use App\Models\TransactionSMS;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -16,10 +14,9 @@ use Maatwebsite\Excel\Facades\Excel;
 use RealRashid\SweetAlert\Facades\Alert;
 use Yajra\DataTables\Facades\DataTables;;
 use Barryvdh\DomPDF\Facade\Pdf;
+use App\Imports\TransactionsSMSImport;
 
-
-
-class TransactionOBDXComController extends Controller
+class TransactionSMSController extends Controller
 {
     public function __construct()
     {
@@ -34,7 +31,7 @@ class TransactionOBDXComController extends Controller
 
         $branches= Branche::all();
     if ($request->ajax()) {
-    $data = TransactionOBDXCom::latest()->get();
+    $data = TransactionSMS::latest()->get();
     return Datatables::of($data)
     ->addIndexColumn()
     ->filter(function ($instance) use ($request) {
@@ -49,14 +46,14 @@ class TransactionOBDXComController extends Controller
  
     ->make(true);
     }
-       return view('dashboard.transactionOBDXCOM.index')->with('branches',$branches);
+       return view('dashboard.transactionSMS.index')->with('branches',$branches);
 }
 
    public function uplode(){
 
 
 
-        return view('dashboard.transactionOBDXCOM.uplode');
+        return view('dashboard.transactionSMS.uplode');
 
     }
 
@@ -78,18 +75,18 @@ class TransactionOBDXComController extends Controller
             $file = $request->file('file');
             $fileName = $file->getClientOriginalName();
             DB::transaction(function () use ($request,$fileName) {
-                Excel::import(new TransactionsOBDXCOMImport, $request->file('file'));
+                Excel::import(new TransactionsSMSImport, $request->file('file'));
                           
             });
             
-            ActivityLogger::activity($fileName.'تمت عملية  تحميل ملف Transactions OBDX COM  بنجاح');
+            ActivityLogger::activity($fileName.'تمت عملية  تحميل ملف Transactions SMS  بنجاح');
 
             Alert::success('تمت عملية  تحميل ملف  بنجاح');
 
-            return redirect('transaction_o_b_d_x_coms');
+            return redirect('transaction_s_m_s');
         } catch (\Exception $e) {
             Alert::warning($e->getMessage());
-            ActivityLogger::activity( $e->getMessage().' فشل   تحميل ملف Transactions OBDX COM  ');
+            ActivityLogger::activity( $e->getMessage().' فشل   تحميل ملف Transactions SMS  ');
 
             return redirect()->back();
         }
@@ -108,7 +105,7 @@ class TransactionOBDXComController extends Controller
             $branches_id = $request->input('branches_id');
        
        
-            $query = DB::table('transaction_o_b_d_x_coms')
+            $query = DB::table('transaction_s_m_s')
             ->select(DB::raw('
                 DATE_FORMAT(trn_date, "%Y-%m") as month_year,
                 brn,
@@ -138,7 +135,7 @@ class TransactionOBDXComController extends Controller
             return $this->generateExcel($data);
         }
 
-        return view('dashboard.transactionOBDXCOM.report_bybranche')
+        return view('dashboard.transactionSMS.report_bybranche')
         ->with('data',$data)
         ->with('branches',$branches)
         ->with('branches_id',$branches_id);
@@ -149,7 +146,7 @@ class TransactionOBDXComController extends Controller
     protected function generatePdf($data) 
     {
         $fileName="TransactionOBDXCom_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
-        $title='Transaction OBDX COM Report Branche';
+        $title='Transaction SMS Report Branche';
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
         $pdf = Pdf::loadView('dashboard.report.transactions_pdf_bybranche', ['data' => $data ,'title'=>$title]);
@@ -177,7 +174,7 @@ class TransactionOBDXComController extends Controller
      
  
              $reportType = $request->input('report_type');
-             $query = DB::table('transaction_o_b_d_x_coms')
+             $query = DB::table('transaction_s_m_s')
              ->select(DB::raw('
                  DATE_FORMAT(trn_date, "%Y-%m") as month_year,
                 SUM(CASE WHEN drcr = "C" THEN lcy_amount ELSE 0 END) as total_credits,
@@ -209,15 +206,15 @@ class TransactionOBDXComController extends Controller
  
  
           
-         return view('dashboard.transactionOBDXCOM.report')
+         return view('dashboard.transactionSMS.report')
          ->with('data',$data);
   
          
      }
      protected function generatePdfALL($data) 
      {
-        $fileName="TransactionOBDXCom_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
-        $title='Transaction OBDX COM ';
+        $fileName="TransactionSMS_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
+        $title='Transaction SMS ';
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
          $pdf = Pdf::loadView('dashboard.report.transactions_pdf', ['data' => $data ,'title'=>$title]);
@@ -229,7 +226,7 @@ class TransactionOBDXComController extends Controller
      {       
     
  
-         $fileName="TransactionOBDXCom_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
+         $fileName="TransactionSMS_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
          ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
          return Excel::download(new \App\Exports\Transactions($data), $fileName);
