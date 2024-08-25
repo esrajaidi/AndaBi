@@ -172,6 +172,29 @@
                  
                     </ul>
                 </li>
+
+
+                <li class="{{ Request::is('transaction_card_issuing_fees*') ? 'current' : '' }} ">
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-credit-card"></i><span>Transaction Card Issuing Fees </span>
+                    </span></a>
+              
+                    <ul class="sub-menu js__content" style="background-color: white;">
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_card_issuing_fees') }}">Transaction Card Issuing Fees  عرض كافة  </span></a>
+                            </a>
+                        </li>
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_card_issuing_fees/report/branche') }}">Transaction Card Issuing Fees Report Branche</span></a>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="waves-effect" href="{{ route('transaction_card_issuing_fees/report') }}">Transaction Card Issuing Fees Report </span></a>
+                        </a>
+                    </li>
+                 
+                    </ul>
+                </li>
                 @can('laravel-logger')
                 <li class="{{ Request::is('logger/activity') ? 'current' : '' }} ">
                     <a class="waves-effect" href="{{ route('logger/activity') }}"><i class="menu-icon  fa fa-eye"></i><span>مراقبة النظام</span></a>

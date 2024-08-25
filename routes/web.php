@@ -91,6 +91,12 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_w_u_s/report/branche', [App\Http\Controllers\Dashbored\TransactionWUController::class, 'generateReportView'])->name('transaction_w_u_s/report/branche');
         Route::get('transaction_w_u_s/report/', [App\Http\Controllers\Dashbored\TransactionWUController::class, 'generateReportViewAll'])->name('transaction_w_u_s/report');
 
+        Route::get('transaction_card_issuing_fees', [App\Http\Controllers\Dashbored\TransactionCardIssuingFeesController::class, 'index'])->name('transaction_card_issuing_fees');
+        Route::get('transaction_card_issuing_fees/uplode', [App\Http\Controllers\Dashbored\TransactionCardIssuingFeesController::class, 'uplode'])->name('transaction_card_issuing_fees/uplode');
+        Route::post('transaction_card_issuing_fees/uplode', [App\Http\Controllers\Dashbored\TransactionCardIssuingFeesController::class, 'storeUplode'])->name('transaction_card_issuing_fees/store_uplode');
+        Route::get('transaction_card_issuing_fees/report/branche', [App\Http\Controllers\Dashbored\TransactionCardIssuingFeesController::class, 'generateReportView'])->name('transaction_card_issuing_fees/report/branche');
+        Route::get('transaction_card_issuing_fees/report/', [App\Http\Controllers\Dashbored\TransactionCardIssuingFeesController::class, 'generateReportViewAll'])->name('transaction_card_issuing_fees/report');
+
         Route::get('logger/activity', [App\Http\Controllers\Dashbored\ActivityLogController::class, 'index'])->name('logger/activity');
 
 });
