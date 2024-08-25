@@ -10,7 +10,7 @@ class TransactionWU extends Model
     use HasFactory;
 
     // Define the table name if it's different from the plural of the model name
-    protected $table = 'transaction_o_b_d_x_e_s';
+    protected $table = 'transaction_w_u_s';
 
     // Define the fillable attributes
     protected $fillable = [

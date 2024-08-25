@@ -25,14 +25,14 @@ class TransactionsWUImport implements ToModel,WithStartRow
         // Check if the `trn_ref_no` already exists
         if (TransactionWU::where('entry_sr_no', $entry_sr_no)->exists()) {
 
-            ActivityLogger::activity("لم يتم ادخال  لوجود entry_sr_no  مسبقا");
+            ActivityLogger::activity("لم يتم ادخال  لوجود entry_sr_no  مسبقا in TransactionsWUImport" );
 
             // Skip this row as it already exists
             return null;
         }
         if ($row[3] !='IC109011620') {
           
-            ActivityLogger::activity("the entry ac_no is ".$row[3]."not  IC109011620" );
+            ActivityLogger::activity("the entry ac_no is ".$row[3]."not  IC109011620 in TransactionsWUImport" );
             return null;
         }
           // Convert the date columns from Excel to the format that Laravel expects
