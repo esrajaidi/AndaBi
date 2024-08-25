@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction OBDX Report Branche')
+@section('title', 'Transaction WU Report Branche')
 @section('content')
 
 <div class="row small-spacing">
@@ -11,7 +11,7 @@
             
             <div class="card-content">
                 
-                <form  method="get" action="{{ route('transaction_o_b_d_x_e_s/report/branche') }}"  enctype="multipart/form-data">
+                <form  method="get" action="{{ route('transaction_w_u_s/report/branche') }}"  enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-4">
@@ -136,7 +136,7 @@ $(document).ready(function(){
             $('#report_type').selectedIndex=0;
             $('#branches_id').selectedIndex=0;
 
-            var redirectUrl = "{{ route('transaction_o_b_d_x_e_s/report/branche') }}";
+            var redirectUrl = "{{ route('transaction_w_u_s/report/branche') }}";
             window.location.href = redirectUrl;
         })
 

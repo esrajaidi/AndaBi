@@ -129,6 +129,7 @@ class TransactionWUController extends Controller
 
 
 
+                dd($data);
         if ($reportType === 'pdf') {
 
             return $this->generatePdf($data);
