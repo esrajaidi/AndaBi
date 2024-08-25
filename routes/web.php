@@ -78,6 +78,13 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_o_b_d_x_e_s/report/branche', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'generateReportView'])->name('transaction_o_b_d_x_e_s/report/branche');
         Route::get('transaction_o_b_d_x_e_s/report/', [App\Http\Controllers\Dashbored\TransactionOBDXController::class, 'generateReportViewAll'])->name('transaction_o_b_d_x_e_s/report');
 
+        Route::get('transaction_o_b_d_x_coms', [App\Http\Controllers\Dashbored\TransactionOBDXComController::class, 'index'])->name('transaction_o_b_d_x_coms');
+        Route::get('transaction_o_b_d_x_coms/uplode', [App\Http\Controllers\Dashbored\TransactionOBDXComController::class, 'uplode'])->name('transaction_o_b_d_x_coms/uplode');
+        Route::post('transaction_o_b_d_x_coms/uplode', [App\Http\Controllers\Dashbored\TransactionOBDXComController::class, 'storeUplode'])->name('transaction_o_b_d_x_coms/store_uplode');
+        Route::get('transaction_o_b_d_x_coms/report/branche', [App\Http\Controllers\Dashbored\TransactionOBDXComController::class, 'generateReportView'])->name('transaction_o_b_d_x_coms/report/branche');
+        Route::get('transaction_o_b_d_x_coms/report/', [App\Http\Controllers\Dashbored\TransactionOBDXComController::class, 'generateReportViewAll'])->name('transaction_o_b_d_x_coms/report');
+
+
         Route::get('transaction_p_o_s', [App\Http\Controllers\Dashbored\TransactionPOSController::class, 'index'])->name('transaction_p_o_s');
         Route::get('transaction_p_o_s/uplode', [App\Http\Controllers\Dashbored\TransactionPOSController::class, 'uplode'])->name('transaction_p_o_s/uplode');
         Route::post('transaction_p_o_s/uplode', [App\Http\Controllers\Dashbored\TransactionPOSController::class, 'storeUplode'])->name('transaction_p_o_s/store_uplode');

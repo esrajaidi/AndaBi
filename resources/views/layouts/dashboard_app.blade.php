@@ -120,10 +120,22 @@
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_o_b_d_x_e_s/report') }}">Transaction OBDX Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_o_b_d_x_coms/report') }}">Transaction OBDX  Report </span></a>
+                             </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect" href="{{ route('transaction_o_b_d_x_coms') }}">Transaction OBDX Company عرض كافة  </span></a>
                         </a>
                     </li>
-                 
+                    <li>
+                            <a class="waves-effect" href="{{ route('transaction_o_b_d_x_coms/report/branche') }}">Transaction OBDX Company Report Branche</span></a>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="waves-effect" href="{{ route('transaction_o_b_d_x_e_s/report') }}">Transaction OBDX Company Report </span></a>
+                         </a>
+                    </li>
                     </ul>
                 </li>
                 
