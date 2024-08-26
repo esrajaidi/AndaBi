@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'WU تحميل ملف ')
+@section('title', 'Outgoing WU تحميل ملف ')
 
 
 @section('content')

@@ -79,7 +79,7 @@ class TransactionWUController extends Controller
                           
             });
             
-            ActivityLogger::activity($fileName.'تمت عملية  تحميل ملف Transactions WU  بنجاح');
+            ActivityLogger::activity($fileName.'تمت عملية  تحميل ملف Transactions Outgoing  WU  بنجاح');
 
             Alert::success('تمت عملية  تحميل ملف  بنجاح');
 
@@ -87,7 +87,7 @@ class TransactionWUController extends Controller
         } catch (\Exception $e) {
             Alert::warning($e->getMessage());
             dd($e->getMessage());
-            ActivityLogger::activity( $e->getMessage().' فشل   تحميل ملف Transactions WU  ');
+            ActivityLogger::activity( $e->getMessage().' فشل   تحميل ملف Transactions Outgoing WU  ');
 
             return redirect()->back();
         }
@@ -146,8 +146,8 @@ class TransactionWUController extends Controller
 
     protected function generatePdf($data) 
     {
-        $fileName="transactionWU_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
-        $title='Transaction WU Report Branche';
+        $fileName="transaction_outgoingWU_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
+        $title='Transaction Outgoing WU Report Branche';
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
         $pdf = Pdf::loadView('dashboard.report.transactions_pdf_bybranche', ['data' => $data ,'title'=>$title]);
@@ -159,7 +159,7 @@ class TransactionWUController extends Controller
     {       
    
 
-        $fileName="transactionWU_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
+        $fileName="transaction_outgoingWU_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
         return Excel::download(new \App\Exports\TransactionsByBranche($data), $fileName);
@@ -214,8 +214,8 @@ class TransactionWUController extends Controller
      }
      protected function generatePdfALL($data) 
      {
-        $fileName="transactionWU_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
-        $title='Transaction WU ';
+        $fileName="transaction_outgoingWU_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
+        $title='Transaction Outgoing WU ';
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
          $pdf = Pdf::loadView('dashboard.report.transactions_pdf', ['data' => $data ,'title'=>$title]);
@@ -227,7 +227,7 @@ class TransactionWUController extends Controller
      {       
     
  
-         $fileName="transactionWU_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
+         $fileName="transaction_outgoingWU_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".xlsx";
          ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
          return Excel::download(new \App\Exports\Transactions($data), $fileName);

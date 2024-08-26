@@ -169,16 +169,16 @@
               
                     <ul class="sub-menu js__content" style="background-color: white;">
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_w_u_s') }}">Transaction WU  عرض كافة  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_w_u_s') }}">Transaction  Outgoing WU   عرض كافة  </span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_w_u_s/report/branche') }}">Transaction WU Report Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_w_u_s/report/branche') }}">Transaction  Outgoing WU Report Branche</span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_w_u_s/report') }}">Transaction WU Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_w_u_s/report') }}">Transaction Outgoing WU Report </span></a>
                         </a>
                     </li>
                  

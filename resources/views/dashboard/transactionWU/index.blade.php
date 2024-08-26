@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction WU')
+@section('title', 'Transaction Outgoing WU')
 @section('content')
 <style>
   .btn-export {

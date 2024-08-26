@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction WU Report Branche')
+@section('title', 'Transaction Outgoing WU Report Branche')
 @section('content')
 
 <div class="row small-spacing">
