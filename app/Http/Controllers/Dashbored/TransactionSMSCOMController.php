@@ -14,7 +14,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use RealRashid\SweetAlert\Facades\Alert;
 use Yajra\DataTables\Facades\DataTables;;
 use Barryvdh\DomPDF\Facade\Pdf;
-use App\Imports\TransactionsSMSImport;
+use App\Imports\TransactionsSMSCOMImport;
 use App\Models\TransactionSMSCOM;
 
 class TransactionSMSCOMController extends Controller
@@ -76,7 +76,7 @@ class TransactionSMSCOMController extends Controller
             $file = $request->file('file');
             $fileName = $file->getClientOriginalName();
             DB::transaction(function () use ($request,$fileName) {
-                Excel::import(new TransactionsSMSImport, $request->file('file'));
+                Excel::import(new TransactionsSMSCOMImport, $request->file('file'));
                           
             });
             
@@ -207,7 +207,7 @@ class TransactionSMSCOMController extends Controller
  
  
           
-         return view('dashboard.transactionSMS.report')
+         return view('dashboard.transactionSMSCOM.report')
          ->with('data',$data);
   
          
