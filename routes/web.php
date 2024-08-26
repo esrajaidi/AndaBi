@@ -116,6 +116,13 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_s_m_s_c_o_m_s/report/branche', [App\Http\Controllers\Dashbored\TransactionSMSCOMController::class, 'generateReportView'])->name('transaction_s_m_s_c_o_m_s/report/branche');
         Route::get('transaction_s_m_s_c_o_m_s/report/', [App\Http\Controllers\Dashbored\TransactionSMSCOMController::class, 'generateReportViewAll'])->name('transaction_s_m_s_c_o_m_s/report');
 
+
+        Route::get('transaction_a_t_m_s', [App\Http\Controllers\Dashbored\TransactionATMController::class, 'index'])->name('transaction_a_t_m_s');
+        Route::get('transaction_a_t_m_s/uplode', [App\Http\Controllers\Dashbored\TransactionATMController::class, 'uplode'])->name('transaction_a_t_m_s/uplode');
+        Route::post('transaction_a_t_m_s/uplode', [App\Http\Controllers\Dashbored\TransactionATMController::class, 'storeUplode'])->name('transaction_a_t_m_s/store_uplode');
+        Route::get('transaction_a_t_m_s/report/branche', [App\Http\Controllers\Dashbored\TransactionATMController::class, 'generateReportView'])->name('transaction_a_t_m_s/report/branche');
+        Route::get('transaction_a_t_m_s/report/', [App\Http\Controllers\Dashbored\TransactionATMController::class, 'generateReportViewAll'])->name('transaction_a_t_m_s/report');
+
         Route::get('logger/activity', [App\Http\Controllers\Dashbored\ActivityLogController::class, 'index'])->name('logger/activity');
 
 });
