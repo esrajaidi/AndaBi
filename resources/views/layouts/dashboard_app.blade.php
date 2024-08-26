@@ -215,10 +215,23 @@
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_card_issuing_fees/report') }}">Transaction Card Issuing Fees Report </span></a>
-                        </a>
-                    </li>
-                 
+                            <a class="waves-effect" href="{{ route('transaction_card_issuing_fees/report') }}">Transaction  Card Issuing Fees Report </span></a>
+                            </a>
+                        </li>
+                 {{-- ********************************** --}}
+                 <li>
+                    <a class="waves-effect" href="{{ route('transaction_incom_card_fees') }}">Transaction Income Card Fees  عرض كافة  </span></a>
+                </a>
+            </li>
+            <li>
+                    <a class="waves-effect" href="{{ route('transaction_incom_card_fees/report/branche') }}">Transaction Income Card  Fees Report Branche</span></a>
+                </a>
+            </li>
+        
+            <li>
+                <a class="waves-effect" href="{{ route('transaction_incom_card_fees/report') }}">Transaction Income Card Fees Report </span></a>
+                </a>
+            </li>
                     </ul>
                 </li>
 
