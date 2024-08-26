@@ -54,7 +54,7 @@ class TransactionSMSCOMController extends Controller
 
 
 
-        return view('dashboard.transactionSMS.uplode');
+        return view('dashboard.transactionSMSCOM.uplode');
 
     }
 

@@ -3,6 +3,7 @@
 namespace App\Imports;
 
 use App\Models\TransactionSMS;
+use App\Models\TransactionSMSCOM;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithStartRow;
 use jeremykenedy\LaravelLogger\App\Http\Traits\ActivityLogger;
@@ -20,16 +21,16 @@ class TransactionsSMSCOMImport implements ToModel,WithStartRow
       
 
        
-        if ($row[3] !='IC109012504') {
+        if ($row[3] !='IC109012404') {
           
-            ActivityLogger::activity("the entry ac_no is ".$row[3]."not  IC109012504 in TransactionsSMSCOMImport" );
+            ActivityLogger::activity("the entry ac_no is ".$row[3]."not  IC109012404 in TransactionsSMSCOMImport" );
             return null;
         }
           // Convert the date columns from Excel to the format that Laravel expects
 
           $trnDate = $this->excelSerialToDate($row[10]);
           $valueDate = $this->excelSerialToDate($row[11]);
-        return new TransactionSMS([
+        return new TransactionSMSCOM([
             'trn_ref_no' => $row[0],
             'event' => $row[1],
             'brn' => $row[2],
