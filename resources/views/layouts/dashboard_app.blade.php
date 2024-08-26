@@ -224,9 +224,22 @@
                     
                         <li>
                             <a class="waves-effect" href="{{ route('transaction_s_m_s/report') }}">Transaction SMS Report </span></a>
+                              </a>
+                         </li>
+                 
+                         <li>
+                            <a class="waves-effect" href="{{ route('transaction_s_m_s_c_o_m_s') }}">Transaction Company SMS  عرض كافة  </span></a>
                         </a>
                     </li>
-                 
+                    <li>
+                            <a class="waves-effect" href="{{ route('transaction_s_m_s_c_o_m_s/report/branche') }}">Transaction  Company SMS Branche</span></a>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="waves-effect" href="{{ route('transaction_s_m_s_c_o_m_s/report') }}">Transaction  Company SMS Report </span></a>
+                          </a>
+                     </li>
                     </ul>
                 </li>
                 @can('laravel-logger')

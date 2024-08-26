@@ -10,7 +10,7 @@ class TransactionSMSCOM extends Model
     use HasFactory;
 
     // Define the table name if it's different from the plural of the model name
-    protected $table = 'transaction_s_m_s_c_o_m_s0';
+    protected $table = 'transaction_s_m_s_c_o_m_s';
 
     // Define the fillable attributes
     protected $fillable = [
