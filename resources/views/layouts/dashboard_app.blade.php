@@ -163,7 +163,7 @@
 
 
                       
-                <li class="{{ Request::is('transaction_w_u_s*') ? 'current' : '' }} ">
+                <li class="{{ Request::is('transaction_w_u_s*') || Request::is('transaction_incom_w_u_s*') ? 'current' : '' }}">
                     <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon  glyphicon glyphicon-modal-window"></i><span>Transaction WU </span>
                     </span></a>
               
@@ -179,9 +179,23 @@
                     
                         <li>
                             <a class="waves-effect" href="{{ route('transaction_w_u_s/report') }}">Transaction Outgoing WU Report </span></a>
+                            </a>
+                        </li>
+                 
+                        <li>
+                            <a class="waves-effect" href="{{ route('transaction_incom_w_u_s') }}">Transaction  Incom WU   عرض كافة  </span></a>
                         </a>
                     </li>
-                 
+                    <li>
+                            <a class="waves-effect" href="{{ route('transaction_incom_w_u_s/report/branche') }}">Transaction  Incom WU Report Branche</span></a>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="waves-effect" href="{{ route('transaction_incom_w_u_s/report') }}">Transaction Incom WU Report </span></a>
+                        </a>
+                    </li>
+                        
                     </ul>
                 </li>
 

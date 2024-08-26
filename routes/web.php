@@ -98,6 +98,12 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_w_u_s/report/branche', [App\Http\Controllers\Dashbored\TransactionWUController::class, 'generateReportView'])->name('transaction_w_u_s/report/branche');
         Route::get('transaction_w_u_s/report/', [App\Http\Controllers\Dashbored\TransactionWUController::class, 'generateReportViewAll'])->name('transaction_w_u_s/report');
 
+        Route::get('transaction_incom_w_u_s', [App\Http\Controllers\Dashbored\TransactionIncomWUController::class, 'index'])->name('transaction_incom_w_u_s');
+        Route::get('transaction_incom_w_u_s/uplode', [App\Http\Controllers\Dashbored\TransactionIncomWUController::class, 'uplode'])->name('transaction_incom_w_u_s/uplode');
+        Route::post('transaction_incom_w_u_s/uplode', [App\Http\Controllers\Dashbored\TransactionIncomWUController::class, 'storeUplode'])->name('transaction_incom_w_u_s/store_uplode');
+        Route::get('transaction_incom_w_u_s/report/branche', [App\Http\Controllers\Dashbored\TransactionIncomWUController::class, 'generateReportView'])->name('transaction_incom_w_u_s/report/branche');
+        Route::get('transaction_incom_w_u_s/report/', [App\Http\Controllers\Dashbored\TransactionIncomWUController::class, 'generateReportViewAll'])->name('transaction_incom_w_u_s/report');
+
         Route::get('transaction_card_issuing_fees', [App\Http\Controllers\Dashbored\TransactionCardIssuingFeesController::class, 'index'])->name('transaction_card_issuing_fees');
         Route::get('transaction_card_issuing_fees/uplode', [App\Http\Controllers\Dashbored\TransactionCardIssuingFeesController::class, 'uplode'])->name('transaction_card_issuing_fees/uplode');
         Route::post('transaction_card_issuing_fees/uplode', [App\Http\Controllers\Dashbored\TransactionCardIssuingFeesController::class, 'storeUplode'])->name('transaction_card_issuing_fees/store_uplode');
