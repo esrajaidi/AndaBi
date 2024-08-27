@@ -1,17 +1,17 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Card Re Issuing Fees Report')
+@section('title', 'Transaction Re Issuing Card Fees Report Branche')
 @section('content')
 
 <div class="row small-spacing">
     <div class="col-lg-12 col-xs-12">
         <div class="box-content ">
-            <h3 ><i class="ico fa fa-cc-mastercard"></i> @yield('title')</h3>
+            <h3 ><i class="ico glyphicon glyphicon-credit-card"></i> @yield('title')</h3>
            
             <!-- /.box-title -->
             
             <div class="card-content">
                 
-                <form  method="get" action="{{ route('transaction_card_re_issuing_fees/report') }}"  enctype="multipart/form-data">
+                <form  method="get" action="{{ route('transaction_re_issuing_pin_fees/report/branche') }}"  enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-4">
@@ -31,7 +31,28 @@
                                 @enderror
                             </div>
                         </div>
-               
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label> الفرع  </label>
+                                <select type="text" name="branches_id"
+                                        class="form-control">
+                                        
+                                        <option label="اختر الفرع"></option>
+                                        @forelse ($branches as $branche)
+                                        
+                                            <option value="{{ $branche->branche_number }}" {{ old('branches_id') == $branche->id ? 'selected' : '' }}> {{ $branche->branche_name }}
+                                            </option>
+                                        @empty
+                                            <option value="">لا يوجد فروع</option>
+                                        @endforelse
+                                </select>
+                                @error('branches_id')
+                                    <span class="text-danger" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span> 
+                                @enderror
+                            </div>
+                        </div>
                        
                     </div>
 
@@ -55,6 +76,7 @@
                     <thead>
                         <tr>
                             <th>Month-Year</th>
+                            <th>Branch</th>
                             <th>Total Credits</th>
                             <th>Total Debits</th>
                             <th>Total Amount</th>
@@ -66,24 +88,24 @@
                         @foreach ($data as $row)
                         <tr>
                             <td>{{ $row->month_year }}</td>
+                            <td>{{ $row->brn }}</td>
                             <td>{{ $row->total_credits }}</td>
                             <td>{{ $row->total_debits }}</td>
                             <td>{{ number_format($row->total_amount, 2) }}</td>
 
                             <td>{{ $row->total_transactions }}</td>
-                            
                         </tr>
             @endforeach
                     </tbody>
                     <tfoot>
                         <tr>
-                    <td colspan="1"><strong>الاجمالي</strong></td>
+                    <td colspan="2"><strong>الاجمالي</strong></td>
              
-                        <td>{{ number_format($data->sum('total_credits'),2) }} دينار</td>
-                        <td>{{ number_format($data->sum('total_debits'),2) }} دينار</td>
-                        <td>{{ number_format($data->sum('total_amount'),2) }} دينار</td>
+                <td>{{ number_format($data->sum('total_credits'),2) }} دينار</td>
+                <td>{{ number_format($data->sum('total_debits'),2) }} دينار</td>
+                <td>{{ number_format($data->sum('total_amount'),2) }} دينار</td>
 
-                        <td>{{ $data->sum('total_transactions') }}</td>
+                <td>{{ $data->sum('total_transactions') }}</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -112,7 +134,9 @@ $(document).ready(function(){
 
         $('#reset').click(function(){
             $('#report_type').selectedIndex=0;
-            var redirectUrl = "{{ route('transaction_card_re_issuing_fees/report') }}";
+            $('#branches_id').selectedIndex=0;
+
+            var redirectUrl = "{{ route('transaction_re_issuing_pin_fees/report/branche') }}";
             window.location.href = redirectUrl;
         })
 

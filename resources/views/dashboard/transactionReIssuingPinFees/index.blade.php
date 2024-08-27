@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Card Re Issuing Fees')
+@section('title', 'Transaction Re Issuing Pin Fees')
 @section('content')
 <style>
   .btn-export {
@@ -16,9 +16,9 @@
 <div class="row small-spacing">
     <div class="col-xs-12">
       <div class="box-content">
-        <h3 ><i class="ico fa fa-cc-mastercard"></i> @yield('title')</h3>
+        <h3 ><i class="ico glyphicon glyphicon-credit-card"></i> @yield('title')</h3>
         <br>
-        <a class="btn btn-success" href="{{ route('transaction_card_re_issuing_fees/uplode') }}">تحميل ملف  </a>
+        <a class="btn btn-success" href="{{ route('transaction_re_issuing_pin_fees/uplode') }}">تحميل ملف  </a>
 
 
         <br>
@@ -80,7 +80,7 @@
 <br>
 
   <div class="table-responsive">
-    <table class="table table-striped" style="width: 100%" id="transaction_card_re_issuing_fees_tbl">
+    <table class="table table-striped" style="width: 100%" id="transaction_re_issuing_pin_fees_tbl">
         <thead>
             <tr>
                 <th>ID</th>
@@ -116,7 +116,7 @@ $(document).ready(function(){
   fill_datatable();
           function fill_datatable(brn='')
           {
-            var table = $('#transaction_card_re_issuing_fees_tbl').DataTable({
+            var table = $('#transaction_re_issuing_pin_fees_tbl').DataTable({
                 "initComplete": function(settings, json) {
                     var api = this.api();
 
@@ -168,7 +168,7 @@ $(document).ready(function(){
   
                 ],
             ajax: {
-              url: "{{ route('transaction_card_re_issuing_fees') }}",
+              url: "{{ route('transaction_re_issuing_pin_fees') }}",
               data:{brn:brn,
               }
 
@@ -211,7 +211,7 @@ $(document).ready(function(){
        
         $('#reset').click(function(){
             $('#brn').val('');
-            $('#transaction_card_re_issuing_fees_tbl').DataTable().destroy();
+            $('#transaction_re_issuing_pin_fees_tbl').DataTable().destroy();
         fill_datatable();
          });
 
@@ -227,7 +227,7 @@ $(document).ready(function(){
 
 
 
-            $('#transaction_card_re_issuing_fees_tbl').DataTable().destroy();
+            $('#transaction_re_issuing_pin_fees_tbl').DataTable().destroy();
             fill_datatable(brn)
 
 

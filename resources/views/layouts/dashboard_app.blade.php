@@ -249,6 +249,28 @@
                         </ul>
                 </li>
 
+
+                <li class="{{ Request::is('transaction_re_issuing_pin_fees*') ? 'current' : '' }} ">
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-cc-mastercard"></i><span>Transaction ReIssuing Pin Fees </span>
+                    </span></a>
+              
+                    <ul class="sub-menu js__content" style="background-color: white;">
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_re_issuing_pin_fees') }}">Transaction ReIssuing Pin Fees  عرض كافة  </span></a>
+                            </a>
+                        </li>
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_re_issuing_pin_fees/report/branche') }}">Transaction ReIssuing Pin Fees Report Branche</span></a>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="waves-effect" href="{{ route('transaction_re_issuing_pin_fees/report') }}">Transaction ReIssuing Pin Fees Report </span></a>
+                        </a>
+                    </li>
+                 
+                    </ul>
+                </li>
                 <li class="{{ Request::is('transaction_s_m_s*') ? 'current' : '' }} ">
                     <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-newspaper-o"></i><span>Transaction SMS </span>
                     </span></a>

@@ -1,17 +1,17 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Card Re Issuing Fees Report')
+@section('title', 'Transaction Re Issuing Pin Fees Report')
 @section('content')
 
 <div class="row small-spacing">
     <div class="col-lg-12 col-xs-12">
         <div class="box-content ">
-            <h3 ><i class="ico fa fa-cc-mastercard"></i> @yield('title')</h3>
+            <h3 ><i class="ico glyphicon glyphicon-credit-card"></i> @yield('title')</h3>
            
             <!-- /.box-title -->
             
             <div class="card-content">
                 
-                <form  method="get" action="{{ route('transaction_card_re_issuing_fees/report') }}"  enctype="multipart/form-data">
+                <form  method="get" action="{{ route('transaction_re_issuing_pin_fees/report') }}"  enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-4">
@@ -112,7 +112,7 @@ $(document).ready(function(){
 
         $('#reset').click(function(){
             $('#report_type').selectedIndex=0;
-            var redirectUrl = "{{ route('transaction_card_re_issuing_fees/report') }}";
+            var redirectUrl = "{{ route('transaction_re_issuing_pin_fees/report') }}";
             window.location.href = redirectUrl;
         })
 

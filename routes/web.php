@@ -117,6 +117,12 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_card_re_issuing_fees/report/branche', [App\Http\Controllers\Dashbored\TransactionCardReIssuingFeesController::class, 'generateReportView'])->name('transaction_card_re_issuing_fees/report/branche');
         Route::get('transaction_card_re_issuing_fees/report/', [App\Http\Controllers\Dashbored\TransactionCardReIssuingFeesController::class, 'generateReportViewAll'])->name('transaction_card_re_issuing_fees/report');
 
+        Route::get('transaction_re_issuing_pin_fees', [App\Http\Controllers\Dashbored\TransactionReIssuingPinFeesController::class, 'index'])->name('transaction_re_issuing_pin_fees');
+        Route::get('transaction_re_issuing_pin_fees/uplode', [App\Http\Controllers\Dashbored\TransactionReIssuingPinFeesController::class, 'uplode'])->name('transaction_re_issuing_pin_fees/uplode');
+        Route::post('transaction_re_issuing_pin_fees/uplode', [App\Http\Controllers\Dashbored\TransactionReIssuingPinFeesController::class, 'storeUplode'])->name('transaction_re_issuing_pin_fees/store_uplode');
+        Route::get('transaction_re_issuing_pin_fees/report/branche', [App\Http\Controllers\Dashbored\TransactionReIssuingPinFeesController::class, 'generateReportView'])->name('transaction_re_issuing_pin_fees/report/branche');
+        Route::get('transaction_re_issuing_pin_fees/report/', [App\Http\Controllers\Dashbored\TransactionReIssuingPinFeesController::class, 'generateReportViewAll'])->name('transaction_re_issuing_pin_fees/report');
+
 
         Route::get('transaction_incom_card_fees', [App\Http\Controllers\Dashbored\TransactionIncomCardFeesController::class, 'index'])->name('transaction_incom_card_fees');
         Route::get('transaction_incom_card_fees/uplode', [App\Http\Controllers\Dashbored\TransactionIncomCardFeesController::class, 'uplode'])->name('transaction_incom_card_fees/uplode');
