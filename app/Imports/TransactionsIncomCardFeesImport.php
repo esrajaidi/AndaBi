@@ -23,14 +23,7 @@ class TransactionsIncomCardFeesImport implements ToModel,WithStartRow
     
         $entry_sr_no = $row[15];
 
-        // Check if the `trn_ref_no` already exists
-        if (TransactionIncomCardFees::where('entry_sr_no', $entry_sr_no)->exists()) {
-
-            ActivityLogger::activity("لم يتم ادخال  لوجود entry_sr_no  مسبقا in TransactionsIncomCardFeesImport" );
-
-            // Skip this row as it already exists
-            return null;
-        }
+     
         if ($row[3] !='IC109012709') {
           
             ActivityLogger::activity("the entry ac_no is ".$row[3]."not  IC109012709 in TransactionsIncomCardFeesImport" );

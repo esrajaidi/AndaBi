@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('related_account')->nullable(); // Related Account
             $table->string('maker'); // Maker
             $table->string('checker'); // Checker
-            $table->integer('entry_sr_no');// Entry Serial Number
+            $table->string('entry_sr_no')->nullable();// Entry Serial Number
             $table->timestamps();
         });
     }
