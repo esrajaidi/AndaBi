@@ -110,6 +110,14 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_card_issuing_fees/report/branche', [App\Http\Controllers\Dashbored\TransactionCardIssuingFeesController::class, 'generateReportView'])->name('transaction_card_issuing_fees/report/branche');
         Route::get('transaction_card_issuing_fees/report/', [App\Http\Controllers\Dashbored\TransactionCardIssuingFeesController::class, 'generateReportViewAll'])->name('transaction_card_issuing_fees/report');
 
+
+        Route::get('transaction_card_re_issuing_fees', [App\Http\Controllers\Dashbored\TransactionCardReIssuingFeesController::class, 'index'])->name('transaction_card_re_issuing_fees');
+        Route::get('transaction_card_re_issuing_fees/uplode', [App\Http\Controllers\Dashbored\TransactionCardReIssuingFeesController::class, 'uplode'])->name('transaction_card_re_issuing_fees/uplode');
+        Route::post('transaction_card_re_issuing_fees/uplode', [App\Http\Controllers\Dashbored\TransactionCardReIssuingFeesController::class, 'storeUplode'])->name('transaction_card_re_issuing_fees/store_uplode');
+        Route::get('transaction_card_re_issuing_fees/report/branche', [App\Http\Controllers\Dashbored\TransactionCardReIssuingFeesController::class, 'generateReportView'])->name('transaction_card_re_issuing_fees/report/branche');
+        Route::get('transaction_card_re_issuing_fees/report/', [App\Http\Controllers\Dashbored\TransactionCardReIssuingFeesController::class, 'generateReportViewAll'])->name('transaction_card_re_issuing_fees/report');
+
+
         Route::get('transaction_incom_card_fees', [App\Http\Controllers\Dashbored\TransactionIncomCardFeesController::class, 'index'])->name('transaction_incom_card_fees');
         Route::get('transaction_incom_card_fees/uplode', [App\Http\Controllers\Dashbored\TransactionIncomCardFeesController::class, 'uplode'])->name('transaction_incom_card_fees/uplode');
         Route::post('transaction_incom_card_fees/uplode', [App\Http\Controllers\Dashbored\TransactionIncomCardFeesController::class, 'storeUplode'])->name('transaction_incom_card_fees/store_uplode');

@@ -185,54 +185,68 @@
                         <li>
                             <a class="waves-effect" href="{{ route('transaction_incom_w_u_s') }}">Transaction  Incom WU   عرض كافة  </span></a>
                         </a>
-                    </li>
-                    <li>
-                            <a class="waves-effect" href="{{ route('transaction_incom_w_u_s/report/branche') }}">Transaction  Incom WU Report Branche</span></a>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a class="waves-effect" href="{{ route('transaction_incom_w_u_s/report') }}">Transaction Incom WU Report </span></a>
-                        </a>
-                    </li>
+                        </li>
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_incom_w_u_s/report/branche') }}">Transaction  Incom WU Report Branche</span></a>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="waves-effect" href="{{ route('transaction_incom_w_u_s/report') }}">Transaction Incom WU Report </span></a>
+                            </a>
+                        </li>
                         
                     </ul>
                 </li>
 
                 <li class="{{ Request::is('transaction_card_issuing_fees*') || Request::is('transaction_incom_card_fees*') ? 'current' : '' }}">
 
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-credit-card"></i><span>Transaction Card  </span>
-                    </span></a>
-              
-                    <ul class="sub-menu js__content" style="background-color: white;">
-                        <li>
-                                <a class="waves-effect" href="{{ route('transaction_card_issuing_fees') }}">Transaction Card Issuing Fees  عرض كافة  </span></a>
+                        <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-credit-card"></i><span>Transaction Card  </span>
+                        </span></a>
+                
+                        <ul class="sub-menu js__content" style="background-color: white;">
+                            
+                            <li>
+                                    <a class="waves-effect" href="{{ route('transaction_card_issuing_fees') }}">Transaction Card Issuing Fees  عرض كافة  </span></a>
+                                </a>
+                            </li>
+                            <li>
+                                    <a class="waves-effect" href="{{ route('transaction_card_issuing_fees/report/branche') }}">Transaction Card Issuing Fees Report Branche</span></a>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="waves-effect" href="{{ route('transaction_card_issuing_fees/report') }}">Transaction  Card Issuing Fees Report </span></a>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect" href="{{ route('transaction_incom_card_fees') }}">Transaction Income Card Fees  عرض كافة  </span></a>
+                                </a>
+                            </li>
+                            <li>
+                                    <a class="waves-effect" href="{{ route('transaction_incom_card_fees/report/branche') }}">Transaction Income Card  Fees Report Branche</span></a>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="waves-effect" href="{{ route('transaction_incom_card_fees/report') }}">Transaction Income Card Fees Report </span></a>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect" href="{{ route('transaction_card_re_issuing_fees') }}">Transaction Card ReIssuing Fees  عرض كافة  </span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_card_issuing_fees/report/branche') }}">Transaction Card Issuing Fees Report Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_card_re_issuing_fees/report/branche') }}">Transaction Card ReIssuing Fees Report Branche</span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_card_issuing_fees/report') }}">Transaction  Card Issuing Fees Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_card_re_issuing_fees/report') }}">Transaction  Card ReIssuing Fees Report </span></a>
                             </a>
                         </li>
-                 {{-- ********************************** --}}
-                 <li>
-                    <a class="waves-effect" href="{{ route('transaction_incom_card_fees') }}">Transaction Income Card Fees  عرض كافة  </span></a>
-                    </a>
-                </li>
-                <li>
-                        <a class="waves-effect" href="{{ route('transaction_incom_card_fees/report/branche') }}">Transaction Income Card  Fees Report Branche</span></a>
-                    </a>
-                </li>
-            
-                <li>
-                    <a class="waves-effect" href="{{ route('transaction_incom_card_fees/report') }}">Transaction Income Card Fees Report </span></a>
-                    </a>
-                </li>
-                    </ul>
+                            
+                        </ul>
                 </li>
 
                 <li class="{{ Request::is('transaction_s_m_s*') ? 'current' : '' }} ">
