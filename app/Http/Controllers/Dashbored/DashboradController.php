@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashbored;
 
 use App\BranchCard;
 use App\Classes\DaysInfo;
+use App\Classes\HelperC;
 use App\CompanyStock;
 use App\Enums\CustomerStatus;
 use App\Http\Controllers\Controller;
@@ -17,6 +18,7 @@ use App\TotalStock;
 use App\Models\Customer;
 use Illuminate\Support\Carbon;
 use Spatie\Permission\Models\Permission;
+USE Illuminate\Support\Facades\DB;
 
 class DashboradController extends Controller
 {
@@ -38,9 +40,14 @@ class DashboradController extends Controller
     public function index()
     {
 
-      
-      
-        return view('dashboard.home');
+        $months = HelperC::months();
+        $year=HelperC::year;
+
+        // $monthYearString = '2024-August';
+        // $month_year = HelperC::convertMonthYear($monthYearString);
+        // $d=HelperC::get_transaction_card_issuing_fees($month_year);
+        //     dd($d);
+                return view('dashboard.home',compact('months', 'year'));
         
     }
 

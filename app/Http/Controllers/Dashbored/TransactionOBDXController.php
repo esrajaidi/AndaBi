@@ -28,6 +28,7 @@ class TransactionOBDXController extends Controller
 
     }
 
+    
 
     public function index(Request $request)
     {
@@ -93,6 +94,16 @@ class TransactionOBDXController extends Controller
 
             return redirect()->back();
         }
+
+    }
+
+    public function truncateTable()
+    {
+        // DB::table('transaction_o_b_d_x_e_s')->truncate();
+
+        ActivityLogger::activity("تم تفريغ الجدول Transactions OBDX بنجاح ");
+
+        Alert::success('تمت عملية  تحميل ملف  بنجاح');
 
     }
 
