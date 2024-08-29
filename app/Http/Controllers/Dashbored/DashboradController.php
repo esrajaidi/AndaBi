@@ -43,10 +43,7 @@ class DashboradController extends Controller
         $months = HelperC::months();
         $year=HelperC::year;
 
-        // $monthYearString = '2024-August';
-        // $month_year = HelperC::convertMonthYear($monthYearString);
-        // $d=HelperC::get_transaction_card_issuing_fees($month_year);
-        //     dd($d);
+      
                 return view('dashboard.home',compact('months', 'year'));
         
     }

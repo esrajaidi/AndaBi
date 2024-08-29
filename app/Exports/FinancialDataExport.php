@@ -123,4 +123,21 @@ class FinancialDataExport implements FromCollection, WithHeadings
             'POS Fees',
         ];
     }
+    public function columnFormats(): array
+    {
+        return [
+            'B' => '#,##0.000', // Card Issuing Fees
+            'C' => '#,##0.000', // Card Income Fees
+            'D' => '#,##0.000', // Card Reissuing Fees
+            'E' => '#,##0.000', // Pin Reissuing Fees
+            'F' => '#,##0.000', // OBDX Fees
+            'G' => '#,##0.000', // OBDX Company Fees
+            'H' => '#,##0.000', // Income WU Fees
+            'I' => '#,##0.000', // Outgoing WU Fees
+            'J' => '#,##0.000', // SMS Fees
+            'K' => '#,##0.000', // SMS Company Fees
+            'L' => '#,##0.000', // ATM Fees
+            'M' => '#,##0.000', // POS Fees
+        ];
+    }
 }

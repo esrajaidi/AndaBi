@@ -20,9 +20,9 @@ return new class extends Migration
             $table->string('ccy'); // Currency
             $table->enum('drcr', ['D', 'C']); // Debit or Credit
             $table->string('trn_code'); // Transaction Code
-            $table->decimal('fcy_amount', 15, 2)->nullable(); // Foreign Currency Amount
+            $table->decimal('fcy_amount', 15, 3)->nullable(); // Foreign Currency Amount
             $table->decimal('exch_rate', 10, 6)->nullable(); // Exchange Rate
-            $table->decimal('lcy_amount', 15, 2); // Local Currency Amount
+            $table->decimal('lcy_amount', 15, 3); // Local Currency Amount
             $table->date('trn_date'); // Transaction Date
             $table->date('value_date'); // Value Date
             $table->string('related_account')->nullable(); // Related Account

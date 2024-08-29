@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('bank_name');
             $table->string('branch_name');
             $table->string('branch_number');
-            $table->decimal('net_amount', 15, 2);
+            $table->decimal('net_amount', 15, 3);
             $table->date('processing_date');
-            $table->decimal('total_amount', 15, 2);
+            $table->decimal('total_amount', 15, 3);
             $table->string('trx_no');
             $table->string('file_name');
             $table->timestamps();
