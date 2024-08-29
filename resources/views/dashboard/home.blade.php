@@ -21,6 +21,8 @@
                         <th>SMS Fees</th>
                         <th>SMS Company Fees</th>
                         <th>ATM Fees</th>
+                        <th>POS Fees</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -35,6 +37,8 @@
                         $total_w_u_s = 0;
                         $total_s_m_s = 0;
                         $total_s_m_s_c_o_m_s = 0;
+                        $total_a_t_m_s=0;
+                        $total_p_o_s=0;
                     @endphp
                     @foreach ($months as $month)
                         @php
@@ -51,7 +55,11 @@
                             $transaction_s_m_s = \App\Classes\HelperC::get_transaction_s_m_s($month_year);
                             $transaction_s_m_s_c_o_m_s = \App\Classes\HelperC::get_transaction_s_m_s_c_o_m_s($month_year);
                             $transaction_re_issuing_pin_fees = \App\Classes\HelperC::get_transaction_re_issuing_pin_fees($month_year);
-                                        // Accumulate totals
+                            $transaction_a_t_m_s = \App\Classes\HelperC::get_transaction_a_t_m_s($month_year);
+
+                            $transaction_p_o_s = \App\Classes\HelperC::get_transaction_p_o_s($month_year);
+
+                            // Accumulate totals
                             $total_card_issuing_fees += $transaction_card_issuing_fees->total_amount ?? 0;
                             $total_incom_card_fees += $transaction_incom_card_fees->total_amount ?? 0;
                             $total_card_re_issuing_fees += $transaction_card_re_issuing_fees->total_amount ?? 0;
@@ -62,6 +70,10 @@
                             $total_w_u_s += $transaction_w_u_s->total_amount ?? 0;
                             $total_s_m_s += $transaction_s_m_s->total_amount ?? 0;
                             $total_s_m_s_c_o_m_s += $transaction_s_m_s_c_o_m_s->total_amount ?? 0;
+                            $total_a_t_m_s += $transaction_a_t_m_s->total_amount ?? 0;
+
+                            $total_p_o_s += $transaction_p_o_s->total_amount ?? 0;
+
                         @endphp
                         <tr>
                             <td>{{ $month }}</td>
@@ -75,7 +87,9 @@
                             <td>{{ $transaction_w_u_s->total_amount ?? 0 }}</td>
                             <td>{{ $transaction_s_m_s->total_amount ?? 0 }}</td>
                             <td>{{ $transaction_s_m_s_c_o_m_s->total_amount ?? 0 }}</td>
-                            <td>{{ $transaction_s_m_s->total_amount ?? 0 }}</td>
+                            <td>{{ $transaction_a_t_m_s->total_amount ?? 0 }}</td>
+
+                            <td>{{ $transaction_p_o_s->total_amount ?? 0 }}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -92,7 +106,9 @@
                     <th>{{ $total_w_u_s }}</th>
                     <th>{{ $total_s_m_s }}</th>
                     <th>{{ $total_s_m_s_c_o_m_s }}</th>
-                    <th>{{ $total_s_m_s }}</th>
+                    <th>{{ $total_a_t_m_s }}</th>
+                    <th>{{ $total_p_o_s }}</th>
+
                 </tr>
             </tfoot>
             </table>

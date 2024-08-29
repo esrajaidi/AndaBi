@@ -240,8 +240,30 @@ class HelperC {
                                              ->first();
                                              }
      
-                                        
-                                   public static function convertMonthYear($monthYearString) {
+                       
+                                             public static function get_transaction_p_o_s($month_year){
+
+
+                                                  return  DB::table('transaction_p_o_s')
+                                                  ->select(
+                                                      DB::raw('DATE_FORMAT(processing_date, "%Y-%m") as month_year'),
+                                                      DB::raw('SUM(total_amount) as total_amount_sum'),
+                                                      DB::raw('SUM(net_amount) as net_amount_sum'),
+                                                      DB::raw('SUM((total_amount - net_amount) * 0.25) as total_branch_amount')
+                                                  )
+                                                  ->where(DB::raw('DATE_FORMAT(processing_date, "%Y-%m")'), $month_year)
+                                                  ->groupBy(DB::raw('DATE_FORMAT(processing_date, "%Y-%m")'))
+                                                  ->orderBy(DB::raw('DATE_FORMAT(processing_date, "%Y-%m")'), 'asc')
+                                                  ->first();
+                                                  
+                                               
+                                                  }
+            
+                                             
+                                             
+
+
+               public static function convertMonthYear($monthYearString) {
                          // Create a DateTime instance from the input string
                          $date = DateTime::createFromFormat('Y-F', $monthYearString);
                          
