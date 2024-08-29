@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Exports\FinancialDataExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Classes\HelperC;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -150,6 +152,11 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_a_t_m_s/report/branche', [App\Http\Controllers\Dashbored\TransactionATMController::class, 'generateReportView'])->name('transaction_a_t_m_s/report/branche');
         Route::get('transaction_a_t_m_s/report/', [App\Http\Controllers\Dashbored\TransactionATMController::class, 'generateReportViewAll'])->name('transaction_a_t_m_s/report');
 
+
+        Route::get('/export-financial-data', function () {
+                $months = HelperC::months();
+                return Excel::download(new FinancialDataExport($months), 'financial_data.xlsx');
+            });
         Route::get('logger/activity', [App\Http\Controllers\Dashbored\ActivityLogController::class, 'index'])->name('logger/activity');
 
 });
