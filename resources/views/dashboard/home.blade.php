@@ -4,57 +4,99 @@
 @section('content')
 <div class="row small-spacing">
     <div class="col-xs-12">
-       
-      
-            <div class="container my-5">
-                <h2 class="text-center">Financial Data </h2>
-                <table class="table table-bordered table-striped table-hover">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>Month</th>
-                            <th>Card issuing fees</th>
-                            <th>OBDX fees</th>
-                            <th>Card Using Fee</th>
-                            <th>ATM Fees</th>
-                            <th>Total Fee</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        @foreach ($months as $month)
-<?php $monthYearString = \App\Classes\HelperC::year ."-".$month;
-        $month_year = \App\Classes\HelperC::convertMonthYear($monthYearString); 
-      $transaction_card_issuing_fees=  \App\Classes\HelperC::get_transaction_card_issuing_fees($month_year);
-     
-      $transaction_o_b_d_x_e_s=  \App\Classes\HelperC::get_transaction_o_b_d_x_e_s($month_year);
-
-     ?>
+        <div class="container my-5">
+            <h2 class="text-center">Financial Data</h2>
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Month</th>
+                        <th>Card Issuing Fees</th>
+                        <th>Card Income Fees</th>
+                        <th>Card Reissuing Fees</th>
+                        <th>Pin Reissuing Fees</th>
+                        <th>OBDX Fees</th>
+                        <th>OBDX Company Fees</th>
+                        <th>Income WU Fees</th>
+                        <th>Outgoing WU Fees</th>
+                        <th>SMS Fees</th>
+                        <th>SMS Company Fees</th>
+                        <th>ATM Fees</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @php
+                        $total_card_issuing_fees = 0;
+                        $total_incom_card_fees = 0;
+                        $total_card_re_issuing_fees = 0;
+                        $total_re_issuing_pin_fees = 0;
+                        $total_o_b_d_x_e_s = 0;
+                        $total_o_b_d_x_coms = 0;
+                        $total_incom_w_u_s = 0;
+                        $total_w_u_s = 0;
+                        $total_s_m_s = 0;
+                        $total_s_m_s_c_o_m_s = 0;
+                    @endphp
+                    @foreach ($months as $month)
+                        @php
+                            $monthYearString = \App\Classes\HelperC::year . "-" . $month;
+                            $month_year = \App\Classes\HelperC::convertMonthYear($monthYearString);
+                            
+                            $transaction_card_issuing_fees = \App\Classes\HelperC::get_transaction_card_issuing_fees($month_year);
+                            $transaction_incom_card_fees = \App\Classes\HelperC::get_transaction_incom_card_fees($month_year);
+                            $transaction_card_re_issuing_fees = \App\Classes\HelperC::get_transaction_card_re_issuing_fees($month_year);
+                            $transaction_o_b_d_x_e_s = \App\Classes\HelperC::get_transaction_o_b_d_x_e_s($month_year);
+                            $transaction_o_b_d_x_coms = \App\Classes\HelperC::get_transaction_o_b_d_x_coms($month_year);
+                            $transaction_incom_w_u_s = \App\Classes\HelperC::get_transaction_incom_w_u_s($month_year);
+                            $transaction_w_u_s = \App\Classes\HelperC::get_transaction_w_u_s($month_year);
+                            $transaction_s_m_s = \App\Classes\HelperC::get_transaction_s_m_s($month_year);
+                            $transaction_s_m_s_c_o_m_s = \App\Classes\HelperC::get_transaction_s_m_s_c_o_m_s($month_year);
+                            $transaction_re_issuing_pin_fees = \App\Classes\HelperC::get_transaction_re_issuing_pin_fees($month_year);
+                                        // Accumulate totals
+                            $total_card_issuing_fees += $transaction_card_issuing_fees->total_amount ?? 0;
+                            $total_incom_card_fees += $transaction_incom_card_fees->total_amount ?? 0;
+                            $total_card_re_issuing_fees += $transaction_card_re_issuing_fees->total_amount ?? 0;
+                            $total_re_issuing_pin_fees += $transaction_re_issuing_pin_fees->total_amount ?? 0;
+                            $total_o_b_d_x_e_s += $transaction_o_b_d_x_e_s->total_amount ?? 0;
+                            $total_o_b_d_x_coms += $transaction_o_b_d_x_coms->total_amount ?? 0;
+                            $total_incom_w_u_s += $transaction_incom_w_u_s->total_amount ?? 0;
+                            $total_w_u_s += $transaction_w_u_s->total_amount ?? 0;
+                            $total_s_m_s += $transaction_s_m_s->total_amount ?? 0;
+                            $total_s_m_s_c_o_m_s += $transaction_s_m_s_c_o_m_s->total_amount ?? 0;
+                        @endphp
                         <tr>
                             <td>{{ $month }}</td>
-                            <td>{{( $transaction_card_issuing_fees!= null) ? $transaction_card_issuing_fees->total_amount : 0}}
-                            </td>
-                            <td>{{( $transaction_o_b_d_x_e_s!= null) ? $transaction_o_b_d_x_e_s->total_amount : 0}}
-                                <td>0.000</td>
-                            <td>11,974.900</td>
-                            <td>129,377.631</td>
-                        
+                            <td>{{ $transaction_card_issuing_fees->total_amount ?? 0 }}</td>
+                            <td>{{ $transaction_incom_card_fees->total_amount ?? 0 }}</td>
+                            <td>{{ $transaction_card_re_issuing_fees->total_amount ?? 0 }}</td>
+                            <td>{{ $transaction_re_issuing_pin_fees->total_amount ?? 0 }}</td>
+                            <td>{{ $transaction_o_b_d_x_e_s->total_amount ?? 0 }}</td>
+                            <td>{{ $transaction_o_b_d_x_coms->total_amount ?? 0 }}</td>
+                            <td>{{ $transaction_incom_w_u_s->total_amount ?? 0 }}</td>
+                            <td>{{ $transaction_w_u_s->total_amount ?? 0 }}</td>
+                            <td>{{ $transaction_s_m_s->total_amount ?? 0 }}</td>
+                            <td>{{ $transaction_s_m_s_c_o_m_s->total_amount ?? 0 }}</td>
+                            <td>{{ $transaction_s_m_s->total_amount ?? 0 }}</td>
                         </tr>
-                        @endforeach
-
-                    </tbody>
-                </table>
-            </div>
-        
-       
-        
-       
+                    @endforeach
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>Total</th>
+                    <th>{{ $total_card_issuing_fees }}</th>
+                    <th>{{ $total_incom_card_fees }}</th>
+                    <th>{{ $total_card_re_issuing_fees }}</th>
+                    <th>{{ $total_re_issuing_pin_fees }}</th>
+                    <th>{{ $total_o_b_d_x_e_s }}</th>
+                    <th>{{ $total_o_b_d_x_coms }}</th>
+                    <th>{{ $total_incom_w_u_s }}</th>
+                    <th>{{ $total_w_u_s }}</th>
+                    <th>{{ $total_s_m_s }}</th>
+                    <th>{{ $total_s_m_s_c_o_m_s }}</th>
+                    <th>{{ $total_s_m_s }}</th>
+                </tr>
+            </tfoot>
+            </table>
+        </div>
     </div>
-
- 
-
- 
-   
-     
-    </div>
-
+</div>
 @endsection
