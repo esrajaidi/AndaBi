@@ -2,7 +2,7 @@
 
 namespace App\Imports;
 
-use App\Models\TransactionCardIssuingFees;
+use App\Models\TransactionMasterCardIssuingFees;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithStartRow;
 use jeremykenedy\LaravelLogger\App\Http\Traits\ActivityLogger;
@@ -17,18 +17,6 @@ class TransactionMasterCardIssuingFeesImport implements ToModel,WithStartRow
     public function model(array $row)
     {
        
-        
-    
-        $entry_sr_no = $row[15];
-
-        // Check if the `trn_ref_no` already exists
-        // if (TransactionCardIssuingFees::where('entry_sr_no', $entry_sr_no)->exists()) {
-
-        //     ActivityLogger::activity("لم يتم ادخال  لوجود entry_sr_no  مسبقا in TransactionsCardIssuingFeesImport" );
-
-        //     // Skip this row as it already exists
-        //     return null;
-        // }
         if ($row[3] !='IC109011670') {
           
             ActivityLogger::activity("the entry ac_no is ".$row[3]."not  IC109011670 in Transaction MasterCard Issuing FeesImport" );
@@ -38,7 +26,7 @@ class TransactionMasterCardIssuingFeesImport implements ToModel,WithStartRow
 
           $trnDate = $this->excelSerialToDate($row[10]);
           $valueDate = $this->excelSerialToDate($row[11]);
-        return new TransactionCardIssuingFees([
+        return new TransactionMasterCardIssuingFees([
             'trn_ref_no' => $row[0],
             'event' => $row[1],
             'brn' => $row[2],

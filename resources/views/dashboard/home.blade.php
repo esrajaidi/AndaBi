@@ -132,5 +132,11 @@
     @include('dashboard.transactionPOS.chart', ['months' => $months])
 
 </div>
+<div>
 
+</div>
+<div class="row">
+    @include('dashboard.transactionMasterCardIssuingFees.chart', ['months' => $months])
+
+</div>
 @endsection
