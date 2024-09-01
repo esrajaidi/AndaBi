@@ -117,5 +117,11 @@
             </table>
         </div>
     </div>
+    <br>
+    @include('dashboard.transactionCardIssuingFees.chart', ['months' => $months])
+    @include('dashboard.transactionIncomCardFees.chart', ['months' => $months])
+    @include('dashboard.transactionCardReIssuingFees.chart', ['months' => $months])
+
 </div>
+
 @endsection
