@@ -121,6 +121,7 @@
     @include('dashboard.transactionCardIssuingFees.chart', ['months' => $months])
     @include('dashboard.transactionIncomCardFees.chart', ['months' => $months])
     @include('dashboard.transactionCardReIssuingFees.chart', ['months' => $months])
+    @include('dashboard.transactionReIssuingPinFees.chart', ['months' => $months])
 
 </div>
 
