@@ -126,6 +126,9 @@
     @include('dashboard.transactionOBDXCOM.chart', ['months' => $months])
     @include('dashboard.transactionIncomWU.chart', ['months' => $months])
     @include('dashboard.transactionWU.chart', ['months' => $months])
+    @include('dashboard.transactionSMS.chart', ['months' => $months])
+    @include('dashboard.transactionSMSCOM.chart', ['months' => $months])
+    @include('dashboard.transactionATM.chart', ['months' => $months])
 
 </div>
 
