@@ -122,6 +122,10 @@
     @include('dashboard.transactionIncomCardFees.chart', ['months' => $months])
     @include('dashboard.transactionCardReIssuingFees.chart', ['months' => $months])
     @include('dashboard.transactionReIssuingPinFees.chart', ['months' => $months])
+    @include('dashboard.transactionOBDX.chart', ['months' => $months])
+    @include('dashboard.transactionOBDXCOM.chart', ['months' => $months])
+    @include('dashboard.transactionIncomWU.chart', ['months' => $months])
+    @include('dashboard.transactionWU.chart', ['months' => $months])
 
 </div>
 

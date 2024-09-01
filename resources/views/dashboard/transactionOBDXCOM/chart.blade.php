@@ -1,11 +1,11 @@
 <!-- resources/views/partials/obdx_chart.blade.php -->
 
 <div class="col-xs-5">
-    <canvas id="o_b_d_x_chart"></canvas>
+    <canvas id="o_b_d_x_coms_chart"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    var o_b_d_x_chart = document.getElementById('o_b_d_x_chart').getContext('2d');
+    var o_b_d_x_coms_chart = document.getElementById('o_b_d_x_coms_chart').getContext('2d');
 
     function getRandomColor() {
         var letters = '0123456789ABCDEF';
@@ -17,8 +17,8 @@
     }
 
     // Prepare data arrays
-    var labels_o_b_d_x = [];
-    var data_o_b_d_x = [];
+    var labels = [];
+    var data = [];
     var backgroundColors = [];
     var borderColors = [];
 
@@ -26,12 +26,12 @@
         @php
             $monthYearString = \App\Classes\HelperC::year . "-" . $month;
             $month_year = \App\Classes\HelperC::convertMonthYear($monthYearString);
-            $transaction_o_b_d_x_e_s = \App\Classes\HelperC::get_transaction_o_b_d_x_e_s($month_year);
-            $total_amount_o_b_d_x = $transaction_o_b_d_x_e_s->total_amount ?? 0;
+            $transaction = \App\Classes\HelperC::get_transaction_o_b_d_x_coms($month_year);
+            $total_amount = $transaction->total_amount ?? 0;
         @endphp
         
-        labels_o_b_d_x.push("{{ $month_year }}");
-        data_o_b_d_x.push("{{ $total_amount_o_b_d_x }}");
+        labels.push("{{ $month_year }}");
+        data.push("{{ $total_amount }}");
 
         // Generate random colors for each month
         var randomBackgroundColor = getRandomColor();
@@ -40,17 +40,17 @@
     @endforeach
 
     var chartData = {
-        labels: labels_o_b_d_x,
+        labels: labels,
         datasets: [{
-            label: 'OBDX FEES',
-            data: data_o_b_d_x,
+            label: 'OBDX COMPANY FEES',
+            data: data,
             backgroundColor: backgroundColors,  // Array of random background colors
             borderColor: borderColors,          // Array of random border colors
             borderWidth: 1
         }]
     };
 
-    var totalAmountChart = new Chart(o_b_d_x_chart, {
+    var totalAmountChart = new Chart(o_b_d_x_coms_chart, {
         type: 'bar', // or 'line', 'pie', etc.
         data: chartData,
         options: {
