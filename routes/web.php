@@ -158,6 +158,12 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_master_card_issuing_fees/report/branche', [App\Http\Controllers\Dashbored\TransactionMasterCardIssuingFeesController::class, 'generateReportView'])->name('transaction_master_card_issuing_fees/report/branche');
         Route::get('transaction_master_card_issuing_fees/report/', [App\Http\Controllers\Dashbored\TransactionMasterCardIssuingFeesController::class, 'generateReportViewAll'])->name('transaction_master_card_issuing_fees/report');
 
+        Route::get('transaction_master_card_charging_fees', [App\Http\Controllers\Dashbored\TransactionMasterCardChargingFeesController::class, 'index'])->name('transaction_master_card_charging_fees');
+        Route::get('transaction_master_card_charging_fees/uplode', [App\Http\Controllers\Dashbored\TransactionMasterCardChargingFeesController::class, 'uplode'])->name('transaction_master_card_charging_fees/uplode');
+        Route::post('transaction_master_card_charging_fees/uplode', [App\Http\Controllers\Dashbored\TransactionMasterCardChargingFeesController::class, 'storeUplode'])->name('transaction_master_card_charging_fees/store_uplode');
+        Route::get('transaction_master_card_charging_fees/report/branche', [App\Http\Controllers\Dashbored\TransactionMasterCardChargingFeesController::class, 'generateReportView'])->name('transaction_master_card_charging_fees/report/branche');
+        Route::get('transaction_master_card_charging_fees/report/', [App\Http\Controllers\Dashbored\TransactionMasterCardChargingFeesController::class, 'generateReportViewAll'])->name('transaction_master_card_charging_fees/report');
+
 
         Route::get('/export-financial-data', function () {
                 $months = HelperC::months();

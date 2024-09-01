@@ -338,7 +338,7 @@
                         <li>
                             <a class="waves-effect" href="{{ route('transaction_master_card_issuing_fees') }}">Transaction MasterCard Issuing Fees  عرض كافة  </span></a>
                         </a>
-                    </li>
+                         </li>
                     <li>
                             <a class="waves-effect" href="{{ route('transaction_master_card_issuing_fees/report/branche') }}">Transaction MasterCard Issuing Fees Report Branche</span></a>
                         </a>
@@ -348,6 +348,22 @@
                         <a class="waves-effect" href="{{ route('transaction_master_card_issuing_fees/report') }}">Transaction  MasterCard Issuing Fees Report </span></a>
                         </a>
                     </li>
+
+
+
+                    <li>
+                        <a class="waves-effect" href="{{ route('transaction_master_card_charging_fees') }}">Transaction MasterCard Charging Fees  عرض كافة  </span></a>
+                    </a>
+                     </li>
+                <li>
+                        <a class="waves-effect" href="{{ route('transaction_master_card_charging_fees/report/branche') }}">Transaction MasterCard Charging Fees Report Branche</span></a>
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="waves-effect" href="{{ route('transaction_master_card_charging_fees/report') }}">Transaction  MasterCard Charging Fees Report </span></a>
+                    </a>
+                </li>
                     </ul>
                 </li>
                 @can('laravel-logger')
