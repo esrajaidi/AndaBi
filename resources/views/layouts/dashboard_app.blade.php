@@ -330,7 +330,7 @@
                 </li>
 
                 <li class="{{ Request::is('transaction_master_card_issuing_fees*') ? 'current' : '' }} ">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-newspaper-o"></i><span>Transaction MasterCard </span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-cc-mastercard"></i><span>Transaction MasterCard </span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
