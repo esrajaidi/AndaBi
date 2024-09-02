@@ -328,8 +328,8 @@
                  
                     </ul>
                 </li>
+                <li class="{{ Request::is('transaction_master_card_issuing_fees*') || Request::is('transaction_master_card_charging_fees*') ||  Request::is('transaction_master_card_mangment_fees*')  ? 'current' : '' }}">
 
-                <li class="{{ Request::is('transaction_master_card_issuing_fees*') ? 'current' : '' }} ">
                     <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-cc-mastercard"></i><span>Transaction MasterCard </span>
                     </span></a>
               
@@ -364,6 +364,23 @@
                     <a class="waves-effect" href="{{ route('transaction_master_card_charging_fees/report') }}">Transaction  MasterCard Charging Fees Report </span></a>
                     </a>
                 </li>
+
+
+
+
+                <li>
+                    <a class="waves-effect" href="{{ route('transaction_master_card_mangment_fees') }}">Transaction MasterCard Mangment Fees  عرض كافة  </span></a>
+                </a>
+                 </li>
+            <li>
+                    <a class="waves-effect" href="{{ route('transaction_master_card_mangment_fees/report/branche') }}">Transaction MasterCard Mangment Fees Report Branche</span></a>
+                </a>
+            </li>
+        
+            <li>
+                <a class="waves-effect" href="{{ route('transaction_master_card_mangment_fees/report') }}">Transaction  MasterCard Mangment Fees Report </span></a>
+                </a>
+            </li>
                     </ul>
                 </li>
                 @can('laravel-logger')
