@@ -407,7 +407,27 @@
             </li>
                     </ul>
                 </li>
-
+                <li class="{{ Request::is('transaction_master_a_t_m_s*') ? 'current' : '' }} ">
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-reorder"></i><span>Transaction Master ATM </span>
+                    </span></a>
+              
+                    <ul class="sub-menu js__content" style="background-color: white;">
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_master_a_t_m_s') }}">Transaction Master ATM  عرض كافة  </span></a>
+                            </a>
+                        </li>
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_master_a_t_m_s/report/branche') }}">Transaction Master ATM Report Branche</span></a>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="waves-effect" href="{{ route('transaction_master_a_t_m_s/report') }}">Transaction Master ATM Report </span></a>
+                        </a>
+                    </li>
+                 
+                    </ul>
+                </li>
 
                 <li class="{{ Request::is('transaction_markup_fees*') ? 'current' : '' }} ">
                     <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-reorder"></i><span>Transaction MarkUp</span>

@@ -179,6 +179,12 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_a_t_m_o_f_f_u_s_fees/report/', [App\Http\Controllers\Dashbored\TransactionATMOFFUSFeesController::class, 'generateReportViewAll'])->name('transaction_a_t_m_o_f_f_u_s_fees/report');
 
 
+        Route::get('transaction_master_a_t_m_s', [App\Http\Controllers\Dashbored\TransactionMasterATMController::class, 'index'])->name('transaction_master_a_t_m_s');
+        Route::get('transaction_master_a_t_m_s/uplode', [App\Http\Controllers\Dashbored\TransactionMasterATMController::class, 'uplode'])->name('transaction_master_a_t_m_s/uplode');
+        Route::post('transaction_master_a_t_m_s/uplode', [App\Http\Controllers\Dashbored\TransactionMasterATMController::class, 'storeUplode'])->name('transaction_master_a_t_m_s/store_uplode');
+        Route::get('transaction_master_a_t_m_s/report/branche', [App\Http\Controllers\Dashbored\TransactionMasterATMController::class, 'generateReportView'])->name('transaction_master_a_t_m_s/report/branche');
+        Route::get('transaction_master_a_t_m_s/report/', [App\Http\Controllers\Dashbored\TransactionMasterATMController::class, 'generateReportViewAll'])->name('transaction_master_a_t_m_s/report');
+
 
 
         Route::get('transaction_markup_fees', [App\Http\Controllers\Dashbored\TransactionMarkupFeesController::class, 'index'])->name('transaction_markup_fees');
