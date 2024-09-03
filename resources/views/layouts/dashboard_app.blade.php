@@ -407,6 +407,29 @@
             </li>
                     </ul>
                 </li>
+
+
+                <li class="{{ Request::is('transaction_markup_fees*') ? 'current' : '' }} ">
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-reorder"></i><span>Transaction MarkUp</span>
+                    </span></a>
+              
+                    <ul class="sub-menu js__content" style="background-color: white;">
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_markup_fees') }}">Transaction MarkUp عرض كافة  </span></a>
+                            </a>
+                        </li>
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_markup_fees/report/branche') }}">Transaction MarkUp Report Branche</span></a>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="waves-effect" href="{{ route('transaction_markup_fees/report') }}">Transaction MarkUp Report </span></a>
+                        </a>
+                    </li>
+                 
+                    </ul>
+                </li>
                 @can('laravel-logger')
                 <li class="{{ Request::is('logger/activity') ? 'current' : '' }} ">
                     <a class="waves-effect" href="{{ route('logger/activity') }}"><i class="menu-icon  fa fa-eye"></i><span>مراقبة النظام</span></a>

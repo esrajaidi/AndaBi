@@ -178,6 +178,16 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_a_t_m_o_f_f_u_s_fees/report/branche', [App\Http\Controllers\Dashbored\TransactionATMOFFUSFeesController::class, 'generateReportView'])->name('transaction_a_t_m_o_f_f_u_s_fees/report/branche');
         Route::get('transaction_a_t_m_o_f_f_u_s_fees/report/', [App\Http\Controllers\Dashbored\TransactionATMOFFUSFeesController::class, 'generateReportViewAll'])->name('transaction_a_t_m_o_f_f_u_s_fees/report');
 
+
+
+
+        Route::get('transaction_markup_fees', [App\Http\Controllers\Dashbored\TransactionMarkupFeesController::class, 'index'])->name('transaction_markup_fees');
+        Route::get('transaction_markup_fees/uplode', [App\Http\Controllers\Dashbored\TransactionMarkupFeesController::class, 'uplode'])->name('transaction_markup_fees/uplode');
+        Route::post('transaction_markup_fees/uplode', [App\Http\Controllers\Dashbored\TransactionMarkupFeesController::class, 'storeUplode'])->name('transaction_markup_fees/store_uplode');
+        Route::get('transaction_markup_fees/report/branche', [App\Http\Controllers\Dashbored\TransactionMarkupFeesController::class, 'generateReportView'])->name('transaction_markup_fees/report/branche');
+        Route::get('transaction_markup_fees/report/', [App\Http\Controllers\Dashbored\TransactionMarkupFeesController::class, 'generateReportViewAll'])->name('transaction_markup_fees/report');
+
+
         Route::get('/export-financial-data', function () {
                 $months = HelperC::months();
                 return Excel::download(new FinancialDataExport($months), 'financial_data.xlsx');
