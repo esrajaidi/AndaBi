@@ -170,6 +170,14 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_master_card_mangment_fees/report/branche', [App\Http\Controllers\Dashbored\TransactionMasterCardMangmentFeesController::class, 'generateReportView'])->name('transaction_master_card_mangment_fees/report/branche');
         Route::get('transaction_master_card_mangment_fees/report/', [App\Http\Controllers\Dashbored\TransactionMasterCardMangmentFeesController::class, 'generateReportViewAll'])->name('transaction_master_card_mangment_fees/report');
 
+
+
+        Route::get('transaction_a_t_m_o_f_f_u_s_fees', [App\Http\Controllers\Dashbored\TransactionATMOFFUSFeesController::class, 'index'])->name('transaction_a_t_m_o_f_f_u_s_fees');
+        Route::get('transaction_a_t_m_o_f_f_u_s_fees/uplode', [App\Http\Controllers\Dashbored\TransactionATMOFFUSFeesController::class, 'uplode'])->name('transaction_a_t_m_o_f_f_u_s_fees/uplode');
+        Route::post('transaction_a_t_m_o_f_f_u_s_fees/uplode', [App\Http\Controllers\Dashbored\TransactionATMOFFUSFeesController::class, 'storeUplode'])->name('transaction_a_t_m_o_f_f_u_s_fees/store_uplode');
+        Route::get('transaction_a_t_m_o_f_f_u_s_fees/report/branche', [App\Http\Controllers\Dashbored\TransactionATMOFFUSFeesController::class, 'generateReportView'])->name('transaction_a_t_m_o_f_f_u_s_fees/report/branche');
+        Route::get('transaction_a_t_m_o_f_f_u_s_fees/report/', [App\Http\Controllers\Dashbored\TransactionATMOFFUSFeesController::class, 'generateReportViewAll'])->name('transaction_a_t_m_o_f_f_u_s_fees/report');
+
         Route::get('/export-financial-data', function () {
                 $months = HelperC::months();
                 return Excel::download(new FinancialDataExport($months), 'financial_data.xlsx');

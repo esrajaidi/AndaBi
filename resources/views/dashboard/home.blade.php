@@ -140,6 +140,7 @@
     @include('dashboard.transactionMasterCardIssuingFees.chart', ['months' => $months])
     @include('dashboard.transactionMasterCardChargingFees.chart', ['months' => $months])
     @include('dashboard.transactionMasterCardMangmentFees.chart', ['months' => $months])
+    @include('dashboard.transactionATMOFFUSFees.chart', ['months' => $months])
 
 </div>
 @endsection

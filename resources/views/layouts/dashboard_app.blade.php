@@ -328,6 +328,30 @@
                  
                     </ul>
                 </li>
+
+
+                
+                <li class="{{ Request::is('transaction_a_t_m_o_f_f_u_s_fees*') ? 'current' : '' }} ">
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-reorder"></i><span>Transaction ATM  OFF-US</span>
+                    </span></a>
+              
+                    <ul class="sub-menu js__content" style="background-color: white;">
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_a_t_m_o_f_f_u_s_fees') }}">Transaction ATM  OFF-US  عرض كافة  </span></a>
+                            </a>
+                        </li>
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_a_t_m_o_f_f_u_s_fees/report/branche') }}">Transaction ATM  OFF-US Report Branche</span></a>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="waves-effect" href="{{ route('transaction_a_t_m_o_f_f_u_s_fees/report') }}">Transaction ATM  OFF-US Report </span></a>
+                        </a>
+                    </li>
+                 
+                    </ul>
+                </li>
                 <li class="{{ Request::is('transaction_master_card_issuing_fees*') || Request::is('transaction_master_card_charging_fees*') ||  Request::is('transaction_master_card_mangment_fees*')  ? 'current' : '' }}">
 
                     <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-cc-mastercard"></i><span>Transaction MasterCard </span>
