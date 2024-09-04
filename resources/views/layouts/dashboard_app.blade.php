@@ -470,6 +470,27 @@
                  
                     </ul>
                 </li>
+                <li class="{{ Request::is('transaction_matser_point_o_f_sale_purchase_commissions*') ? 'current' : '' }} ">
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-reorder"></i><span>Transaction Matser Point OF Sale Purchase Commission</span>
+                    </span></a>
+              
+                    <ul class="sub-menu js__content" style="background-color: white;">
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commissions') }}">Transaction Matser Point OF Sale Purchase Commission عرض كافة  </span></a>
+                            </a>
+                        </li>
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commissions/report/branche') }}">Transaction Matser Point OF Sale Purchase Commission Report Branche</span></a>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commissions/report') }}">Transaction Matser Point OF Sale Purchase Commission Report </span></a>
+                        </a>
+                    </li>
+                 
+                    </ul>
+                </li>
                 @can('laravel-logger')
                 <li class="{{ Request::is('logger/activity') ? 'current' : '' }} ">
                     <a class="waves-effect" href="{{ route('logger/activity') }}"><i class="menu-icon  fa fa-eye"></i><span>مراقبة النظام</span></a>

@@ -201,6 +201,13 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_master_card_coin_purchase_request_commissions/report/', [App\Http\Controllers\Dashbored\TransactionMasterCardCoinPurchaseRequestCommissionController::class, 'generateReportViewAll'])->name('transaction_master_card_coin_purchase_request_commissions/report');
 
 
+
+        Route::get('transaction_matser_point_o_f_sale_purchase_commissions', [App\Http\Controllers\Dashbored\TransactionMatserPointOFSalePurchaseCommissionController::class, 'index'])->name('transaction_matser_point_o_f_sale_purchase_commissions');
+        Route::get('transaction_matser_point_o_f_sale_purchase_commissions/uplode', [App\Http\Controllers\Dashbored\TransactionMatserPointOFSalePurchaseCommissionController::class, 'uplode'])->name('transaction_matser_point_o_f_sale_purchase_commissions/uplode');
+        Route::post('transaction_matser_point_o_f_sale_purchase_commissions/uplode', [App\Http\Controllers\Dashbored\TransactionMatserPointOFSalePurchaseCommissionController::class, 'storeUplode'])->name('transaction_matser_point_o_f_sale_purchase_commissions/store_uplode');
+        Route::get('transaction_matser_point_o_f_sale_purchase_commissions/report/branche', [App\Http\Controllers\Dashbored\TransactionMatserPointOFSalePurchaseCommissionController::class, 'generateReportView'])->name('transaction_matser_point_o_f_sale_purchase_commissions/report/branche');
+        Route::get('transaction_matser_point_o_f_sale_purchase_commissions/report/', [App\Http\Controllers\Dashbored\TransactionMatserPointOFSalePurchaseCommissionController::class, 'generateReportViewAll'])->name('transaction_matser_point_o_f_sale_purchase_commissions/report');
+
         Route::get('/export-financial-data', function () {
                 $months = HelperC::months();
                 return Excel::download(new FinancialDataExport($months), 'financial_data.xlsx');
