@@ -144,5 +144,7 @@
     @include('dashboard.transactionMasterATM.chart', ['months' => $months])
     @include('dashboard.transactionMarkupFees.chart', ['months' => $months])
     @include('dashboard.transactionMasterCardCoinPurchaseRequestCommission.chart', ['months' => $months])
+    @include('dashboard.transactionMatserPointOFSalePurchaseCommission.chart', ['months' => $months])
+
 </div>
 @endsection

@@ -49,7 +49,8 @@ class TransactionATMController extends Controller
        return view('dashboard.transactionATM.index')->with('branches',$branches);
 }
 
-   public function uplode(){
+   public function uplode()
+   {
 
 
 

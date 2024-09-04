@@ -28,6 +28,8 @@ class TransactionMatserPointOFSalePurchaseCommission extends Model
         'related_account',
         'maker',
         'checker',
-    ]
-        
+    ];
 }
+
+
+
