@@ -194,6 +194,13 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_markup_fees/report/', [App\Http\Controllers\Dashbored\TransactionMarkupFeesController::class, 'generateReportViewAll'])->name('transaction_markup_fees/report');
 
 
+        Route::get('transaction_master_card_coin_purchase_request_commissions', [App\Http\Controllers\Dashbored\TransactionMasterCardCoinPurchaseRequestCommissionController::class, 'index'])->name('transaction_master_card_coin_purchase_request_commissions');
+        Route::get('transaction_master_card_coin_purchase_request_commissions/uplode', [App\Http\Controllers\Dashbored\TransactionMasterCardCoinPurchaseRequestCommissionController::class, 'uplode'])->name('transaction_master_card_coin_purchase_request_commissions/uplode');
+        Route::post('transaction_master_card_coin_purchase_request_commissions/uplode', [App\Http\Controllers\Dashbored\TransactionMasterCardCoinPurchaseRequestCommissionController::class, 'storeUplode'])->name('transaction_master_card_coin_purchase_request_commissions/store_uplode');
+        Route::get('transaction_master_card_coin_purchase_request_commissions/report/branche', [App\Http\Controllers\Dashbored\TransactionMasterCardCoinPurchaseRequestCommissionController::class, 'generateReportView'])->name('transaction_master_card_coin_purchase_request_commissions/report/branche');
+        Route::get('transaction_master_card_coin_purchase_request_commissions/report/', [App\Http\Controllers\Dashbored\TransactionMasterCardCoinPurchaseRequestCommissionController::class, 'generateReportViewAll'])->name('transaction_master_card_coin_purchase_request_commissions/report');
+
+
         Route::get('/export-financial-data', function () {
                 $months = HelperC::months();
                 return Excel::download(new FinancialDataExport($months), 'financial_data.xlsx');
