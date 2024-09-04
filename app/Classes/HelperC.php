@@ -23,7 +23,25 @@ class HelperC {
 
      public static  function branches(){
 
+          
           return ['فرع زليتن','فرع طريق الشط','الرئيسي','مصراتة','فرع برج طرابلس'];
+     }
+
+     
+     public static  function branchesgetname($number){
+
+          if($number=='10000004')
+          return'فرع زليتن';
+               else
+               if($number=='10000005')
+                    return 'فرع طريق الشط';
+               else if($number=='10000003')
+                    return'فرع الرئيسي';
+               else if($number=='10000003')
+               return'فرع مصراتة';
+               else
+               'فرع برج طرابلس';
+
      }
      public static function get_transaction_master_card_coin_purchase_request_commissions($month_year){
           return DB::table('transaction_master_card_coin_purchase_request_commissions')

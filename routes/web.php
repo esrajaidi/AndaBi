@@ -208,6 +208,13 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_matser_point_o_f_sale_purchase_commissions/report/branche', [App\Http\Controllers\Dashbored\TransactionMatserPointOFSalePurchaseCommissionController::class, 'generateReportView'])->name('transaction_matser_point_o_f_sale_purchase_commissions/report/branche');
         Route::get('transaction_matser_point_o_f_sale_purchase_commissions/report/', [App\Http\Controllers\Dashbored\TransactionMatserPointOFSalePurchaseCommissionController::class, 'generateReportViewAll'])->name('transaction_matser_point_o_f_sale_purchase_commissions/report');
 
+
+
+        Route::get('a_t_m_file_uploads', [App\Http\Controllers\Dashbored\ATMFileUploadController::class, 'index'])->name('a_t_m_file_uploads');
+        Route::get('a_t_m_file_uploads/uplode', [App\Http\Controllers\Dashbored\ATMFileUploadController::class, 'uplode'])->name('a_t_m_file_uploads/uplode');
+        Route::post('a_t_m_file_uploads/uplode', [App\Http\Controllers\Dashbored\ATMFileUploadController::class, 'storeUplode'])->name('a_t_m_file_uploads/store_uplode');
+        Route::get('a_t_m_file_uploads/export', [App\Http\Controllers\Dashbored\ATMFileUploadController::class, 'export'])->name('a_t_m_file_uploads/export');
+
         Route::get('/export-financial-data', function () {
                 $months = HelperC::months();
                 return Excel::download(new FinancialDataExport($months), 'financial_data.xlsx');
