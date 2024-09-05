@@ -154,7 +154,7 @@
                     <th>Markup Fees</th>
                     <th>Master Card Coin Commission</th>
                     <th>Matser PointOF Sale Commission</th>
-                    <th>Matser PointOF Sale Commission_66</th>
+                    <th>Matser PointOF Sale Commission_55</th>
 
 
                 </tr>
@@ -169,6 +169,7 @@
                     $total_transaction_markumarp_fees = 0;
                     $total_transaction_master_card_coin_purchase_request_commissions = 0;
                     $total_transaction_matser_point_o_f_sale_purchase_commissions = 0;
+                    $total_transaction_matser_point_o_f_sale_purchase_commission_ = 0;
 
                     
                 @endphp
@@ -185,6 +186,7 @@
                         $transaction_markumarp_fees = \App\Classes\HelperC::get_transaction_kup_fees($month_year);
                         $transaction_master_card_coin_purchase_request_commissions = \App\Classes\HelperC::get_transaction_master_card_coin_purchase_request_commissions($month_year);
                         $transaction_matser_point_o_f_sale_purchase_commissions = \App\Classes\HelperC::get_transaction_matser_point_o_f_sale_purchase_commissions($month_year);
+                        $transaction_matser_point_o_f_sale_purchase_commission_ = \App\Classes\HelperC::get_transaction_master_card_coin_purchase_request_commissions_($month_year);
 
 
                         $total_transaction_master_card_issuing_fees += $transaction_master_card_issuing_fees->total_amount ?? 0;
@@ -196,6 +198,8 @@
                         $total_transaction_master_card_coin_purchase_request_commissions += $transaction_master_card_coin_purchase_request_commissions->total_amount ?? 0;
                         
                         $total_transaction_matser_point_o_f_sale_purchase_commissions += $transaction_matser_point_o_f_sale_purchase_commissions->total_amount ?? 0;
+                        $total_transaction_matser_point_o_f_sale_purchase_commission_ += $transaction_matser_point_o_f_sale_purchase_commission_->total_amount ?? 0;
+
                     @endphp
                     <tr>
                         <td>{{ $month }}</td>
@@ -207,6 +211,7 @@
                         <td>{{ $transaction_markumarp_fees->total_amount ?? 0 }}</td>
                         <td>{{ $transaction_master_card_coin_purchase_request_commissions->total_amount ?? 0 }}</td>
                         <td>{{ $transaction_matser_point_o_f_sale_purchase_commissions->total_amount ?? 0 }}</td>
+                        <td>{{ $transaction_matser_point_o_f_sale_purchase_commission_->total_amount ?? 0 }}</td>
 
                     </tr>
                 @endforeach
@@ -222,6 +227,7 @@
                 <th>{{ $total_transaction_markumarp_fees }}</th>
                 <th>{{ $total_transaction_master_card_coin_purchase_request_commissions }}</th>
                 <th>{{ $total_transaction_matser_point_o_f_sale_purchase_commissions }}</th>
+                <th>{{ $total_transaction_matser_point_o_f_sale_purchase_commission_ }}</th>
 
             </tr>
         </tfoot>
