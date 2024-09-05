@@ -237,6 +237,7 @@
     @include('dashboard.transactionMarkupFees.chart', ['months' => $months])
     @include('dashboard.transactionMasterCardCoinPurchaseRequestCommission.chart', ['months' => $months])
     @include('dashboard.transactionMatserPointOFSalePurchaseCommission.chart', ['months' => $months])
+    @include('dashboard.transactionMasterCardCoinPurchaseRequestCommission_.chart', ['months' => $months])
 
 </div>
 @endsection
