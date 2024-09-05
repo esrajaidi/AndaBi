@@ -42,11 +42,16 @@ class DashboradController extends Controller
 
         $months = HelperC::months();
         $year=HelperC::year;
-
-      
-                return view('dashboard.home',compact('months', 'year'));
+         return view('dashboard.home',compact('months', 'year'));
         
     }
 
-   
+    public function index2()
+    {
+
+        $months = HelperC::months();
+        $year=HelperC::year;
+        return view('dashboard.home2',compact('months', 'year'));
+        
+    }
 }

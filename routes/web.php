@@ -31,6 +31,8 @@ Route::post('logout',[App\Http\Controllers\Auth\LoginController::class,'Logout']
 
 Route::group(['middleware' => ['auth']], function() {
         Route::get('/home', [App\Http\Controllers\Dashbored\DashboradController::class, 'index'])->name('home');
+        Route::get('/home_', [App\Http\Controllers\Dashbored\DashboradController::class, 'index2'])->name('home_');
+
         Route::get('users', [App\Http\Controllers\Dashbored\UserController::class, 'index'])->name('users');
         Route::get('users/create', [App\Http\Controllers\Dashbored\UserController::class, 'create'])->name('users/create');
         Route::post('users/create', [App\Http\Controllers\Dashbored\UserController::class, 'store'])->name('users/store');
