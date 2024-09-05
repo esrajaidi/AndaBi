@@ -18,7 +18,7 @@
       <div class="box-content">
         <h3 ><i class="ico glyphicon glyphicon-copyright-mark"></i> @yield('title')</h3>
         <br>
-        <a class="btn btn-success" href="{{ route('transaction_master_card_coin_purchase_request_commissions_/uplode') }}">تحميل ملف  </a>
+        <a class="btn btn-success" href="{{ route('transaction_matser_point_o_f_sale_purchase_commission_/uplode') }}">تحميل ملف  </a>
 
 
         <br>
@@ -168,7 +168,7 @@ $(document).ready(function(){
   
                 ],
             ajax: {
-              url: "{{ route('transaction_master_card_coin_purchase_request_commissions_') }}",
+              url: "{{ route('transaction_matser_point_o_f_sale_purchase_commission_') }}",
               data:{brn:brn,
               }
 

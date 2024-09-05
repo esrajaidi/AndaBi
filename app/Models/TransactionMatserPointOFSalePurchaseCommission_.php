@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TransactionMatserPointOFSalePurchaseCommission_ extends Model
 {
     use HasFactory;
-    protected $table = 'transaction_matser_point_o_f_sale_purchase_commissions_';
+    protected $table = 'transaction_matser_point_o_f_sale_purchase_commission_';
 
     // Define the fillable attributes
     protected $fillable = [

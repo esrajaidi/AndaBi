@@ -5,7 +5,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="pull-right">
-        <a class="btn btn-primary" href="{{ route('transaction_master_card_coin_purchase_request_commissions_') }}"> الرجوع  </a>
+        <a class="btn btn-primary" href="{{ route('transaction_matser_point_o_f_sale_purchase_commission_') }}"> الرجوع  </a>
     </div>
     
 </div>
@@ -19,7 +19,7 @@
             <!-- /.box-title -->
             
             <div class="card-content">
-                <form  method="post" action="{{ route('transaction_master_card_coin_purchase_request_commissions_/store_uplode') }}"  enctype="multipart/form-data">
+                <form  method="post" action="{{ route('transaction_matser_point_o_f_sale_purchase_commission_/store_uplode') }}"  enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">

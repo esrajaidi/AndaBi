@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashbored;
 use App\Http\Controllers\Controller;
-use App\Imports\TransactionMatserPointOFSalePurchaseCommissionImport;
+use App\Imports\TransactionMatserPointOFSalePurchaseCommissionImport_;
 use App\Models\Branche;
 use App\Models\TransactionMatserPointOFSalePurchaseCommission_;
 use App\Models\TransactionWU;
@@ -41,14 +41,14 @@ class TransactionMatserPointOFSalePurchaseCommission_Controller extends Controll
         })
         ->make(true);
         }
-       return view('dashboard.transactionMatserPointOFSalePurchaseCommission_.index')->with('branches',$branches);
+       return view('dashboard.transactionMasterCardCoinPurchaseRequestCommission_.index')->with('branches',$branches);
     }
 
    public function uplode(){
 
 
 
-        return view('dashboard.transactionMatserPointOFSalePurchaseCommission_.uplode');
+        return view('dashboard.transactionMasterCardCoinPurchaseRequestCommission_.uplode');
 
     }
 
@@ -69,11 +69,11 @@ class TransactionMatserPointOFSalePurchaseCommission_Controller extends Controll
             $file = $request->file('file');
             $fileName = $file->getClientOriginalName();
             DB::transaction(function () use ($request,$fileName) {
-                Excel::import(new TransactionMatserPointOFSalePurchaseCommission_Import, $request->file('file'));
+                Excel::import(new TransactionMatserPointOFSalePurchaseCommissionImport_, $request->file('file'));
                           
             });
             
-            ActivityLogger::activity($fileName.'تمت عملية  تحميل ملف Transaction Matser Point OF Sale Purchase Commission_  بنجاح');
+            ActivityLogger::activity($fileName.'تمت عملية  تحميل ملف Transaction Matser Point OF Sale Purchase Commission__  بنجاح');
 
             Alert::success('تمت عملية  تحميل ملف  بنجاح');
 
@@ -81,7 +81,7 @@ class TransactionMatserPointOFSalePurchaseCommission_Controller extends Controll
         } catch (\Exception $e) {
             Alert::warning($e->getMessage());
             dd($e->getMessage());
-            ActivityLogger::activity( $e->getMessage().' فشل   تحميل ملف Transaction Matser Point OF Sale Purchase Commission_  ');
+            ActivityLogger::activity( $e->getMessage().' فشل   تحميل ملف Transaction Matser Point OF Sale Purchase Commission__  ');
 
             return redirect()->back();
         }
@@ -98,7 +98,7 @@ class TransactionMatserPointOFSalePurchaseCommission_Controller extends Controll
             $branches_id = $request->input('branches_id');
        
        
-            $query = DB::table('transaction_matser_point_o_f_sale_purchase_commissions_')
+            $query = DB::table('transaction_matser_point_o_f_sale_purchase_commission_')
             ->select(DB::raw('
                 DATE_FORMAT(trn_date, "%Y-%m") as month_year,
                 brn,
@@ -128,7 +128,7 @@ class TransactionMatserPointOFSalePurchaseCommission_Controller extends Controll
             return $this->generateExcel($data);
         }
 
-        return view('dashboard.transactionMatserPointOFSalePurchaseCommission_.report_bybranche')
+        return view('dashboard.transactionMasterCardCoinPurchaseRequestCommission_.report_bybranche')
         ->with('data',$data)
         ->with('branches',$branches)
         ->with('branches_id',$branches_id);
@@ -164,7 +164,7 @@ class TransactionMatserPointOFSalePurchaseCommission_Controller extends Controll
      public function generateReportViewAll(Request $request)
      { 
              $reportType = $request->input('report_type');
-             $query = DB::table('transaction_matser_point_o_f_sale_purchase_commissions_')
+             $query = DB::table('transaction_matser_point_o_f_sale_purchase_commission_')
              ->select(DB::raw('
                  DATE_FORMAT(trn_date, "%Y-%m") as month_year,
                 SUM(CASE WHEN drcr = "C" THEN lcy_amount ELSE 0 END) as total_credits,
@@ -187,7 +187,7 @@ class TransactionMatserPointOFSalePurchaseCommission_Controller extends Controll
              return $this->generateExcelALL($data);
          }
  
-         return view('dashboard.transactionMatserPointOFSalePurchaseCommission_.report')
+         return view('dashboard.transactionMasterCardCoinPurchaseRequestCommission_.report')
          ->with('data',$data);
   
          
