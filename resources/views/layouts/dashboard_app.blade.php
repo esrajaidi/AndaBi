@@ -491,14 +491,15 @@
                  
                     </ul>
                 </li>
+              
+                <li class="{{ Request::is('a_t_m_file_uploads') ? 'current' : '' }} ">
+                    <a class="waves-effect" href="{{ route('a_t_m_file_uploads') }}"><i class="menu-icon  glyphicon glyphicon-eject"></i><span> ATM UPLODE FILE</span></a>
+                </li>
                 @can('laravel-logger')
                 <li class="{{ Request::is('logger/activity') ? 'current' : '' }} ">
                     <a class="waves-effect" href="{{ route('logger/activity') }}"><i class="menu-icon  fa fa-eye"></i><span>مراقبة النظام</span></a>
                 </li>
                 @endcan
-                <li class="{{ Request::is('a_t_m_file_uploads') ? 'current' : '' }} ">
-                    <a class="waves-effect" href="{{ route('a_t_m_file_uploads') }}"><i class="menu-icon  glyphicon glyphicon-eject"></i><span> ATM UPLODE FILE</span></a>
-                </li>
                 </ul>
                
                
