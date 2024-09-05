@@ -20,12 +20,12 @@
         <br>
         <a class="btn btn-success" href="{{ route('a_t_m_file_uploads/uplode') }}">تحميل ملف  </a>
 
+       
+        <br>
+        <br>
         <form action="{{ url('a_t_m_file_uploads/export') }}" method="GET">
-          <button type="submit">Export Report</button>
+          <button type="submit" class="btn btn-outline-success">Export Report</button>
       </form>
-        <br>
-        <br>
-
         <div class="row">
           <div class="row">
             <div class="col-md-3">

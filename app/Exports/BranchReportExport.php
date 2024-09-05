@@ -29,6 +29,8 @@ class BranchReportExport implements FromCollection, WithHeadings, WithColumnForm
             'Year',
             'Month',
             'Terminal ID',
+            'Termina Name',
+            'Total Amount',
             'Total Fee',
             'Bank Fee',
         ];
@@ -37,8 +39,10 @@ class BranchReportExport implements FromCollection, WithHeadings, WithColumnForm
     public function columnFormats(): array
     {
         return [
-            'D' => '#,##0.000', // Format for Total Amount (Column C)
             'E' => '#,##0.000', // Format for Total Amount (Column C)
+            'F' => '#,##0.000', // Format for Total Amount (Column C)
+            'G' => '#,##0.000', // Format for Total Amount (Column C)
+
 
                     ];
     }
