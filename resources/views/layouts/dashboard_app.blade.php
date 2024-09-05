@@ -429,7 +429,7 @@
                     </ul>
                 </li>
                 <li class="{{ Request::is('transaction_master_card_coin_purchase_request_commissions*') ? 'current' : '' }} ">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-cc-mastercard"></i><span>Transaction MasterCard Coin Purchase Request Commission </span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-copyright-mark"></i><span>Transaction MasterCard Coin Purchase Request Commission </span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
@@ -450,7 +450,7 @@
                     </ul>
                 </li>
                 <li class="{{ Request::is('transaction_markup_fees*') ? 'current' : '' }} ">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-reorder"></i><span>Transaction MarkUp</span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-th-large"></i><span>Transaction MarkUp</span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
@@ -471,7 +471,7 @@
                     </ul>
                 </li>
                 <li class="{{ Request::is('transaction_matser_point_o_f_sale_purchase_commissions*') ? 'current' : '' }} ">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-reorder"></i><span>Transaction Matser Point OF Sale Purchase Commission</span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-expand"></i><span>Transaction Matser Point OF Sale Purchase Commission</span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">

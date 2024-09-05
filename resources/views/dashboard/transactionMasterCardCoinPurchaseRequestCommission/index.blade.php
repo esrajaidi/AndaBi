@@ -16,7 +16,7 @@
 <div class="row small-spacing">
     <div class="col-xs-12">
       <div class="box-content">
-        <h3 ><i class="ico glyphicon glyphicon-credit-card"></i> @yield('title')</h3>
+        <h3 ><i class="ico glyphicon glyphicon-copyright-mark"></i> @yield('title')</h3>
         <br>
         <a class="btn btn-success" href="{{ route('transaction_master_card_coin_purchase_request_commissions/uplode') }}">تحميل ملف  </a>
 

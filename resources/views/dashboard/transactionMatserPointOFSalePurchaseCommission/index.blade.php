@@ -16,7 +16,7 @@
 <div class="row small-spacing">
     <div class="col-xs-12">
       <div class="box-content">
-        <h3 ><i class="ico fa fa-reorder"></i> @yield('title')</h3>
+        <h3 ><i class="ico glyphicon glyphicon-expand"></i> @yield('title')</h3>
         <br>
         <a class="btn btn-success" href="{{ route('transaction_matser_point_o_f_sale_purchase_commissions/uplode') }}">تحميل ملف  </a>
 
