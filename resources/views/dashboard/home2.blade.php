@@ -15,7 +15,8 @@
         'Q3' => ['July', 'August', 'September'],
         'Q4' => ['October', 'November', 'December']
     ];
-        
+     
+
             // Initialize an array to store quarterly totals for each fee type
             $quarter_totals = [
                 'Q1' => [
