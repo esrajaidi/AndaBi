@@ -208,6 +208,11 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_matser_point_o_f_sale_purchase_commissions/report/branche', [App\Http\Controllers\Dashbored\TransactionMatserPointOFSalePurchaseCommissionController::class, 'generateReportView'])->name('transaction_matser_point_o_f_sale_purchase_commissions/report/branche');
         Route::get('transaction_matser_point_o_f_sale_purchase_commissions/report/', [App\Http\Controllers\Dashbored\TransactionMatserPointOFSalePurchaseCommissionController::class, 'generateReportViewAll'])->name('transaction_matser_point_o_f_sale_purchase_commissions/report');
 
+        Route::get('transaction_matser_point_o_f_sale_purchase_commissions_', [App\Http\Controllers\Dashbored\TransactionMatserPointOFSalePurchaseCommissionController::class, 'index'])->name('transaction_matser_point_o_f_sale_purchase_commissions_');
+        Route::get('transaction_matser_point_o_f_sale_purchase_commissions_/uplode', [App\Http\Controllers\Dashbored\TransactionMatserPointOFSalePurchaseCommissionController::class, 'uplode'])->name('transaction_matser_point_o_f_sale_purchase_commissions_/uplode');
+        Route::post('transaction_matser_point_o_f_sale_purchase_commissions_/uplode', [App\Http\Controllers\Dashbored\TransactionMatserPointOFSalePurchaseCommissionController::class, 'storeUplode'])->name('transaction_matser_point_o_f_sale_purchase_commissions_/store_uplode');
+        Route::get('transaction_matser_point_o_f_sale_purchase_commissions_/report/branche', [App\Http\Controllers\Dashbored\TransactionMatserPointOFSalePurchaseCommissionController::class, 'generateReportView'])->name('transaction_matser_point_o_f_sale_purchase_commissions_/report/branche');
+        Route::get('transaction_matser_point_o_f_sale_purchase_commissions_/report/', [App\Http\Controllers\Dashbored\TransactionMatserPointOFSalePurchaseCommissionController::class, 'generateReportViewAll'])->name('transaction_matser_point_o_f_sale_purchase_commissions_/report');
 
 
         Route::get('a_t_m_file_uploads', [App\Http\Controllers\Dashbored\ATMFileUploadController::class, 'index'])->name('a_t_m_file_uploads');
