@@ -136,6 +136,97 @@
 <div>
 
 </div>
+<div class="col-xs-12">
+    <div class="container my-5">
+        <h2 class="text-center">Financial Data</h2>
+        <a href="{{ url('/export-financial-data') }}" class="btn btn-success mb-3">Export to Excel</a>
+        <br>
+        <br>
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Month</th>
+                    <th>Master Card Issuing Fees</th>
+                    <th>Master Card Charging Fees</th>
+                    <th>Master Card Mangment Fees</th>
+                    <th>ATM OFF US Fees</th>
+                    <th>Master ATM</th>
+                    <th>Markup Fees</th>
+                    <th>Master Card Coin Commission</th>
+                    <th>Matser PointOF Sale Commission</th>
+               
+
+                </tr>
+            </thead>
+            <tbody>
+                @php
+                    $total_transaction_master_card_issuing_fees = 0;
+                    $total_transaction_master_card_charging_fees = 0;
+                    $total_transaction_master_card_mangment_fees = 0;
+                    $total_transaction_a_t_m_o_f_f_u_s_fees = 0;
+                    $total_transaction_master_a_t_m_s = 0;
+                    $total_transaction_markumarp_fees = 0;
+                    $total_transaction_master_card_coin_purchase_request_commissions = 0;
+                    $total_transaction_matser_point_o_f_sale_purchase_commissions = 0;
+
+                    
+                @endphp
+                @foreach ($months as $month)
+                    @php
+                        $monthYearString = \App\Classes\HelperC::year . "-" . $month;
+                        $month_year = \App\Classes\HelperC::convertMonthYear($monthYearString);
+                        
+                        $transaction_master_card_issuing_fees = \App\Classes\HelperC::get_transaction_master_card_issuing_fees($month_year);
+                        $transaction_master_card_charging_fees = \App\Classes\HelperC::get_transaction_master_card_charging_fees($month_year);
+                        $transaction_master_card_mangment_fees = \App\Classes\HelperC::get_transaction_master_card_mangment_fees($month_year);
+                        $transaction_a_t_m_o_f_f_u_s_fees = \App\Classes\HelperC::get_transaction_a_t_m_o_f_f_u_s_fees($month_year);
+                        $transaction_master_a_t_m_s = \App\Classes\HelperC::get_transaction_master_a_t_m_s($month_year);
+                        $transaction_markumarp_fees = \App\Classes\HelperC::get_transaction_kup_fees($month_year);
+                        $transaction_master_card_coin_purchase_request_commissions = \App\Classes\HelperC::get_transaction_master_card_coin_purchase_request_commissions($month_year);
+                        $transaction_matser_point_o_f_sale_purchase_commissions = \App\Classes\HelperC::get_transaction_matser_point_o_f_sale_purchase_commissions($month_year);
+
+
+                        $total_transaction_master_card_issuing_fees += $transaction_master_card_issuing_fees->total_amount ?? 0;
+                        $total_transaction_master_card_charging_fees += $transaction_master_card_charging_fees->total_amount ?? 0;
+                        $total_transaction_master_card_mangment_fees += $transaction_master_card_mangment_fees->total_amount ?? 0;
+                        $total_transaction_a_t_m_o_f_f_u_s_fees += $transaction_a_t_m_o_f_f_u_s_fees->total_amount ?? 0;
+                        $total_transaction_master_a_t_m_s += $transaction_master_a_t_m_s->total_amount ?? 0;
+                        $total_transaction_markumarp_fees += $transaction_markumarp_fees->total_amount ?? 0;
+                        $total_transaction_master_card_coin_purchase_request_commissions += $transaction_master_card_coin_purchase_request_commissions->total_amount ?? 0;
+                        
+                        $total_transaction_matser_point_o_f_sale_purchase_commissions += $transaction_matser_point_o_f_sale_purchase_commissions->total_amount ?? 0;
+                    @endphp
+                    <tr>
+                        <td>{{ $month }}</td>
+                        <td>{{ $transaction_master_card_issuing_fees->total_amount ?? 0 }}</td>
+                        <td>{{ $transaction_master_card_charging_fees->total_amount ?? 0 }}</td>
+                        <td>{{ $transaction_master_card_mangment_fees->total_amount ?? 0 }}</td>
+                        <td>{{ $transaction_a_t_m_o_f_f_u_s_fees->total_amount ?? 0 }}</td>
+                        <td>{{ $transaction_master_a_t_m_s->total_amount ?? 0 }}</td>
+                        <td>{{ $transaction_markumarp_fees->total_amount ?? 0 }}</td>
+                        <td>{{ $transaction_master_card_coin_purchase_request_commissions->total_amount ?? 0 }}</td>
+                        <td>{{ $transaction_matser_point_o_f_sale_purchase_commissions->total_amount ?? 0 }}</td>
+
+                    </tr>
+                @endforeach
+            </tbody>
+            <tfoot>
+            <tr>
+                <th>Total</th>
+                <th>{{ $total_transaction_master_card_issuing_fees }}</th>
+                <th>{{ $total_transaction_master_card_charging_fees }}</th>
+                <th>{{ $total_transaction_master_card_mangment_fees }}</th>
+                <th>{{ $total_transaction_a_t_m_o_f_f_u_s_fees }}</th>
+                <th>{{ $total_transaction_master_a_t_m_s }}</th>
+                <th>{{ $total_transaction_markumarp_fees }}</th>
+                <th>{{ $total_transaction_master_card_coin_purchase_request_commissions }}</th>
+                <th>{{ $total_transaction_matser_point_o_f_sale_purchase_commissions }}</th>
+
+            </tr>
+        </tfoot>
+        </table>
+    </div>
+</div>
 <div class="row">
     @include('dashboard.transactionMasterCardIssuingFees.chart', ['months' => $months])
     @include('dashboard.transactionMasterCardChargingFees.chart', ['months' => $months])

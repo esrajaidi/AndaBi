@@ -95,7 +95,7 @@ class HelperC {
           ->orderBy(DB::raw('DATE_FORMAT(trn_date, "%Y-%m")'), 'asc')
           ->first();
      }
-     public static function get_transaction_markup_fees($month_year){
+     public static function get_transaction_kup_fees($month_year){
           return DB::table('transaction_markup_fees')
           ->select(DB::raw('
           DATE_FORMAT(trn_date, "%Y-%m") as month_year,

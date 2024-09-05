@@ -26,7 +26,7 @@
         @php
             $monthYearString = \App\Classes\HelperC::year . "-" . $month;
             $month_year = \App\Classes\HelperC::convertMonthYear($monthYearString);
-            $transaction = \App\Classes\HelperC::get_transaction_markup_fees($month_year);
+            $transaction = \App\Classes\HelperC::get_transaction_kup_fees($month_year);
             $total_amount = $transaction->total_amount ?? 0;
         @endphp
         
