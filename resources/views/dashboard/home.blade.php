@@ -154,7 +154,8 @@
                     <th>Markup Fees</th>
                     <th>Master Card Coin Commission</th>
                     <th>Matser PointOF Sale Commission</th>
-               
+                    <th>Matser PointOF Sale Commission_66</th>
+
 
                 </tr>
             </thead>
