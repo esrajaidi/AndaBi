@@ -5,7 +5,7 @@
 <div class="row small-spacing">
     <div class="col-lg-12 col-xs-12">
         <div class="box-content ">
-            <h3 ><i class="ico fa fa-reorder"></i> @yield('title')</h3>
+            <h3 ><i class="ico glyphicon glyphicon-eject"></i> @yield('title')</h3>
            
             <!-- /.box-title -->
             

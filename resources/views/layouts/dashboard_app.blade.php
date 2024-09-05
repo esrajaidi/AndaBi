@@ -497,7 +497,7 @@
                 </li>
                 @endcan
                 <li class="{{ Request::is('a_t_m_file_uploads') ? 'current' : '' }} ">
-                    <a class="waves-effect" href="{{ route('a_t_m_file_uploads') }}"><i class="menu-icon  fa fa-eye"></i><span> ATM UPLODE FILE</span></a>
+                    <a class="waves-effect" href="{{ route('a_t_m_file_uploads') }}"><i class="menu-icon  glyphicon glyphicon-eject"></i><span> ATM UPLODE FILE</span></a>
                 </li>
                 </ul>
                

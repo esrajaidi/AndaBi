@@ -16,7 +16,7 @@
 <div class="row small-spacing">
     <div class="col-xs-12">
       <div class="box-content">
-        <h3 ><i class="ico fa fa-reorder"></i> @yield('title')</h3>
+        <h3 ><i class="ico glyphicon glyphicon-eject"></i> @yield('title')</h3>
         <br>
         <a class="btn btn-success" href="{{ route('a_t_m_file_uploads/uplode') }}">تحميل ملف  </a>
 
