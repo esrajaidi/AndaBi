@@ -108,20 +108,23 @@ class ATMFileUploadController extends Controller
     }
     public function export()
     {
-        $data= DB::table('a_t_m_file_uploads')
-            ->select(
-                DB::raw('YEAR(processing_date) as year'),
-                DB::raw('MONTH(processing_date) as month'),
-                'terminal_id',
-                'terminal_name',
-                DB::raw('SUM(total_amount) as total_amount'),
-                DB::raw('SUM(tot_fee) as tot_fee'),
-                DB::raw('SUM(bank_fee) as bank_fee')
-            )
-            ->groupBy(DB::raw('YEAR(processing_date)'), DB::raw('MONTH(processing_date)'), 'terminal_id','terminal_name')
-            ->orderBy(DB::raw('MONTH(processing_date)'), 'asc')
-            ->orderBy('terminal_id', 'asc')
-            ->get();
+        $data = DB::table('a_t_m_file_uploads')
+        ->select(
+            DB::raw('YEAR(processing_date) as year'),
+            DB::raw('MONTHNAME(processing_date) as month'), // Get month as string
+            'terminal_id',
+            'terminal_name',
+            DB::raw('SUM(total_amount) as total_amount'),
+            DB::raw('SUM(tot_fee) as tot_fee'),
+            DB::raw('SUM(bank_fee) as bank_fee')
+        )
+        ->groupBy(DB::raw('YEAR(processing_date)'), DB::raw('MONTH(processing_date)'), DB::raw('MONTHNAME(processing_date)'), 'terminal_id', 'terminal_name') // Include both MONTH and MONTHNAME in groupBy
+        ->orderBy(DB::raw('MONTH(processing_date)'), 'asc')
+        ->orderBy('terminal_id', 'asc')
+        ->get();
+    
+
+    
 
         return Excel::download(new BranchReportExport($data), 'ATM_branch_monthly_report.xlsx');
     }

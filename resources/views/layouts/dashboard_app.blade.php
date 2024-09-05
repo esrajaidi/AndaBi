@@ -449,22 +449,23 @@
                  
                     </ul>
                 </li>
-                <li class="{{ Request::is('transaction_master_card_coin_purchase_request_commissions_*') ? 'current' : '' }} ">
+
+                <li class="{{ Request::is('transaction_matser_point_o_f_sale_purchase_commissions_*') ? 'current' : '' }} ">
                     <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-copyright-mark"></i><span>Transaction MasterCard Coin Purchase Request Commission_ </span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_master_card_coin_purchase_request_commissions_') }}">Transaction MasterCard Coin Purchase Request Commission_  عرض كافة  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commissions_') }}">Transaction MasterCard Coin Purchase Request Commission_  عرض كافة  </span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_master_card_coin_purchase_request_commissions_/report/branche') }}">Transaction MasterCard Coin Purchase Request Commission_ Report Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commissions_/report/branche') }}">Transaction MasterCard Coin Purchase Request Commission_ Report Branche</span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_master_card_coin_purchase_request_commissions_/report') }}">Transaction MasterCard Coin Purchase Request Commission_ Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commissions_/report') }}">Transaction MasterCard Coin Purchase Request Commission_ Report </span></a>
                         </a>
                     </li>
                  
