@@ -19,6 +19,8 @@ use App\Models\Customer;
 use Illuminate\Support\Carbon;
 use Spatie\Permission\Models\Permission;
 USE Illuminate\Support\Facades\DB;
+use App\Exports\FinancialData_Export;
+use Maatwebsite\Excel\Facades\Excel;
 
 class DashboradController extends Controller
 {
@@ -54,4 +56,8 @@ class DashboradController extends Controller
         return view('dashboard.home2',compact('months', 'year'));
         
     }
+
+
+    
+
 }
