@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Outgoing WU')
+@section('title', 'تقرير عمولات حوالات ويستر يونيون صادرة')
 @section('content')
 <style>
   .btn-export {

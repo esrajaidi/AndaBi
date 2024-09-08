@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Outgoing WU Report')
+@section('title', 'تقرير عمولات حوالات ويستر يونيون صادرة')
 @section('content')
 
 <div class="row small-spacing">

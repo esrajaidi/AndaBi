@@ -164,21 +164,21 @@
 
                       
                 <li class="{{ Request::is('transaction_w_u_s*') || Request::is('transaction_incom_w_u_s*') ? 'current' : '' }}">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon  glyphicon glyphicon-modal-window"></i><span>Transaction WU </span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon  glyphicon glyphicon-modal-window"></i><span> عمولة حوالات ويستر يونيون صادرة</span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_w_u_s') }}">Transaction  Outgoing WU   عرض كافة  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_w_u_s') }}">عرض كافة عمولة حوالات ويستر يونيون صادرة</span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_w_u_s/report/branche') }}">Transaction  Outgoing WU Report Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_w_u_s/report/branche') }}">تقرير حسب الفروع عمولات حوالات ويستر يونيون صادرة</span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_w_u_s/report') }}">Transaction Outgoing WU Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_w_u_s/report') }}">تقرير عمولات حوالات ويستر يونيون صادرة </span></a>
                             </a>
                         </li>
                  
