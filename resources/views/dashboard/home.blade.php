@@ -17,8 +17,8 @@
                         <th>Card Income Fees</th>
                         <th>Card Reissuing Fees</th>
                         <th>Pin Reissuing Fees</th>
-                        <th>OBDX Fees</th>
-                        <th>OBDX Company Fees</th>
+                        <th>اشتراك في خدمة الانترنت موبايل -افراد</th>
+                        <th>اشتراك في خدمة الانترنت موبايل -شركات </th>
                         <th>Income WU Fees</th>
                         <th>Outgoing WU Fees</th>
                         <th>SMS Fees</th>

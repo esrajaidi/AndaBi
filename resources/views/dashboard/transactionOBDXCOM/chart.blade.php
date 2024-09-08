@@ -42,7 +42,7 @@
     var chartData = {
         labels: labels,
         datasets: [{
-            label: 'OBDX COMPANY FEES',
+            label: 'اشتراك في خدمة الانترنت موبايل -شركات ',
             data: data,
             backgroundColor: backgroundColors,  // Array of random background colors
             borderColor: borderColors,          // Array of random border colors

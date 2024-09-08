@@ -106,34 +106,34 @@
                    @endcanany
                 
                    <li class="{{ Request::is('transaction_o_b_d_x_e_s*') ? 'current' : '' }} ">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon  fa fa-list-ul"></i><span>Transaction OBDX </span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon  fa fa-list-ul"></i><span>اشتراك في خدمة الانترنت موبايل  </span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_o_b_d_x_e_s') }}">Transaction OBDX  عرض كافة  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_o_b_d_x_e_s') }}">اشتراك في خدمة الانترنت موبايل -افراد     </span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_o_b_d_x_e_s/report/branche') }}">Transaction OBDX Report Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_o_b_d_x_e_s/report/branche') }}">تقرير حسب الفروع اشتراك في خدمة الانترنت موبايل -افراد  </span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_o_b_d_x_e_s/report') }}">Transaction OBDX  Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_o_b_d_x_e_s/report') }}" >تقرير اشتراك في خدمة الانترنت موبايل -افراد </span></a>
                              </a>
                         </li>
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_o_b_d_x_coms') }}">Transaction OBDX Company عرض كافة  </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_o_b_d_x_coms') }}">اشتراك في خدمة الانترنت موبايل -شركات     </span></a>
                         </a>
                     </li>
                     <li>
-                            <a class="waves-effect" href="{{ route('transaction_o_b_d_x_coms/report/branche') }}">Transaction OBDX Company Report Branche</span></a>
+                            <a class="waves-effect" href="{{ route('transaction_o_b_d_x_coms/report/branche') }}">تقرير حسب اشتراك في خدمة الانترنت موبايل -شركات   </span></a>
                         </a>
                     </li>
                 
                     <li>
-                        <a class="waves-effect" href="{{ route('transaction_o_b_d_x_coms/report') }}">Transaction OBDX Company Report </span></a>
+                        <a class="waves-effect" href="{{ route('transaction_o_b_d_x_coms/report') }}">تقريراشتراك  في خدمة الانترنت موبايل -شركات  </span></a>
                          </a>
                     </li>
                     </ul>
@@ -354,7 +354,7 @@
                 </li>
                 <li class="{{ Request::is('transaction_master_card_issuing_fees*') || Request::is('transaction_master_card_charging_fees*') ||  Request::is('transaction_master_card_mangment_fees*')  ? 'current' : '' }}">
 
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-cc-mastercard"></i><span>Transaction MasterCard </span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-cc-mastercard"></i><span>بطاقات ماستر كارد </span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
@@ -376,16 +376,16 @@
 
 
                     <li>
-                        <a class="waves-effect" href="{{ route('transaction_master_card_charging_fees') }}">Transaction MasterCard Charging Fees  عرض كافة  </span></a>
+                        <a class="waves-effect" href="{{ route('transaction_master_card_charging_fees') }}">عمولة شحن بطاقة ماستر كارد    </span></a>
                     </a>
                      </li>
                 <li>
-                        <a class="waves-effect" href="{{ route('transaction_master_card_charging_fees/report/branche') }}">Transaction MasterCard Charging Fees Report Branche</span></a>
+                        <a class="waves-effect" href="{{ route('transaction_master_card_charging_fees/report/branche') }}">  تقرير حسب الفروع عن عمولة شحن بطاقة ماستر كارد </span></a>
                     </a>
                 </li>
             
                 <li>
-                    <a class="waves-effect" href="{{ route('transaction_master_card_charging_fees/report') }}">Transaction  MasterCard Charging Fees Report </span></a>
+                    <a class="waves-effect" href="{{ route('transaction_master_card_charging_fees/report') }}">تقرير عمولة شحن بطاقة ماستر كارد  </span></a>
                     </a>
                 </li>
 

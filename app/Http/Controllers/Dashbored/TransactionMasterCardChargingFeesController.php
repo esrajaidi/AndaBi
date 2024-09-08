@@ -147,7 +147,7 @@ class TransactionMasterCardChargingFeesController extends Controller
     protected function generatePdf($data) 
     {
         $fileName="transactionMasterCardChargingFees_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
-        $title='Transaction MasterCard Charging Fees Report Branche';
+        $title='عمولة شحن بطاقة ماستر كارد 				 Report Branche';
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
         $pdf = Pdf::loadView('dashboard.report.transactions_pdf_bybranche', ['data' => $data ,'title'=>$title]);
@@ -203,7 +203,7 @@ class TransactionMasterCardChargingFeesController extends Controller
      protected function generatePdfALL($data) 
      {
         $fileName="transactionMasterCardChargingFees_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
-        $title='Transaction MasterCard Charging Fees ';
+        $title='عمولة شحن بطاقة ماستر كارد 				 ';
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
          $pdf = Pdf::loadView('dashboard.report.transactions_pdf', ['data' => $data ,'title'=>$title]);

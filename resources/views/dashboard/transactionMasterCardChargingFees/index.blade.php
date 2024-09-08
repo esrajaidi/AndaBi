@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction MasterCard Charging Fees')
+@section('title', 'عمولة شحن بطاقة ماستر كارد 				')
 @section('content')
 <style>
   .btn-export {

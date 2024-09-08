@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'OBDX COMPANY تحميل ملف ')
+@section('title', 'تحميل ملف اشتراك في خدمة الانترنت موبايل -شركات')
 
 
 @section('content')

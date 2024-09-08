@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction OBDX COMPANY')
+@section('title', 'اشتراك في خدمة الانترنت موبايل -شركات')
 @section('content')
 <style>
   .btn-export {

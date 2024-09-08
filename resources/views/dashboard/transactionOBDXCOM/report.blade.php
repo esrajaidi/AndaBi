@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction OBDX COMPANY Report')
+@section('title', 'تقرير اشتراك في خدمة الانترنت موبايل -شركات')
 @section('content')
 
 <div class="row small-spacing">
