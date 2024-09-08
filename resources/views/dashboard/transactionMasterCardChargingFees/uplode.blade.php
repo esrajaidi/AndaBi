@@ -15,7 +15,7 @@
     <div class="col-lg-8 col-xs-12">
         <div class="box-content card white">
             
-            <h3 class="box-title">تحميل ملف </h3>
+            <h3 class="box-title">تحميل ملف  IC109011672</h3>
             <!-- /.box-title -->
             
             <div class="card-content">
