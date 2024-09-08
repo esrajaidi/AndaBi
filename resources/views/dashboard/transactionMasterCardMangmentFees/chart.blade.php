@@ -42,7 +42,7 @@
     var chartData = {
         labels: labels,
         datasets: [{
-            label: 'MasterCard MANGMENT  FEES',
+            label: 'عمولة إدارة حساب بطاقة دولية',
             data: data,
             backgroundColor: backgroundColors,  // Array of random background colors
             borderColor: borderColors,          // Array of random border colors

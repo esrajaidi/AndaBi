@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'MasterCard Issuing Fees تحميل ملف ')
+@section('title', ' تحميل ملف عمولة اصدار بطاقة ماستر كارد بلاتينيوم')
 
 
 @section('content')

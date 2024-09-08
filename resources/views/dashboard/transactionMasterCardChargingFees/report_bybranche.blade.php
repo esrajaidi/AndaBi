@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'عمولة شحن بطاقة ماستر كارد 				 Report Branche')
+@section('title', 'تقرير حسب الفروع عمولة شحن بطاقة ماستر كارد ')
 @section('content')
 
 <div class="row small-spacing">

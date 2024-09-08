@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction MasterCard Mangment Fees')
+@section('title', 'عمولة إدارة حساب بطاقة دولية')
 @section('content')
 <style>
   .btn-export {

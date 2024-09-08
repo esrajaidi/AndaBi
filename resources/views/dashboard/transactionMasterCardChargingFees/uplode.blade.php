@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'MasterCard Charging Fees تحميل ملف ')
+@section('title', 'تحميل ملف عمولة شحن بطاقة ماستر كارد ')
 
 
 @section('content')

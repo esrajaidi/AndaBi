@@ -42,7 +42,7 @@
     var chartData = {
         labels: labels,
         datasets: [{
-            label: 'MasterCard ISSUING FEES',
+            label: 'عمولة اصدار بطاقة ماستر كارد بلاتينيوم',
             data: data,
             backgroundColor: backgroundColors,  // Array of random background colors
             borderColor: borderColors,          // Array of random border colors

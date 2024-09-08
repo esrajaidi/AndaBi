@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'عمولة شحن بطاقة ماستر كارد 				')
+@section('title', 'عمولة شحن بطاقة ماستر كارد ')
 @section('content')
 <style>
   .btn-export {

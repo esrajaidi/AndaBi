@@ -146,10 +146,10 @@
             <thead class="thead-dark">
                 <tr>
                     <th>Month</th>
-                    <th>Master Card Issuing Fees</th>
-                    <th>Master Card Charging Fees</th>
-                    <th>Master Card Mangment Fees</th>
-                    <th>ATM OFF US Fees</th>
+                    <th>عمولة اصدار بطاقة ماستر كارد بلاتينيوم</th>
+                    <th>عمولة شحن بطاقة ماستر كارد </th>
+                    <th>عمولة إدارة حساب بطاقة دولية</th>
+                    <th>عمولة سحب من الة السحب الداتي مصارف تجارية</th>
                     <th>Master ATM</th>
                     <th>عمولة شراء بطاقات ماستر كارد عبر نقاط البيع </th>
                     <th>Master Card Coin Commission</th>

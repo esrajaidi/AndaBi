@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'ATM OFF -US Fees تحميل ملف ')
+@section('title', ' تحميل ملف عمولة سحب من الة السحب الداتي مصارف تجارية')
 
 
 @section('content')

@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction MasterCard Mangment Fees Report')
+@section('title', 'تقرير عمولة إدارة حساب بطاقة دولية')
 @section('content')
 
 <div class="row small-spacing">

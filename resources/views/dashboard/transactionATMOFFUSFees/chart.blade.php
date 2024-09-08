@@ -42,7 +42,7 @@
     var chartData = {
         labels: labels,
         datasets: [{
-            label: 'ATM OFF-US FEES',
+            label: 'عمولة سحب من الة السحب الداتي مصارف تجارية',
             data: data,
             backgroundColor: backgroundColors,  // Array of random background colors
             borderColor: borderColors,          // Array of random border colors

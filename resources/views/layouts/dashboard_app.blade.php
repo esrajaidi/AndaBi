@@ -332,21 +332,21 @@
 
                 
                 <li class="{{ Request::is('transaction_a_t_m_o_f_f_u_s_fees*') ? 'current' : '' }} ">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-reorder"></i><span>Transaction ATM  OFF-US</span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-reorder"></i><span>عمولة سحب من الة السحب الداتي مصارف تجارية</span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_a_t_m_o_f_f_u_s_fees') }}">Transaction ATM  OFF-US  عرض كافة  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_a_t_m_o_f_f_u_s_fees') }}"> عرض كافة عمولة سحب من الة السحب الداتي مصارف تجارية</span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_a_t_m_o_f_f_u_s_fees/report/branche') }}">Transaction ATM  OFF-US Report Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_a_t_m_o_f_f_u_s_fees/report/branche') }}"> تقرير حسب الفروع عمولة سحب من الة السحب الداتي مصارف تجارية</span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_a_t_m_o_f_f_u_s_fees/report') }}">Transaction ATM  OFF-US Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_a_t_m_o_f_f_u_s_fees/report') }}">تقرير عمولة سحب من الة السحب الداتي مصارف تجارية</span></a>
                         </a>
                     </li>
                  
@@ -360,16 +360,16 @@
                     <ul class="sub-menu js__content" style="background-color: white;">
                      
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_master_card_issuing_fees') }}">Transaction MasterCard Issuing Fees  عرض كافة  </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_master_card_issuing_fees') }}">عرض كافة عمولة اصدار بطاقة ماستر كارد بلاتينيوم</span></a>
                         </a>
                          </li>
                     <li>
-                            <a class="waves-effect" href="{{ route('transaction_master_card_issuing_fees/report/branche') }}">Transaction MasterCard Issuing Fees Report Branche</span></a>
+                            <a class="waves-effect" href="{{ route('transaction_master_card_issuing_fees/report/branche') }}">تقرير الفروع حسب عمولة اصدار بطاقة ماستر كارد بلاتينيوم</span></a>
                         </a>
                     </li>
                 
                     <li>
-                        <a class="waves-effect" href="{{ route('transaction_master_card_issuing_fees/report') }}">Transaction  MasterCard Issuing Fees Report </span></a>
+                        <a class="waves-effect" href="{{ route('transaction_master_card_issuing_fees/report') }}">تقرير عمولة اصدار بطاقة ماستر كارد بلاتينيوم</span></a>
                         </a>
                     </li>
 
@@ -393,16 +393,16 @@
 
 
                 <li>
-                    <a class="waves-effect" href="{{ route('transaction_master_card_mangment_fees') }}">Transaction MasterCard Mangment Fees  عرض كافة  </span></a>
+                    <a class="waves-effect" href="{{ route('transaction_master_card_mangment_fees') }}"> عرض كافة عمولة إدارة حساب بطاقة دولية</span></a>
                 </a>
                  </li>
             <li>
-                    <a class="waves-effect" href="{{ route('transaction_master_card_mangment_fees/report/branche') }}">Transaction MasterCard Mangment Fees Report Branche</span></a>
+                    <a class="waves-effect" href="{{ route('transaction_master_card_mangment_fees/report/branche') }}">تقرير حسب الفروع عمولة إدارة حساب بطاقة دولية</span></a>
                 </a>
             </li>
         
             <li>
-                <a class="waves-effect" href="{{ route('transaction_master_card_mangment_fees/report') }}">Transaction  MasterCard Mangment Fees Report </span></a>
+                <a class="waves-effect" href="{{ route('transaction_master_card_mangment_fees/report') }}">تقرير عمولة إدارة حساب بطاقة دولية</span></a>
                 </a>
             </li>
                     </ul>

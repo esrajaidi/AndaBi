@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'MasterCard Mangment Fees تحميل ملف ')
+@section('title', ' تحميل ملف عمولة إدارة حساب بطاقة دولية')
 
 
 @section('content')
