@@ -42,7 +42,7 @@
     var chartData = {
         labels: labels,
         datasets: [{
-            label: 'INCOME CARD FEES',
+            label: 'ايرادات بطاقات الدفع المسبق',
             data: data,
             backgroundColor: backgroundColors,  // Array of random background colors
             borderColor: borderColors,          // Array of random border colors

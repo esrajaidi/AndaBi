@@ -220,29 +220,29 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="waves-effect" href="{{ route('transaction_incom_card_fees') }}">Transaction Income Card Fees  عرض كافة  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_incom_card_fees') }}"> عرض كافة ايرادات بطاقات الدفع المسبق</span></a>
                                 </a>
                             </li>
                             <li>
-                                    <a class="waves-effect" href="{{ route('transaction_incom_card_fees/report/branche') }}">Transaction Income Card  Fees Report Branche</span></a>
+                                    <a class="waves-effect" href="{{ route('transaction_incom_card_fees/report/branche') }}">تقرير حسب الفروع ايرادات بطاقات الدفع المسبق </span></a>
                                 </a>
                             </li>
                         
                             <li>
-                                <a class="waves-effect" href="{{ route('transaction_incom_card_fees/report') }}">Transaction Income Card Fees Report </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_incom_card_fees/report') }}">تقرير ايرادات بطاقات الدفع المسبق</span></a>
                                 </a>
                             </li>
                             <li>
-                                <a class="waves-effect" href="{{ route('transaction_card_re_issuing_fees') }}">Transaction Card ReIssuing Fees  عرض كافة  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_card_re_issuing_fees') }}">  عرض كافة اعادة إصدار بطاقة بدل فاقد</span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_card_re_issuing_fees/report/branche') }}">Transaction Card ReIssuing Fees Report Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_card_re_issuing_fees/report/branche') }}">تقرير حسب الفروع اعادة إصدار بطاقة بدل فاقد</span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_card_re_issuing_fees/report') }}">Transaction  Card ReIssuing Fees Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_card_re_issuing_fees/report') }}">تقريراعادة إصدار بطاقة بدل فاقد</span></a>
                             </a>
                         </li>
                             

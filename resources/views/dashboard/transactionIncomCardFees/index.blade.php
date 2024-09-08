@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Income Card  Fees')
+@section('title', 'ايرادات بطاقات الدفع المسبق')
 @section('content')
 <style>
   .btn-export {

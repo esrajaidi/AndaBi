@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Card Re Issuing Fees تحميل ملف ')
+@section('title', ' تحميل ملف اعادة إصدار بطاقة بدل فاقد')
 
 
 @section('content')

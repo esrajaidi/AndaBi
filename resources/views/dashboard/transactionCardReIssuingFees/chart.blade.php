@@ -42,7 +42,7 @@
     var chartData = {
         labels: labels,
         datasets: [{
-            label: 'CARD REISSING FEES',
+            label: 'اعادة إصدار بطاقة بدل فاقد',
             data: data,
             backgroundColor: backgroundColors,  // Array of random background colors
             borderColor: borderColors,          // Array of random border colors

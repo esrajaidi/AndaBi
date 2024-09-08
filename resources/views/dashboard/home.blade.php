@@ -13,9 +13,9 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>Month</th>
-                        <th>Card Issuing Fees</th>
-                        <th>Card Income Fees</th>
-                        <th>Card Reissuing Fees</th>
+                        <th>عمولة إصدار بطاقة سحب داتي</th>
+                        <th>ايرادات بطاقات الدفع المسبق</th>
+                        <th>اعادة إصدار بطاقة بدل فاقد</th>
                         <th>Pin Reissuing Fees</th>
                         <th>اشتراك في خدمة الانترنت موبايل -افراد</th>
                         <th>اشتراك في خدمة الانترنت موبايل -شركات </th>

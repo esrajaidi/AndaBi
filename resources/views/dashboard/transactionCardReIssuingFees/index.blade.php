@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Card Re Issuing Fees')
+@section('title', 'اعادة إصدار بطاقة بدل فاقد')
 @section('content')
 <style>
   .btn-export {

@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Income Card Fees تحميل ملف ')
+@section('title', ' تحميل ملف  ايرادات بطاقات الدفع المسبق')
 
 
 @section('content')
