@@ -42,7 +42,7 @@
     var chartData = {
         labels: labels,
         datasets: [{
-            label: 'MARKUP FEES',
+            label: 'عمولة شراء بطاقات ماستر كارد عبر نقاط البيع ',
             data: data,
             backgroundColor: backgroundColors,  // Array of random background colors
             borderColor: borderColors,          // Array of random border colors

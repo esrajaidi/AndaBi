@@ -151,7 +151,7 @@
                     <th>Master Card Mangment Fees</th>
                     <th>ATM OFF US Fees</th>
                     <th>Master ATM</th>
-                    <th>Markup Fees</th>
+                    <th>عمولة شراء بطاقات ماستر كارد عبر نقاط البيع </th>
                     <th>Master Card Coin Commission</th>
                     <th>Matser PointOF Sale Commission</th>
                     <th>Matser PointOF Sale Commission_55</th>

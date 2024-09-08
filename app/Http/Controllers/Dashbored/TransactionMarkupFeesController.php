@@ -147,7 +147,7 @@ class TransactionMarkupFeesController extends Controller
     protected function generatePdf($data) 
     {
         $fileName="transactionMarkupFees_bybranche_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
-        $title='Transaction Markup Fees Report Branche';
+        $title='Transaction عمولة شراء بطاقات ماستر كارد عبر نقاط البيع  Report Branche';
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
         $pdf = Pdf::loadView('dashboard.report.transactions_pdf_bybranche', ['data' => $data ,'title'=>$title]);
@@ -203,7 +203,7 @@ class TransactionMarkupFeesController extends Controller
      protected function generatePdfALL($data) 
      {
         $fileName="transactionMarkupFees_".str_replace( array( '\'', '/',"-" ), '', Now()->toDateString()).".pdf";
-        $title='Transaction Markup Fees ';
+        $title='Transaction عمولة شراء بطاقات ماستر كارد عبر نقاط البيع  ';
         ActivityLogger::activity($fileName. "تم تصدير ملف  تحت اسم ");
 
          $pdf = Pdf::loadView('dashboard.report.transactions_pdf', ['data' => $data ,'title'=>$title]);
