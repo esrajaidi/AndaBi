@@ -23,11 +23,7 @@ class TransactionsWUImport implements ToModel,WithStartRow
         $entry_sr_no = $row[15];
 
       
-        if ($row[3] !='IC109011620') {
-          
-            ActivityLogger::activity("the entry ac_no is ".$row[3]."not  IC109011620 in TransactionsWUImport" );
-            return null;
-        }
+      
           // Convert the date columns from Excel to the format that Laravel expects
 
           $trnDate = $this->excelSerialToDate($row[10]);
