@@ -164,9 +164,7 @@
 
 
 @php
-   
-
-    $quarter_totals = [
+    $grand_totals = [
         'master_card_issuing_fees' => 0,
         'master_card_charging_fees' => 0,
         'master_card_mangment_fees' => 0,
@@ -235,6 +233,11 @@
                     $quarter_totals['matser_point_o_f_sale_purchase_commissions'] += $transaction_matser_point_o_f_sale_purchase_commissions->total_amount ?? 0;
                     $quarter_totals['matser_point_o_f_sale_purchase_commission_'] += $transaction_matser_point_o_f_sale_purchase_commission_->total_amount ?? 0;
                 }
+
+                // Add the quarter totals to the grand totals
+                foreach ($quarter_totals as $key => $total) {
+                    $grand_totals[$key] += $total;
+                }
             @endphp
 
             <tr>
@@ -251,8 +254,20 @@
             </tr>
         @endforeach
     </tbody>
+    <tfoot>
+        <tr>
+            <th>Total</th>
+            <th>{{ $grand_totals['master_card_issuing_fees'] }}</th>
+            <th>{{ $grand_totals['master_card_charging_fees'] }}</th>
+            <th>{{ $grand_totals['master_card_mangment_fees'] }}</th>
+            <th>{{ $grand_totals['a_t_m_o_f_f_u_s_fees'] }}</th>
+            <th>{{ $grand_totals['master_a_t_m_s'] }}</th>
+            <th>{{ $grand_totals['markumarp_fees'] }}</th>
+            <th>{{ $grand_totals['master_card_coin_purchase_request_commissions'] }}</th>
+            <th>{{ $grand_totals['matser_point_o_f_sale_purchase_commissions'] }}</th>
+            <th>{{ $grand_totals['matser_point_o_f_sale_purchase_commission_'] }}</th>
+        </tr>
+    </tfoot>
 </table>
-</div>
-</div>
-</div>
+
 @endsection
