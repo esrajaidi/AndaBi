@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Incom WU تحميل ملف ')
+@section('title', ' تحميل ملف عمولة على الحوالاات الخارجية الواردة')
 
 
 @section('content')

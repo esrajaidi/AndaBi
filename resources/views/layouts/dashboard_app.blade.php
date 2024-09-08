@@ -164,7 +164,7 @@
 
                       
                 <li class="{{ Request::is('transaction_w_u_s*') || Request::is('transaction_incom_w_u_s*') ? 'current' : '' }}">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon  glyphicon glyphicon-modal-window"></i><span> عمولة حوالات ويستر يونيون صادرة</span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon  glyphicon glyphicon-modal-window"></i><span> عمولة حوالات ويستر يونيون </span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
@@ -183,16 +183,16 @@
                         </li>
                  
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_incom_w_u_s') }}">Transaction  Incom WU   عرض كافة  </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_incom_w_u_s') }}">عرض كافة عمولة على الحوالاات الخارجية الواردة</span></a>
                         </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_incom_w_u_s/report/branche') }}">Transaction  Incom WU Report Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_incom_w_u_s/report/branche') }}">تقرير حسب الفروع عمولة على الحوالاات الخارجية الواردة</span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_incom_w_u_s/report') }}">Transaction Incom WU Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_incom_w_u_s/report') }}">تقرير عمولة على الحوالاات الخارجية الواردة</span></a>
                             </a>
                         </li>
                         

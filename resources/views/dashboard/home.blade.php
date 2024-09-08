@@ -19,8 +19,8 @@
                         <th>Pin Reissuing Fees</th>
                         <th>اشتراك في خدمة الانترنت موبايل -افراد</th>
                         <th>اشتراك في خدمة الانترنت موبايل -شركات </th>
-                        <th>Income WU Fees</th>
-                        <th>Outgoing WU Fees</th>
+                        <th> عمولة حوالات ويستر يونيون صادرة</th>
+                        <th> عمولة على الحوالاات الخارجية الواردة</th>
                         <th>SMS Fees</th>
                         <th>SMS Company Fees</th>
                         <th>ATM Fees</th>
