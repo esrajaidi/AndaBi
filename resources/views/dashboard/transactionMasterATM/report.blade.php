@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Master ATM Report')
+@section('title', 'تقرير عمولة السحب من بطاقات ماستر كارد عبر الصراف الآلي')
 @section('content')
 
 <div class="row small-spacing">

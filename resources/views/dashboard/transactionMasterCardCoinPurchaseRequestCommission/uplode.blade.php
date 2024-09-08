@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction MasterCardCoinPurchaseRequestCommission Fees تحميل ملف ')
+@section('title', ' تحميل ملف عمولة طلب شراء عملة أغراض شخصية - ماستر كارد')
 
 
 @section('content')

@@ -57,18 +57,18 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>Quarter</th>
-                        <th>Card Issuing Fees</th>
-                        <th>Card Income Fees</th>
-                        <th>Card Reissuing Fees</th>
-                        <th>Pin Reissuing Fees</th>
-                        <th>OBDX Fees</th>
-                        <th>OBDX Company Fees</th>
-                        <th>Income WU Fees</th>
-                        <th>Outgoing WU Fees</th>
-                        <th>SMS Fees</th>
-                        <th>SMS Company Fees</th>
-                        <th>ATM Fees</th>
-                        <th>POS Fees</th>
+                        <th>عمولة إصدار بطاقة سحب داتي</th>
+                        <th>ايرادات بطاقات الدفع المسبق</th>
+                        <th>اعادة إصدار بطاقة بدل فاقد</th>
+                        <th>إعادة اصدار رقم سري (PIN)</th>
+                        <th>اشتراك في خدمة الانترنت موبايل -افراد</th>
+                        <th>اشتراك في خدمة الانترنت موبايل -شركات </th>
+                        <th> عمولة حوالات ويستر يونيون صادرة</th>
+                        <th> عمولة على الحوالاات الخارجية الواردة</th>
+                        <th>عمولة اشتراك في خدمة sms أفراد</th>
+                        <th> عمولة اشتراك في خدمة sms شركات</th>
+                        <th> عمولة سحب من الة السحب الداتي</th>
+                        <th>عمولات نقاط البيع </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -181,15 +181,16 @@
     <thead class="thead-dark">
         <tr>
             <th>Quarter</th>
-            <th>Master Card Issuing Fees</th>
-            <th>Master Card Charging Fees</th>
-            <th>Master Card Management Fees</th>
-            <th>ATM OFF US Fees</th>
-            <th>Master ATM</th>
-            <th>عمولة شراء بطاقات ماستر كارد عبر نقاط البيع </th>
-            <th>Master Card Coin Commission</th>
-            <th>Master Point of Sale Commission</th>
-            <th>Master Point of Sale Commission_55</th>
+            <th>عمولة اصدار بطاقة ماستر كارد بلاتينيوم</th>
+                    <th>عمولة شحن بطاقة ماستر كارد </th>
+                    <th>عمولة إدارة حساب بطاقة دولية</th>
+                    <th>عمولة سحب من الة السحب الداتي مصارف تجارية</th>
+                    <th>عمولة السحب من بطاقات ماستر كارد عبر الصراف الآلي</th>
+                    <th>عمولة شراء بطاقات ماستر كارد عبر نقاط البيع </th>
+                    <th>عمولة طلب شراء عملة أغراض شخصية - ماستر كارد</th>
+                    <th>عمولة طلب شراء ببطاقات ماستر عبر نقاط البيعvisa</th>
+                    <th> عمولة طلب كشف حساب عبر الصراف ماستر كارد</th>
+
         </tr>
     </thead>
     <tbody>

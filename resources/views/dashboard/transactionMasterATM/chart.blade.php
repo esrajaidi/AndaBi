@@ -42,7 +42,7 @@
     var chartData = {
         labels: labels,
         datasets: [{
-            label: 'Master ATM FEES',
+            label: 'عمولة السحب من بطاقات ماستر كارد عبر الصراف الآلي',
             data: data,
             backgroundColor: backgroundColors,  // Array of random background colors
             borderColor: borderColors,          // Array of random border colors

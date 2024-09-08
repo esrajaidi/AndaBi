@@ -24,7 +24,7 @@
                         <th>عمولة اشتراك في خدمة sms أفراد</th>
                         <th> عمولة اشتراك في خدمة sms شركات</th>
                         <th> عمولة سحب من الة السحب الداتي</th>
-                        <th>POS Fees</th>
+                        <th>عمولات نقاط البيع </th>
 
                     </tr>
                 </thead>
@@ -150,11 +150,11 @@
                     <th>عمولة شحن بطاقة ماستر كارد </th>
                     <th>عمولة إدارة حساب بطاقة دولية</th>
                     <th>عمولة سحب من الة السحب الداتي مصارف تجارية</th>
-                    <th>Master ATM</th>
+                    <th>عمولة السحب من بطاقات ماستر كارد عبر الصراف الآلي</th>
                     <th>عمولة شراء بطاقات ماستر كارد عبر نقاط البيع </th>
-                    <th>Master Card Coin Commission</th>
-                    <th>Matser PointOF Sale Commission</th>
-                    <th>Matser PointOF Sale Commission_55</th>
+                    <th>عمولة طلب شراء عملة أغراض شخصية - ماستر كارد</th>
+                    <th>عمولة طلب شراء ببطاقات ماستر عبر نقاط البيعvisa</th>
+                    <th> عمولة طلب كشف حساب عبر الصراف ماستر كارد</th>
 
 
                 </tr>
@@ -243,7 +243,7 @@
     @include('dashboard.transactionMarkupFees.chart', ['months' => $months])
     @include('dashboard.transactionMasterCardCoinPurchaseRequestCommission.chart', ['months' => $months])
     @include('dashboard.transactionMatserPointOFSalePurchaseCommission.chart', ['months' => $months])
-    @include('dashboard.transactionMasterCardCoinPurchaseRequestCommission_.chart', ['months' => $months])
+    @include('dashboard.transactionMatserPointOFSalePurchaseCommission_.chart', ['months' => $months])
 
 </div>
 @endsection

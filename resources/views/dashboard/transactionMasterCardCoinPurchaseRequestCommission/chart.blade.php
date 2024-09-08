@@ -42,7 +42,7 @@
     var chartData = {
         labels: labels,
         datasets: [{
-            label: 'Transaction Master Card Coin Purchase Request Commission Fees',
+            label: 'عمولة طلب شراء عملة أغراض شخصية - ماستر كارد',
             data: data,
             backgroundColor: backgroundColors,  // Array of random background colors
             borderColor: borderColors,          // Array of random border colors

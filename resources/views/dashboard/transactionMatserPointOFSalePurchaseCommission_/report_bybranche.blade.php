@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction MasterCard Coin Purchase Request Commission_ Fees Report Branche')
+@section('title', 'تقرير حسب الفروع  عمولة طلب كشف حساب عبر الصراف ماستر كارد')
 @section('content')
 
 <div class="row small-spacing">

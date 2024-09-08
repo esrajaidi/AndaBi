@@ -42,7 +42,7 @@
     var chartData = {
         labels: labels,
         datasets: [{
-            label: 'Transaction Matser Point OF Sale Purchase Commission',
+            label: 'عمولة طلب شراء ببطاقات ماستر عبر نقاط البيعvisa',
             data: data,
             backgroundColor: backgroundColors,  // Array of random background colors
             borderColor: borderColors,          // Array of random border colors

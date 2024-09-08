@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Matser Point OF Sale Purchase Commission')
+@section('title', 'عمولة طلب شراء ببطاقات ماستر عبر نقاط البيعvisa')
 @section('content')
 <style>
   .btn-export {

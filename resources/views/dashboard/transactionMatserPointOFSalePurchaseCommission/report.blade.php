@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Matser Point OF Sale Purchase Commission Report')
+@section('title', 'تقرير عمولة طلب شراء ببطاقات ماستر عبر نقاط البيعvisa')
 @section('content')
 
 <div class="row small-spacing">

@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'تقرير معاملات نقاط البيع ')
+@section('title', 'تقرير عمولات نقاط البيع ')
 @section('content')
 
 <div class="row small-spacing">

@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Master ATM')
+@section('title', 'عمولة السحب من بطاقات ماستر كارد عبر الصراف الآلي')
 @section('content')
 <style>
   .btn-export {

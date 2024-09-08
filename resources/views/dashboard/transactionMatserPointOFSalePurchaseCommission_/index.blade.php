@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Master Card Coin Purchase Request Commission_ Fees')
+@section('title', ' عمولة طلب كشف حساب عبر الصراف ماستر كارد')
 @section('content')
 <style>
   .btn-export {

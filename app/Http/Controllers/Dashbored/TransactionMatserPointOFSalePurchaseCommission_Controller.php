@@ -41,14 +41,14 @@ class TransactionMatserPointOFSalePurchaseCommission_Controller extends Controll
         })
         ->make(true);
         }
-       return view('dashboard.transactionMasterCardCoinPurchaseRequestCommission_.index')->with('branches',$branches);
+       return view('dashboard.transactionMatserPointOFSalePurchaseCommission_.index')->with('branches',$branches);
     }
 
    public function uplode(){
 
 
 
-        return view('dashboard.transactionMasterCardCoinPurchaseRequestCommission_.uplode');
+        return view('dashboard.transactionMatserPointOFSalePurchaseCommission_.uplode');
 
     }
 
@@ -128,7 +128,7 @@ class TransactionMatserPointOFSalePurchaseCommission_Controller extends Controll
             return $this->generateExcel($data);
         }
 
-        return view('dashboard.transactionMasterCardCoinPurchaseRequestCommission_.report_bybranche')
+        return view('dashboard.transactionMatserPointOFSalePurchaseCommission_.report_bybranche')
         ->with('data',$data)
         ->with('branches',$branches)
         ->with('branches_id',$branches_id);
@@ -187,7 +187,7 @@ class TransactionMatserPointOFSalePurchaseCommission_Controller extends Controll
              return $this->generateExcelALL($data);
          }
  
-         return view('dashboard.transactionMasterCardCoinPurchaseRequestCommission_.report')
+         return view('dashboard.transactionMatserPointOFSalePurchaseCommission_.report')
          ->with('data',$data);
   
          

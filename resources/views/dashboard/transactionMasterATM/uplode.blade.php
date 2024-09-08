@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Master ATM تحميل ملف ')
+@section('title', ' تحميل ملف عمولة السحب من بطاقات ماستر كارد عبر الصراف الآلي')
 
 
 @section('content')

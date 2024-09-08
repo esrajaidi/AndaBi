@@ -77,8 +77,12 @@
                 {{-- <h5 class="title"></h5> --}}
                 <!-- /.title -->
                 <ul class="menu js__accordion">
-                    <li class="{{ Request::is('/') ? 'current' : '' }} ">
-                        <a class="waves-effect" href="{{ route('home') }}"><i class="menu-icon fa fa-home"></i><span>الرئسية</span></a>
+                
+                    <li class="{{ Request::is('/*') ? 'current' : '' }} ">
+                        <a class="waves-effect " href="{{ route('home') }}"><i class="menu-icon fa fa-home"></i><span> الرئسية</span></a>
+                    </li>
+                    <li class="{{ Request::is('home_') ? 'current' : '' }} ">
+                        <a class="waves-effect " href="{{ route('home_') }}"><i class="menu-icon fa fa-home"></i><span> Financial Data Quarter</span></a>
                     </li>
                     @canany(['user-list', 'user-create' ,'user-edit','user-delete','user-changestatus'])
 
@@ -140,21 +144,21 @@
                 </li>
                 
                 <li class="{{ Request::is('transaction_p_o_s*') ? 'current' : '' }} ">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon  fa fa-building"></i><span>معاملات نقاط البيع </span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon  fa fa-building"></i><span>عمولات نقاط البيع </span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_p_o_s') }}">كافة معاملات نقاط البيع</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_p_o_s') }}">كافة عمولات نقاط البيع</span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_p_o_s/report/branche') }}">تقرير حسب الفروع معاملات نقاط البيع  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_p_o_s/report/branche') }}">تقرير حسب الفروع عمولات نقاط البيع  </span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_p_o_s/report') }}">تقرير معاملات نقاط البيع  </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_p_o_s/report') }}">تقرير عمولات نقاط البيع  </span></a>
                         </a>
                     </li>
                  
@@ -408,42 +412,42 @@
                     </ul>
                 </li>
                 <li class="{{ Request::is('transaction_master_a_t_m_s*') ? 'current' : '' }} ">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-reorder"></i><span>Transaction Master ATM </span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-reorder"></i><span>عمولة السحب من بطاقات ماستر كارد عبر الصراف الآلي</span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_master_a_t_m_s') }}">Transaction Master ATM  عرض كافة  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_master_a_t_m_s') }}"> عرض كافة عمولة السحب من بطاقات ماستر كارد عبر الصراف الآلي</span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_master_a_t_m_s/report/branche') }}">Transaction Master ATM Report Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_master_a_t_m_s/report/branche') }}">تقرير حسب الفروععمولة السحب من بطاقات ماستر كارد عبر الصراف الآلي</span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_master_a_t_m_s/report') }}">Transaction Master ATM Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_master_a_t_m_s/report') }}">تقرير عمولة السحب من بطاقات ماستر كارد عبر الصراف الآلي </span></a>
                         </a>
                     </li>
                  
                     </ul>
                 </li>
                 <li class="{{ Request::is('transaction_master_card_coin_purchase_request_commissions*') ? 'current' : '' }} ">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-copyright-mark"></i><span>Transaction MasterCard Coin Purchase Request Commission </span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-copyright-mark"></i><span>عمولة طلب شراء عملة أغراض شخصية - ماستر كارد</span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_master_card_coin_purchase_request_commissions') }}">Transaction MasterCard Coin Purchase Request Commission  عرض كافة  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_master_card_coin_purchase_request_commissions') }}">عرض كافة عمولة طلب شراء عملة أغراض شخصية - ماستر كارد</span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_master_card_coin_purchase_request_commissions/report/branche') }}">Transaction MasterCard Coin Purchase Request Commission Report Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_master_card_coin_purchase_request_commissions/report/branche') }}">تقرير حسب الفروع عمولة طلب شراء عملة أغراض شخصية - ماستر كارد</span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_master_card_coin_purchase_request_commissions/report') }}">Transaction MasterCard Coin Purchase Request Commission Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_master_card_coin_purchase_request_commissions/report') }}">تقرير عمولة طلب شراء عملة أغراض شخصية - ماستر كارد</span></a>
                         </a>
                     </li>
                  
@@ -473,42 +477,42 @@
                     </ul>
                 </li>
                 <li class="{{ Request::is('transaction_matser_point_o_f_sale_purchase_commissions*') ? 'current' : '' }} ">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-expand"></i><span>Transaction Matser Point OF Sale Purchase Commission</span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-expand"></i><span>عمولة طلب شراء ببطاقات ماستر عبر نقاط البيعvisa</span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commissions') }}">Transaction Matser Point OF Sale Purchase Commission عرض كافة  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commissions') }}">عرض كافة عمولة طلب شراء ببطاقات ماستر عبر نقاط البيعvisa</span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commissions/report/branche') }}">Transaction Matser Point OF Sale Purchase Commission Report Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commissions/report/branche') }}">تقرير حسب الفروع عمولة طلب شراء ببطاقات ماستر عبر نقاط البيعvisa</span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commissions/report') }}">Transaction Matser Point OF Sale Purchase Commission Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commissions/report') }}">تقرير عمولة طلب شراء ببطاقات ماستر عبر نقاط البيعvisa</span></a>
                         </a>
                     </li>
                  
                     </ul>
                 </li>
                 <li class="{{ Request::is('transaction_matser_point_o_f_sale_purchase_commission_*') ? 'current' : '' }} ">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-copyright-mark"></i><span>Transaction MasterCard Coin Purchase Request Commission_ </span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-copyright-mark"></i><span> عمولة طلب كشف حساب عبر الصراف ماستر كارد</span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commission_') }}">Transaction MasterCard Coin Purchase Request Commission_  عرض كافة  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commission_') }}">عرض كافةعمولة طلب كشف حساب عبر الصراف ماستر كارد</span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commission_/report/branche') }}">Transaction MasterCard Coin Purchase Request Commission_ Report Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commission_/report/branche') }}">تقرير حسب الفروع  عمولة طلب كشف حساب عبر الصراف ماستر كارد</span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commission_/report') }}">Transaction MasterCard Coin Purchase Request Commission_ Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_matser_point_o_f_sale_purchase_commission_/report') }}">تقرير عمولة طلب كشف حساب عبر الصراف ماستر كارد</span></a>
                         </a>
                     </li>
                  

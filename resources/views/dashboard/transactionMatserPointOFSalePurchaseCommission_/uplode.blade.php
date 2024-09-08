@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction MasterCard Coin Purchase Request Commission_ Fees تحميل ملف ')
+@section('title', ' تحميل ملف  عمولة طلب كشف حساب عبر الصراف ماستر كارد')
 
 
 @section('content')
