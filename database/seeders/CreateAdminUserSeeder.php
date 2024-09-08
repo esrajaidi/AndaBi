@@ -22,6 +22,13 @@ class CreateAdminUserSeeder extends Seeder
 
         ]);
 
+        $user2 = User::create([
+            'username' => 'm.hagul',
+            'email' => 'm.hagul@andalusbank.com',
+            'password' => bcrypt('anda@2024'),
+
+        ]);
+
         $role = Role::create(['id' => 1, 'name' => 'مدير نظام']);
 
         $permissions = Permission::pluck('id', 'id')->all();
@@ -29,6 +36,8 @@ class CreateAdminUserSeeder extends Seeder
         $role->syncPermissions($permissions);
 
         $user->assignRole([$role->id]);
+
+        $user2->assignRole([$role->id]);
 
         //  //1
         $role2 = Role::create(['id' => 2, 'name' => 'عرض الرسائل المرسلة']);
