@@ -42,7 +42,7 @@
     var chartData = {
         labels: labels,
         datasets: [{
-            label: 'CARD ISSUING FEES',
+            label: 'عمولة إصدار بطاقة سحب داتي',
             data: data,
             backgroundColor: backgroundColors,  // Array of random background colors
             borderColor: borderColors,          // Array of random border colors

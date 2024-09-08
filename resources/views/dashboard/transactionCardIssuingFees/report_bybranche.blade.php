@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Card Issuing Fees Report Branche')
+@section('title', 'تقرير حسب الفروع عمولة إصدار بطاقة سحب داتي')
 @section('content')
 
 <div class="row small-spacing">

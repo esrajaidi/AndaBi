@@ -201,22 +201,22 @@
 
                 <li class="{{ Request::is('transaction_card_issuing_fees*') || Request::is('transaction_incom_card_fees*') ? 'current' : '' }}">
 
-                        <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-credit-card"></i><span>Transaction Card  </span>
+                        <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-credit-card"></i><span> عمولات بطاقات محلية   </span>
                         </span></a>
                 
                         <ul class="sub-menu js__content" style="background-color: white;">
                             
                             <li>
-                                    <a class="waves-effect" href="{{ route('transaction_card_issuing_fees') }}">Transaction Card Issuing Fees  عرض كافة  </span></a>
+                                    <a class="waves-effect" href="{{ route('transaction_card_issuing_fees') }}">عرض كافة عمولة إصدار بطاقة سحب داتي</span></a>
                                 </a>
                             </li>
                             <li>
-                                    <a class="waves-effect" href="{{ route('transaction_card_issuing_fees/report/branche') }}">Transaction Card Issuing Fees Report Branche</span></a>
+                                    <a class="waves-effect" href="{{ route('transaction_card_issuing_fees/report/branche') }}">تقرير حسب الفروع عمولة إصدار بطاقة سحب داتي</span></a>
                                 </a>
                             </li>
                         
                             <li>
-                                <a class="waves-effect" href="{{ route('transaction_card_issuing_fees/report') }}">Transaction  Card Issuing Fees Report </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_card_issuing_fees/report') }}"> تقرير عمولة إصدار بطاقة سحب داتي</span></a>
                                 </a>
                             </li>
                             <li>
