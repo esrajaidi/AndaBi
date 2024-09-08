@@ -140,21 +140,21 @@
                 </li>
                 
                 <li class="{{ Request::is('transaction_p_o_s*') ? 'current' : '' }} ">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon  fa fa-building"></i><span>Transaction POS </span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon  fa fa-building"></i><span>معاملات نقاط البيع </span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_p_o_s') }}">Transaction POS  عرض كافة  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_p_o_s') }}">كافة معاملات نقاط البيع</span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_p_o_s/report/branche') }}">Transaction POS Report Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_p_o_s/report/branche') }}">تقرير حسب الفروع معاملات نقاط البيع  </span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_p_o_s/report') }}">Transaction POS Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_p_o_s/report') }}">تقرير معاملات نقاط البيع  </span></a>
                         </a>
                     </li>
                  

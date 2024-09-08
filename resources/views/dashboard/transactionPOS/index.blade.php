@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction POS')
+@section('title', 'كافة معاملات نقاط البيع')
 @section('content')
 <style>
   .btn-export {

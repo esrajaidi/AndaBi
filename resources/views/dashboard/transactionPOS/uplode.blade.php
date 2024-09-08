@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', ' POS تحميل ملف ')
+@section('title', '  تحميل ملف معاملات نقاط البيع')
 
 
 @section('content')

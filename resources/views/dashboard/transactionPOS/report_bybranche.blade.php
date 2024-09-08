@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction POS Report Branche')
+@section('title', 'تقرير حسب الفروع معاملات نقاط البيع ')
 @section('content')
 
 <div class="row small-spacing">
