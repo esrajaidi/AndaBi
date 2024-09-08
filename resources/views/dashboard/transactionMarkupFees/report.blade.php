@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Markup Fees Report')
+@section('title', 'تقرير عمولة شراء بطاقات ماستر كارد عبر نقاط البيع ')
 @section('content')
 
 <div class="row small-spacing">

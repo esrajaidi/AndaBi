@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Markup Fees تحميل ملف ')
+@section('title', 'عمولة شراء بطاقات ماستر كارد عبر نقاط البيع  تحميل ملف ')
 
 
 @section('content')

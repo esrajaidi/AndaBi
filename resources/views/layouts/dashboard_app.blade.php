@@ -452,21 +452,21 @@
 
            
                 <li class="{{ Request::is('transaction_markup_fees*') ? 'current' : '' }} ">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-th-large"></i><span>Transaction MarkUp</span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-th-large"></i><span>عمولة شراء بطاقات ماستر كارد عبر نقاط البيع </span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_markup_fees') }}">Transaction MarkUp عرض كافة  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_markup_fees') }}">عمولة شراء بطاقات ماستر كارد عبر نقاط البيع عرض كافة  </span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_markup_fees/report/branche') }}">Transaction MarkUp Report Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_markup_fees/report/branche') }}">تقرير حسب الفروع بعمولة  شراء بطاقات ماستر كارد عبر نقاط البيع </span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_markup_fees/report') }}">Transaction MarkUp Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_markup_fees/report') }}">تقرير عمولة شراء بطاقات ماستر كارد عبر نقاط البيع  </span></a>
                         </a>
                     </li>
                  
