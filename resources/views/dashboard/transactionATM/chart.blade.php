@@ -42,13 +42,14 @@
     var chartData = {
         labels: labels,
         datasets: [{
-            label: 'ATM FEES',
+            label: 'عمولة سحب من الة السحب الداتي',
             data: data,
             backgroundColor: backgroundColors,  // Array of random background colors
             borderColor: borderColors,          // Array of random border colors
             borderWidth: 1
         }]
     };
+   
 
     var totalAmountChart = new Chart(a_t_m_s_chart, {
         type: 'bar', // or 'line', 'pie', etc.

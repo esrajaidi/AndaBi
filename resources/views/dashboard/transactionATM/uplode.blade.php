@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'ATM تحميل ملف ')
+@section('title', ' عمولة سحب من الة السحب الداتي تحميل ملف ')
 
 
 @section('content')

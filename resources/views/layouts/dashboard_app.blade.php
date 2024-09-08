@@ -308,21 +308,21 @@
 
 
                  <li class="{{ Request::is('transaction_a_t_m_s*') ? 'current' : '' }} ">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-reorder"></i><span>Transaction ATM </span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-reorder"></i><span> عمولة سحب من الة السحب الداتي </span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_a_t_m_s') }}">Transaction ATM  عرض كافة  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_a_t_m_s') }}">  عرض كافة  عمولة سحب من الة السحب الداتي </span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_a_t_m_s/report/branche') }}">Transaction ATM Report Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_a_t_m_s/report/branche') }}"> تقرير حسب فروع  عمولة سحب من الة السحب الداتي</span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_a_t_m_s/report') }}">Transaction ATM Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_a_t_m_s/report') }}">تقرير  عمولة سحب من الة السحب الداتي </span></a>
                         </a>
                     </li>
                  

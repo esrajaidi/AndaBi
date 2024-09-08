@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction ATM Report Branche')
+@section('title', 'تقرير حسب فروع  عمولة سحب من الة السحب الداتي')
 @section('content')
 
 <div class="row small-spacing">

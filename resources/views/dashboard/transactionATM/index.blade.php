@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction ATM')
+@section('title', ' عمولة سحب من الة السحب الداتي')
 @section('content')
 <style>
   .btn-export {
