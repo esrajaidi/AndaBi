@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Re Issuing Card Fees Report Branche')
+@section('title', 'تقرير حسب الفروع إعادة اصدار رقم سري (PIN)')
 @section('content')
 
 <div class="row small-spacing">

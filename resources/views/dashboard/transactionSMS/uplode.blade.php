@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'SMS تحميل ملف ')
+@section('title', ' تحميل ملف  عمولة اشتراك في خدمة sms أفراد')
 
 
 @section('content')

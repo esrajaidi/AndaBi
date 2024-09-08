@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Company SMS')
+@section('title', ' عمولة اشتراك في خدمة sms شركات')
 @section('content')
 <style>
   .btn-export {

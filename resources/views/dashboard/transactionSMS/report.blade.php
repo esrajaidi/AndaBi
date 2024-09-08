@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction SMS Report')
+@section('title', 'تقرير عمولة اشتراك في خدمة sms أفراد')
 @section('content')
 
 <div class="row small-spacing">

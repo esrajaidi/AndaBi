@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_app')
-@section('title', 'Re Issuing Pin Fees تحميل ملف ')
+@section('title', 'إعادة اصدار رقم سري (PIN) تحميل ملف ')
 
 
 @section('content')

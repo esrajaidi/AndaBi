@@ -1,6 +1,6 @@
 
 @extends('layouts.dashboard_app')
-@section('title', 'Transaction Re Issuing Pin Fees')
+@section('title', 'إعادة اصدار رقم سري (PIN)')
 @section('content')
 <style>
   .btn-export {

@@ -251,56 +251,56 @@
 
 
                 <li class="{{ Request::is('transaction_re_issuing_pin_fees*') ? 'current' : '' }} ">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-cc-mastercard"></i><span>Transaction ReIssuing Pin Fees </span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-cc-mastercard"></i><span>إعادة اصدار رقم سري (PIN)</span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_re_issuing_pin_fees') }}">Transaction ReIssuing Pin Fees  عرض كافة  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_re_issuing_pin_fees') }}">عرض كافة إعادة اصدار رقم سري (PIN)</span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_re_issuing_pin_fees/report/branche') }}">Transaction ReIssuing Pin Fees Report Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_re_issuing_pin_fees/report/branche') }}">تقرير حسب الفروع إعادة اصدار رقم سري (PIN)</span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_re_issuing_pin_fees/report') }}">Transaction ReIssuing Pin Fees Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_re_issuing_pin_fees/report') }}">تقرير إعادة اصدار رقم سري (PIN)</span></a>
                         </a>
                     </li>
                  
                     </ul>
                 </li>
                 <li class="{{ Request::is('transaction_s_m_s*') ? 'current' : '' }} ">
-                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-newspaper-o"></i><span>Transaction SMS </span>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-newspaper-o"></i><span>عمولة اشتراك في خدمة sms </span>
                     </span></a>
               
                     <ul class="sub-menu js__content" style="background-color: white;">
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_s_m_s') }}">Transaction SMS  عرض كافة  </span></a>
+                                <a class="waves-effect" href="{{ route('transaction_s_m_s') }}">عرض كافة عمولة اشتراك في خدمة sms أفراد</span></a>
                             </a>
                         </li>
                         <li>
-                                <a class="waves-effect" href="{{ route('transaction_s_m_s/report/branche') }}">Transaction SMS Branche</span></a>
+                                <a class="waves-effect" href="{{ route('transaction_s_m_s/report/branche') }}">تقرير حسب الفروع عمولة اشتراك في خدمة sms أفراد</span></a>
                             </a>
                         </li>
                     
                         <li>
-                            <a class="waves-effect" href="{{ route('transaction_s_m_s/report') }}">Transaction SMS Report </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_s_m_s/report') }}">تقرير عمولة اشتراك في خدمة sms أفراد</span></a>
                               </a>
                          </li>
                  
                          <li>
-                            <a class="waves-effect" href="{{ route('transaction_s_m_s_c_o_m_s') }}">Transaction Company SMS  عرض كافة  </span></a>
+                            <a class="waves-effect" href="{{ route('transaction_s_m_s_c_o_m_s') }}"> عمولة اشتراك في خدمة sms شركات عرض كافة  </span></a>
                         </a>
                     </li>
                     <li>
-                            <a class="waves-effect" href="{{ route('transaction_s_m_s_c_o_m_s/report/branche') }}">Transaction  Company SMS Branche</span></a>
+                            <a class="waves-effect" href="{{ route('transaction_s_m_s_c_o_m_s/report/branche') }}">تقرير حسب الفروع  عمولة اشتراك في خدمة sms شركات</span></a>
                         </a>
                     </li>
                 
                     <li>
-                        <a class="waves-effect" href="{{ route('transaction_s_m_s_c_o_m_s/report') }}">Transaction  Company SMS Report </span></a>
+                        <a class="waves-effect" href="{{ route('transaction_s_m_s_c_o_m_s/report') }}">تقرير  عمولة اشتراك في خدمة sms شركات</span></a>
                           </a>
                      </li>
                     </ul>
