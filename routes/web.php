@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Exports\FinancialDataExport;
+use App\Exports\FinancialDataExport2;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Classes\HelperC;
 /*
@@ -225,6 +226,10 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/export-financial-data', function () {
                 $months = HelperC::months();
                 return Excel::download(new FinancialDataExport($months), 'financial_data.xlsx');
+            });
+            Route::get('/export-financial-data2', function () {
+                $months = HelperC::months();
+                return Excel::download(new FinancialDataExport2($months), 'financial_data2.xlsx');
             });
         Route::get('logger/activity', [App\Http\Controllers\Dashbored\ActivityLogController::class, 'index'])->name('logger/activity');
 

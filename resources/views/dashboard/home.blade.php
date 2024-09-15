@@ -139,7 +139,7 @@
 <div class="col-xs-12">
     <div class="container my-5">
         <h2 class="text-center">Financial Data</h2>
-        <a href="{{ url('/export-financial-data') }}" class="btn btn-success mb-3">Export to Excel</a>
+        <a href="{{ url('/export-financial-data2') }}" class="btn btn-success mb-3">Export to Excel</a>
         <br>
         <br>
         <table class="table table-bordered table-striped table-hover">
