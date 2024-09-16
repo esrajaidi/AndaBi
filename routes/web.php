@@ -223,6 +223,16 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('a_t_m_file_uploads/uplode', [App\Http\Controllers\Dashbored\ATMFileUploadController::class, 'storeUplode'])->name('a_t_m_file_uploads/store_uplode');
         Route::get('a_t_m_file_uploads/export', [App\Http\Controllers\Dashbored\ATMFileUploadController::class, 'export'])->name('a_t_m_file_uploads/export');
 
+
+
+        Route::get('transaction_w_u_purchase_commissions', [App\Http\Controllers\Dashbored\TransactionWUPurchaseCommissionController::class, 'index'])->name('transaction_w_u_purchase_commissions');
+        Route::get('transaction_w_u_purchase_commissions/uplode', [App\Http\Controllers\Dashbored\TransactionWUPurchaseCommissionController::class, 'uplode'])->name('transaction_w_u_purchase_commissions/uplode');
+        Route::post('transaction_w_u_purchase_commissions/uplode', [App\Http\Controllers\Dashbored\TransactionWUPurchaseCommissionController::class, 'storeUplode'])->name('transaction_w_u_purchase_commissions/store_uplode');
+        Route::get('transaction_w_u_purchase_commissions/export', [App\Http\Controllers\Dashbored\TransactionWUPurchaseCommissionController::class, 'export'])->name('transaction_w_u_purchase_commissions/export');
+        Route::get('transaction_w_u_purchase_commissions/report/branche', [App\Http\Controllers\Dashbored\TransactionWUPurchaseCommissionController::class, 'generateReportView'])->name('transaction_w_u_purchase_commissions/report/branche');
+        Route::get('transaction_w_u_purchase_commissions/report/', [App\Http\Controllers\Dashbored\TransactionWUPurchaseCommissionController::class, 'generateReportViewAll'])->name('transaction_w_u_purchase_commissions/report');
+
+
         Route::get('/export-financial-data', function () {
                 $months = HelperC::months();
                 return Excel::download(new FinancialDataExport($months), 'financial_data.xlsx');

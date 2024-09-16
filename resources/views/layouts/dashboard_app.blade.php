@@ -202,7 +202,28 @@
                         
                     </ul>
                 </li>
-
+                
+                <li class="{{ Request::is('transaction_w_u_purchase_commissions*') ? 'current' : '' }} ">
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-cc-mastercard"></i><span>عمولة شراء ويسترن يونيون</span>
+                    </span></a>
+              
+                    <ul class="sub-menu js__content" style="background-color: white;">
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_w_u_purchase_commissions') }}">عرض كافة عمولة شراء ويسترن يونيون</span></a>
+                            </a>
+                        </li>
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_w_u_purchase_commissions/report/branche') }}">تقرير حسب الفروع عمولة شراء ويسترن يونيون </span></a>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="waves-effect" href="{{ route('transaction_w_u_purchase_commissions/report') }}">تقرير عمولة شراء ويسترن يونيون</span></a>
+                        </a>
+                    </li>
+                 
+                    </ul>
+                </li>
                 <li class="{{ Request::is('transaction_card_issuing_fees*') || Request::is('transaction_incom_card_fees*') ? 'current' : '' }}">
 
                         <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-credit-card"></i><span> عمولات بطاقات محلية   </span>

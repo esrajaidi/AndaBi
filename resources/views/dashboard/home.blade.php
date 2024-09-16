@@ -21,6 +21,8 @@
                         <th>اشتراك في خدمة الانترنت موبايل -شركات </th>
                         <th> عمولة حوالات ويستر يونيون صادرة</th>
                         <th> عمولة على الحوالاات الخارجية الواردة</th>
+                        <th> عمولة شراء ويسترن يونيون</th>
+
                         <th>عمولة اشتراك في خدمة sms أفراد</th>
                         <th> عمولة اشتراك في خدمة sms شركات</th>
                         <th> عمولة سحب من الة السحب الداتي</th>
@@ -38,6 +40,7 @@
                         $total_o_b_d_x_coms = 0;
                         $total_incom_w_u_s = 0;
                         $total_w_u_s = 0;
+                        $total_w_u_purchase_commissions = 0;
                         $total_s_m_s = 0;
                         $total_s_m_s_c_o_m_s = 0;
                         $total_a_t_m_s=0;
@@ -55,6 +58,8 @@
                             $transaction_o_b_d_x_coms = \App\Classes\HelperC::get_transaction_o_b_d_x_coms($month_year);
                             $transaction_incom_w_u_s = \App\Classes\HelperC::get_transaction_incom_w_u_s($month_year);
                             $transaction_w_u_s = \App\Classes\HelperC::get_transaction_w_u_s($month_year);
+                            $transaction_w_u_purchase_commissions = \App\Classes\HelperC::get_transaction_w_u_purchase_commissions($month_year);
+
                             $transaction_s_m_s = \App\Classes\HelperC::get_transaction_s_m_s($month_year);
                             $transaction_s_m_s_c_o_m_s = \App\Classes\HelperC::get_transaction_s_m_s_c_o_m_s($month_year);
                             $transaction_re_issuing_pin_fees = \App\Classes\HelperC::get_transaction_re_issuing_pin_fees($month_year);
@@ -71,6 +76,8 @@
                             $total_o_b_d_x_coms += $transaction_o_b_d_x_coms->total_amount ?? 0;
                             $total_incom_w_u_s += $transaction_incom_w_u_s->total_amount ?? 0;
                             $total_w_u_s += $transaction_w_u_s->total_amount ?? 0;
+                            $total_w_u_purchase_commissions += $transaction_w_u_purchase_commissions->total_amount ?? 0;
+
                             $total_s_m_s += $transaction_s_m_s->total_amount ?? 0;
                             $total_s_m_s_c_o_m_s += $transaction_s_m_s_c_o_m_s->total_amount ?? 0;
                             $total_a_t_m_s += $transaction_a_t_m_s->total_amount ?? 0;
@@ -88,6 +95,8 @@
                             <td>{{ $transaction_o_b_d_x_coms->total_amount ?? 0 }}</td>
                             <td>{{ $transaction_incom_w_u_s->total_amount ?? 0 }}</td>
                             <td>{{ $transaction_w_u_s->total_amount ?? 0 }}</td>
+                            <td>{{ $transaction_w_u_purchase_commissions->total_amount ?? 0 }}</td>
+
                             <td>{{ $transaction_s_m_s->total_amount ?? 0 }}</td>
                             <td>{{ $transaction_s_m_s_c_o_m_s->total_amount ?? 0 }}</td>
                             <td>{{ $transaction_a_t_m_s->total_amount ?? 0 }}</td>
@@ -107,6 +116,7 @@
                     <th>{{ $total_o_b_d_x_coms }}</th>
                     <th>{{ $total_incom_w_u_s }}</th>
                     <th>{{ $total_w_u_s }}</th>
+                    <th>{{ $total_w_u_purchase_commissions }}</th>
                     <th>{{ $total_s_m_s }}</th>
                     <th>{{ $total_s_m_s_c_o_m_s }}</th>
                     <th>{{ $total_a_t_m_s }}</th>
@@ -126,6 +136,7 @@
     @include('dashboard.transactionOBDXCOM.chart', ['months' => $months])
     @include('dashboard.transactionIncomWU.chart', ['months' => $months])
     @include('dashboard.transactionWU.chart', ['months' => $months])
+    @include('dashboard.transactionWUPurchaseCommission.chart', ['months' => $months])
     @include('dashboard.transactionSMS.chart', ['months' => $months])
     @include('dashboard.transactionSMSCOM.chart', ['months' => $months])
     @include('dashboard.transactionATM.chart', ['months' => $months])
