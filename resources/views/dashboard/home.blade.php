@@ -157,6 +157,7 @@
             <thead class="thead-dark">
                 <tr>
                     <th>Month</th>
+                    <th>عمولة فتح حساب </th>
                     <th>عمولة اصدار بطاقة ماستر كارد بلاتينيوم</th>
                     <th>عمولة شحن بطاقة ماستر كارد </th>
                     <th>عمولة إدارة حساب بطاقة دولية</th>
@@ -172,6 +173,7 @@
             </thead>
             <tbody>
                 @php
+                    $total_transaction_account_opening_commissions = 0;
                     $total_transaction_master_card_issuing_fees = 0;
                     $total_transaction_master_card_charging_fees = 0;
                     $total_transaction_master_card_mangment_fees = 0;
@@ -188,7 +190,7 @@
                     @php
                         $monthYearString = \App\Classes\HelperC::year . "-" . $month;
                         $month_year = \App\Classes\HelperC::convertMonthYear($monthYearString);
-                        
+                        $transaction_account_opening_commissions= \App\Classes\HelperC::get_transaction_account_opening_commissions($month_year);
                         $transaction_master_card_issuing_fees = \App\Classes\HelperC::get_transaction_master_card_issuing_fees($month_year);
                         $transaction_master_card_charging_fees = \App\Classes\HelperC::get_transaction_master_card_charging_fees($month_year);
                         $transaction_master_card_mangment_fees = \App\Classes\HelperC::get_transaction_master_card_mangment_fees($month_year);
@@ -199,7 +201,7 @@
                         $transaction_matser_point_o_f_sale_purchase_commissions = \App\Classes\HelperC::get_transaction_matser_point_o_f_sale_purchase_commissions($month_year);
                         $transaction_matser_point_o_f_sale_purchase_commission_ = \App\Classes\HelperC::get_transaction_master_card_coin_purchase_request_commissions_($month_year);
 
-
+                        $total_transaction_account_opening_commissions += $transaction_account_opening_commissions->total_amount ?? 0;
                         $total_transaction_master_card_issuing_fees += $transaction_master_card_issuing_fees->total_amount ?? 0;
                         $total_transaction_master_card_charging_fees += $transaction_master_card_charging_fees->total_amount ?? 0;
                         $total_transaction_master_card_mangment_fees += $transaction_master_card_mangment_fees->total_amount ?? 0;
@@ -214,6 +216,7 @@
                     @endphp
                     <tr>
                         <td>{{ $month }}</td>
+                        <td>{{ $transaction_account_opening_commissions->total_amount ?? 0 }}</td>
                         <td>{{ $transaction_master_card_issuing_fees->total_amount ?? 0 }}</td>
                         <td>{{ $transaction_master_card_charging_fees->total_amount ?? 0 }}</td>
                         <td>{{ $transaction_master_card_mangment_fees->total_amount ?? 0 }}</td>
@@ -230,6 +233,7 @@
             <tfoot>
             <tr>
                 <th>Total</th>
+                <th>{{ $total_transaction_account_opening_commissions }}</th>
                 <th>{{ $total_transaction_master_card_issuing_fees }}</th>
                 <th>{{ $total_transaction_master_card_charging_fees }}</th>
                 <th>{{ $total_transaction_master_card_mangment_fees }}</th>
@@ -246,6 +250,7 @@
     </div>
 </div>
 <div class="row">
+    @include('dashboard.transactionAccountOpeningCommission.chart', ['months' => $months])
     @include('dashboard.transactionMasterCardIssuingFees.chart', ['months' => $months])
     @include('dashboard.transactionMasterCardChargingFees.chart', ['months' => $months])
     @include('dashboard.transactionMasterCardMangmentFees.chart', ['months' => $months])
