@@ -173,6 +173,7 @@
 
 @php
     $grand_totals = [
+        'account_opening_commissions'=>0,
         'master_card_issuing_fees' => 0,
         'master_card_charging_fees' => 0,
         'master_card_mangment_fees' => 0,
