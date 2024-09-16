@@ -28,6 +28,7 @@ class FinancialDataExport implements FromCollection, WithHeadings
         $total_o_b_d_x_coms = 0;
         $total_incom_w_u_s = 0;
         $total_w_u_s = 0;
+        $total_w_u_purchase_commissions=0;
         $total_s_m_s = 0;
         $total_s_m_s_c_o_m_s = 0;
         $total_a_t_m_s = 0;
@@ -46,6 +47,7 @@ class FinancialDataExport implements FromCollection, WithHeadings
             $o_b_d_x_coms = HelperC::get_transaction_o_b_d_x_coms($month_year)->total_amount ?? 0;
             $incom_w_u_s = HelperC::get_transaction_incom_w_u_s($month_year)->total_amount ?? 0;
             $w_u_s = HelperC::get_transaction_w_u_s($month_year)->total_amount ?? 0;
+            $w_u_purchase_commissions = HelperC::get_transaction_w_u_purchase_commissions($month_year)->total_amount ?? 0;
             $s_m_s = HelperC::get_transaction_s_m_s($month_year)->total_amount ?? 0;
             $s_m_s_c_o_m_s = HelperC::get_transaction_s_m_s_c_o_m_s($month_year)->total_amount ?? 0;
             $a_t_m_s = HelperC::get_transaction_a_t_m_s($month_year)->total_amount ?? 0;
@@ -60,6 +62,7 @@ class FinancialDataExport implements FromCollection, WithHeadings
             $total_o_b_d_x_coms += $o_b_d_x_coms;
             $total_incom_w_u_s += $incom_w_u_s;
             $total_w_u_s += $w_u_s;
+            $total_w_u_purchase_commissions += $w_u_purchase_commissions;
             $total_s_m_s += $s_m_s;
             $total_s_m_s_c_o_m_s += $s_m_s_c_o_m_s;
             $total_a_t_m_s += $a_t_m_s;
@@ -76,6 +79,7 @@ class FinancialDataExport implements FromCollection, WithHeadings
                 $o_b_d_x_coms,
                 $incom_w_u_s,
                 $w_u_s,
+                $w_u_purchase_commissions,
                 $s_m_s,
                 $s_m_s_c_o_m_s,
                 $a_t_m_s,
@@ -96,6 +100,7 @@ class FinancialDataExport implements FromCollection, WithHeadings
             $total_o_b_d_x_coms,
             $total_incom_w_u_s,
             $total_w_u_s,
+            $total_w_u_purchase_commissions,
             $total_s_m_s,
             $total_s_m_s_c_o_m_s,
             $total_a_t_m_s,
@@ -108,36 +113,38 @@ class FinancialDataExport implements FromCollection, WithHeadings
     public function headings(): array
     {
         return [
-            'Month',
-            'Card Issuing Fees',
-            'Card Income Fees',
-            'Card Reissuing Fees',
-            'Pin Reissuing Fees',
-            'OBDX Fees',
-            'OBDX Company Fees',
-            'Income WU Fees',
-            'Outgoing WU Fees',
-            'SMS Fees',
-            'SMS Company Fees',
-            'ATM Fees',
-            'POS Fees',
+            'Month',  // Keep this in English if needed
+            'عمولة إصدار بطاقة سحب داتي',
+            'ايرادات بطاقات الدفع المسبق',
+            'اعادة إصدار بطاقة بدل فاقد',
+            'إعادة اصدار رقم سري (PIN)',
+            'اشتراك في خدمة الانترنت موبايل -افراد',
+            'اشتراك في خدمة الانترنت موبايل -شركات',
+            'عمولة حوالات ويستر يونيون صادرة',
+            'عمولة على الحوالاات الخارجية الواردة',
+            'عمولة شراء ويسترن يونيون',
+            'عمولة اشتراك في خدمة SMS أفراد',
+            'عمولة اشتراك في خدمة SMS شركات',
+            'عمولة سحب من الة السحب الداتي',
+            'عمولات نقاط البيع',
         ];
     }
     public function columnFormats(): array
     {
         return [
-            'B' => '#,##0.000', // Card Issuing Fees
-            'C' => '#,##0.000', // Card Income Fees
-            'D' => '#,##0.000', // Card Reissuing Fees
-            'E' => '#,##0.000', // Pin Reissuing Fees
-            'F' => '#,##0.000', // OBDX Fees
-            'G' => '#,##0.000', // OBDX Company Fees
-            'H' => '#,##0.000', // Income WU Fees
-            'I' => '#,##0.000', // Outgoing WU Fees
-            'J' => '#,##0.000', // SMS Fees
-            'K' => '#,##0.000', // SMS Company Fees
-            'L' => '#,##0.000', // ATM Fees
-            'M' => '#,##0.000', // POS Fees
+            'B' => '#,##0.000', 
+            'C' => '#,##0.000', 
+            'D' => '#,##0.000', 
+            'E' => '#,##0.000',
+            'F' => '#,##0.000', 
+            'G' => '#,##0.000', 
+            'H' => '#,##0.000',
+            'I' => '#,##0.000', 
+            'J' => '#,##0.000', 
+            'K' => '#,##0.000',
+            'L' => '#,##0.000', 
+            'M' => '#,##0.000', 
+            'N' => '#,##0.000', 
         ];
     }
 }
