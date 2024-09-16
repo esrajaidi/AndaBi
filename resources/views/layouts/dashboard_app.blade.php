@@ -81,6 +81,9 @@
                     <li class="{{ Request::is('/*') ? 'current' : '' }} ">
                         <a class="waves-effect " href="{{ route('home') }}"><i class="menu-icon fa fa-home"></i><span> الرئسية</span></a>
                     </li>
+                    <li class="{{ Request::is('select-table') ? 'current' : '' }} ">
+                        <a class="waves-effect " href="{{ route('select-table') }}"><i class="menu-icon fa fa-tarsh"></i><span> تفريغ جدول</span></a>
+                    </li>
                     <li class="{{ Request::is('home_') ? 'current' : '' }} ">
                         <a class="waves-effect " href="{{ route('home_') }}"><i class="menu-icon fa fa-home"></i><span> Financial Data Quarter</span></a>
                     </li>

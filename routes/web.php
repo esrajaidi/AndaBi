@@ -240,6 +240,8 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_account_opening_commissions/report/branche', [App\Http\Controllers\Dashbored\TransactionAccountOpeningCommissionController::class, 'generateReportView'])->name('transaction_account_opening_commissions/report/branche');
         Route::get('transaction_account_opening_commissions/report/', [App\Http\Controllers\Dashbored\TransactionAccountOpeningCommissionController::class, 'generateReportViewAll'])->name('transaction_account_opening_commissions/report');
 
+            Route::get('/select-table', [App\Http\Controllers\DatabaseController::class, 'showTables'])->name('select-table');
+            Route::post('/delete-table', [App\Http\Controllers\DatabaseController::class, 'deleteTable'])->name('delete-table');
 
         Route::get('/export-financial-data', function () {
                 $months = HelperC::months();
