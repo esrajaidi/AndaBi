@@ -22,25 +22,25 @@
                     'Q1' => [
                         'card_issuing_fees' => 0, 'incom_card_fees' => 0, 'card_re_issuing_fees' => 0,
                         're_issuing_pin_fees' => 0, 'o_b_d_x_e_s' => 0, 'o_b_d_x_coms' => 0,
-                        'incom_w_u_s' => 0, 'w_u_s' => 0, 's_m_s' => 0, 's_m_s_c_o_m_s' => 0,
+                        'incom_w_u_s' => 0, 'w_u_s' => 0, 'w_u_purchase_commissions' => 0, 's_m_s' => 0, 's_m_s_c_o_m_s' => 0,
                         'a_t_m_s' => 0, 'p_o_s' => 0
                     ],
                     'Q2' => [
                         'card_issuing_fees' => 0, 'incom_card_fees' => 0, 'card_re_issuing_fees' => 0,
                         're_issuing_pin_fees' => 0, 'o_b_d_x_e_s' => 0, 'o_b_d_x_coms' => 0,
-                        'incom_w_u_s' => 0, 'w_u_s' => 0, 's_m_s' => 0, 's_m_s_c_o_m_s' => 0,
+                        'incom_w_u_s' => 0, 'w_u_s' => 0,'w_u_purchase_commissions' => 0, 's_m_s' => 0, 's_m_s_c_o_m_s' => 0,
                         'a_t_m_s' => 0, 'p_o_s' => 0
                     ],
                     'Q3' => [
                         'card_issuing_fees' => 0, 'incom_card_fees' => 0, 'card_re_issuing_fees' => 0,
                         're_issuing_pin_fees' => 0, 'o_b_d_x_e_s' => 0, 'o_b_d_x_coms' => 0,
-                        'incom_w_u_s' => 0, 'w_u_s' => 0, 's_m_s' => 0, 's_m_s_c_o_m_s' => 0,
+                        'incom_w_u_s' => 0, 'w_u_s' => 0,'w_u_purchase_commissions' => 0, 's_m_s' => 0, 's_m_s_c_o_m_s' => 0,
                         'a_t_m_s' => 0, 'p_o_s' => 0
                     ],
                     'Q4' => [
                         'card_issuing_fees' => 0, 'incom_card_fees' => 0, 'card_re_issuing_fees' => 0,
                         're_issuing_pin_fees' => 0, 'o_b_d_x_e_s' => 0, 'o_b_d_x_coms' => 0,
-                        'incom_w_u_s' => 0, 'w_u_s' => 0, 's_m_s' => 0, 's_m_s_c_o_m_s' => 0,
+                        'incom_w_u_s' => 0, 'w_u_s' => 0,'w_u_purchase_commissions' => 0, 's_m_s' => 0, 's_m_s_c_o_m_s' => 0,
                         'a_t_m_s' => 0, 'p_o_s' => 0
                     ]
                 ];
@@ -49,7 +49,7 @@
                 $total_totals = [
                     'card_issuing_fees' => 0, 'incom_card_fees' => 0, 'card_re_issuing_fees' => 0,
                     're_issuing_pin_fees' => 0, 'o_b_d_x_e_s' => 0, 'o_b_d_x_coms' => 0,
-                    'incom_w_u_s' => 0, 'w_u_s' => 0, 's_m_s' => 0, 's_m_s_c_o_m_s' => 0,
+                    'incom_w_u_s' => 0, 'w_u_s' => 0, 'w_u_purchase_commissions' => 0,'s_m_s' => 0, 's_m_s_c_o_m_s' => 0,
                     'a_t_m_s' => 0, 'p_o_s' => 0
                 ];
             @endphp
@@ -65,6 +65,8 @@
                         <th>اشتراك في خدمة الانترنت موبايل -شركات </th>
                         <th> عمولة حوالات ويستر يونيون صادرة</th>
                         <th> عمولة على الحوالاات الخارجية الواردة</th>
+                        <th> عمولة شراء ويسترن يونيون</th>
+
                         <th>عمولة اشتراك في خدمة sms أفراد</th>
                         <th> عمولة اشتراك في خدمة sms شركات</th>
                         <th> عمولة سحب من الة السحب الداتي</th>
@@ -87,6 +89,8 @@
                                 $transaction_o_b_d_x_coms = \App\Classes\HelperC::get_transaction_o_b_d_x_coms($month_year);
                                 $transaction_incom_w_u_s = \App\Classes\HelperC::get_transaction_incom_w_u_s($month_year);
                                 $transaction_w_u_s = \App\Classes\HelperC::get_transaction_w_u_s($month_year);
+                                $transaction_w_u_purchase_commissions = \App\Classes\HelperC::get_transaction_w_u_purchase_commissions($month_year);
+
                                 $transaction_s_m_s = \App\Classes\HelperC::get_transaction_s_m_s($month_year);
                                 $transaction_s_m_s_c_o_m_s = \App\Classes\HelperC::get_transaction_s_m_s_c_o_m_s($month_year);
                                 $transaction_a_t_m_s = \App\Classes\HelperC::get_transaction_a_t_m_s($month_year);
@@ -101,6 +105,7 @@
                                 $quarter_totals[$quarter]['o_b_d_x_coms'] += $transaction_o_b_d_x_coms->total_amount ?? 0;
                                 $quarter_totals[$quarter]['incom_w_u_s'] += $transaction_incom_w_u_s->total_amount ?? 0;
                                 $quarter_totals[$quarter]['w_u_s'] += $transaction_w_u_s->total_amount ?? 0;
+                                $quarter_totals[$quarter]['w_u_purchase_commissions'] += $transaction_w_u_purchase_commissions->total_amount ?? 0;
                                 $quarter_totals[$quarter]['s_m_s'] += $transaction_s_m_s->total_amount ?? 0;
                                 $quarter_totals[$quarter]['s_m_s_c_o_m_s'] += $transaction_s_m_s_c_o_m_s->total_amount ?? 0;
                                 $quarter_totals[$quarter]['a_t_m_s'] += $transaction_a_t_m_s->total_amount ?? 0;
@@ -115,6 +120,7 @@
                                 $total_totals['o_b_d_x_coms'] += $transaction_o_b_d_x_coms->total_amount ?? 0;
                                 $total_totals['incom_w_u_s'] += $transaction_incom_w_u_s->total_amount ?? 0;
                                 $total_totals['w_u_s'] += $transaction_w_u_s->total_amount ?? 0;
+                                $total_totals['w_u_purchase_commissions'] += $transaction_w_u_purchase_commissions->total_amount ?? 0;
                                 $total_totals['s_m_s'] += $transaction_s_m_s->total_amount ?? 0;
                                 $total_totals['s_m_s_c_o_m_s'] += $transaction_s_m_s_c_o_m_s->total_amount ?? 0;
                                 $total_totals['a_t_m_s'] += $transaction_a_t_m_s->total_amount ?? 0;
@@ -132,6 +138,7 @@
                             <td>{{ $quarter_totals[$quarter]['o_b_d_x_coms'] }}</td>
                             <td>{{ $quarter_totals[$quarter]['incom_w_u_s'] }}</td>
                             <td>{{ $quarter_totals[$quarter]['w_u_s'] }}</td>
+                            <td>{{ $quarter_totals[$quarter]['w_u_purchase_commissions'] }}</td>
                             <td>{{ $quarter_totals[$quarter]['s_m_s'] }}</td>
                             <td>{{ $quarter_totals[$quarter]['s_m_s_c_o_m_s'] }}</td>
                             <td>{{ $quarter_totals[$quarter]['a_t_m_s'] }}</td>
@@ -152,6 +159,7 @@
                         <th>{{ $total_totals['o_b_d_x_coms'] }}</th>
                         <th>{{ $total_totals['incom_w_u_s'] }}</th>
                         <th>{{ $total_totals['w_u_s'] }}</th>
+                        <th>{{ $total_totals['w_u_purchase_commissions'] }}</th>
                         <th>{{ $total_totals['s_m_s'] }}</th>
                         <th>{{ $total_totals['s_m_s_c_o_m_s'] }}</th>
                         <th>{{ $total_totals['a_t_m_s'] }}</th>
