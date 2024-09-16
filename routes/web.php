@@ -232,6 +232,14 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_w_u_purchase_commissions/report/branche', [App\Http\Controllers\Dashbored\TransactionWUPurchaseCommissionController::class, 'generateReportView'])->name('transaction_w_u_purchase_commissions/report/branche');
         Route::get('transaction_w_u_purchase_commissions/report/', [App\Http\Controllers\Dashbored\TransactionWUPurchaseCommissionController::class, 'generateReportViewAll'])->name('transaction_w_u_purchase_commissions/report');
 
+        
+        Route::get('transaction_account_opening_commissions', [App\Http\Controllers\Dashbored\TransactionAccountOpeningCommissionController::class, 'index'])->name('transaction_account_opening_commissions');
+        Route::get('transaction_account_opening_commissions/uplode', [App\Http\Controllers\Dashbored\TransactionAccountOpeningCommissionController::class, 'uplode'])->name('transaction_account_opening_commissions/uplode');
+        Route::post('transaction_account_opening_commissions/uplode', [App\Http\Controllers\Dashbored\TransactionAccountOpeningCommissionController::class, 'storeUplode'])->name('transaction_account_opening_commissions/store_uplode');
+        Route::get('transaction_account_opening_commissions/export', [App\Http\Controllers\Dashbored\TransactionAccountOpeningCommissionController::class, 'export'])->name('transaction_account_opening_commissions/export');
+        Route::get('transaction_account_opening_commissions/report/branche', [App\Http\Controllers\Dashbored\TransactionAccountOpeningCommissionController::class, 'generateReportView'])->name('transaction_account_opening_commissions/report/branche');
+        Route::get('transaction_account_opening_commissions/report/', [App\Http\Controllers\Dashbored\TransactionAccountOpeningCommissionController::class, 'generateReportViewAll'])->name('transaction_account_opening_commissions/report');
+
 
         Route::get('/export-financial-data', function () {
                 $months = HelperC::months();

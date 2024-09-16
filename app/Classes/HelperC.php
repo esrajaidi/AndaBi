@@ -314,6 +314,23 @@ class HelperC {
                     ->first();
                     }
                     
+                    public static function get_transaction_account_opening_commissions($month_year){
+                         return DB::table('transaction_account_opening_commissions')
+                         ->select(DB::raw('
+                         DATE_FORMAT(trn_date, "%Y-%m") as month_year,
+                         SUM(CASE WHEN drcr = "C" THEN lcy_amount ELSE 0 END) as total_credits,
+                         SUM(CASE WHEN drcr = "D" THEN lcy_amount ELSE 0 END) as total_debits,
+                         SUM(CASE WHEN drcr = "C" THEN lcy_amount ELSE 0 END) -
+                         SUM(CASE WHEN drcr = "D" THEN lcy_amount ELSE 0 END) as total_amount,
+                         COUNT(id) as total_transactions
+                         '))
+                         ->when($month_year, function ($query, $month_year) {
+                         return $query->where(DB::raw('DATE_FORMAT(trn_date, "%Y-%m")'), $month_year);
+                         })
+                         ->groupBy(DB::raw('DATE_FORMAT(trn_date, "%Y-%m")'))
+                         ->orderBy(DB::raw('DATE_FORMAT(trn_date, "%Y-%m")'), 'asc')
+                         ->first();
+                         }
                     public static function get_transaction_w_u_purchase_commissions($month_year){
                          return DB::table('transaction_w_u_purchase_commissions')
                          ->select(DB::raw('

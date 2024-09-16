@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TransactionWUPurchaseCommission extends Model
+class TransactionAccountOpeningCommission extends Model
 {
     use HasFactory;
-    protected $table = 'transaction_w_u_purchase_commissions';
+    protected $table = 'transaction_account_opening_commissions';
 
     // Define the fillable attributes
     protected $fillable = [

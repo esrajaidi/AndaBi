@@ -108,7 +108,28 @@
                         <a class="waves-effect" href="{{ route('sms_messages') }}"><i class="menu-icon  fa fa-comment-o"></i><span>إدارة الرسائل  </span></a>
                     </li>
                    @endcanany
-                
+                            
+                   <li class="{{ Request::is('transaction_account_opening_commissions*') ? 'current' : '' }} ">
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon  fa fa-building"></i><span>عمولات فتح حساب  </span>
+                    </span></a>
+              
+                    <ul class="sub-menu js__content" style="background-color: white;">
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_account_opening_commissions') }}">كافة عمولات فتح حساب </span></a>
+                            </a>
+                        </li>
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_account_opening_commissions/report/branche') }}">تقرير حسب الفروع عمولات فتح حساب  </span></a>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="waves-effect" href="{{ route('transaction_account_opening_commissions/report') }}">تقرير عمولات فتح حساب  </span></a>
+                        </a>
+                    </li>
+                 
+                    </ul>
+                </li>
                    <li class="{{ Request::is('transaction_o_b_d_x_e_s*') ? 'current' : '' }} ">
                     <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon  fa fa-list-ul"></i><span>اشتراك في خدمة الانترنت موبايل  </span>
                     </span></a>
