@@ -173,6 +173,7 @@
 
 @php
     $grand_totals = [
+        'w_u_s_m_s'=>0,
         'account_opening_commissions'=>0,
         'master_card_issuing_fees' => 0,
         'master_card_charging_fees' => 0,
@@ -190,6 +191,8 @@
     <thead class="thead-dark">
         <tr>
             <th>Quarter</th>
+            <th>عمولة ارسال رسائل ويسترن يونيون </th>
+
             <th>عمولة فتح حساب </th>
 
             <th>عمولة اصدار بطاقة ماستر كارد بلاتينيوم</th>
@@ -208,6 +211,7 @@
         @foreach ($quarters as $quarter => $months)
             @php
                 $quarter_totals = [
+                    'w_u_s_m_s' =>0,
                     'account_opening_commissions' =>0,
                     'master_card_issuing_fees' => 0,
                     'master_card_charging_fees' => 0,
@@ -225,6 +229,7 @@
                     $month_year = \App\Classes\HelperC::convertMonthYear($monthYearString);
 
                     // Fetch transaction data for the month
+                    $transaction_w_u_s_m_s= \App\Classes\HelperC::get_transaction_w_u_s_m_s($month_year);
                     $transaction_account_opening_commissions= \App\Classes\HelperC::get_transaction_account_opening_commissions($month_year);
                     $transaction_master_card_issuing_fees = \App\Classes\HelperC::get_transaction_master_card_issuing_fees($month_year);
                     $transaction_master_card_charging_fees = \App\Classes\HelperC::get_transaction_master_card_charging_fees($month_year);
@@ -237,6 +242,8 @@
                     $transaction_matser_point_o_f_sale_purchase_commission_ = \App\Classes\HelperC::get_transaction_master_card_coin_purchase_request_commissions_($month_year);
 
                     // Sum up the totals for the quarter
+                    $quarter_totals['w_u_s_m_s'] += $transaction_w_u_s_m_s->total_amount ?? 0;
+
                     $quarter_totals['account_opening_commissions'] += $transaction_account_opening_commissions->total_amount ?? 0;
                     $quarter_totals['master_card_issuing_fees'] += $transaction_master_card_issuing_fees->total_amount ?? 0;
                     $quarter_totals['master_card_charging_fees'] += $transaction_master_card_charging_fees->total_amount ?? 0;
@@ -257,6 +264,7 @@
 
             <tr>
                 <td>{{ $quarter }}</td>
+                <td>{{ $quarter_totals['w_u_s_m_s'] }}</td>
                 <td>{{ $quarter_totals['account_opening_commissions'] }}</td>
                 <td>{{ $quarter_totals['master_card_issuing_fees'] }}</td>
                 <td>{{ $quarter_totals['master_card_charging_fees'] }}</td>
@@ -273,6 +281,8 @@
     <tfoot>
         <tr>
             <th>Total</th>
+            <td>{{ $grand_totals['w_u_s_m_s'] }}</td>
+
             <td>{{ $grand_totals['account_opening_commissions'] }}</td>
             <th>{{ $grand_totals['master_card_issuing_fees'] }}</th>
             <th>{{ $grand_totals['master_card_charging_fees'] }}</th>

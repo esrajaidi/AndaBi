@@ -240,6 +240,15 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('transaction_account_opening_commissions/report/branche', [App\Http\Controllers\Dashbored\TransactionAccountOpeningCommissionController::class, 'generateReportView'])->name('transaction_account_opening_commissions/report/branche');
         Route::get('transaction_account_opening_commissions/report/', [App\Http\Controllers\Dashbored\TransactionAccountOpeningCommissionController::class, 'generateReportViewAll'])->name('transaction_account_opening_commissions/report');
 
+
+        Route::get('transaction_w_u_s_m_s', [App\Http\Controllers\Dashbored\TransactionWUSMSController::class, 'index'])->name('transaction_w_u_s_m_s');
+        Route::get('transaction_w_u_s_m_s/uplode', [App\Http\Controllers\Dashbored\TransactionWUSMSController::class, 'uplode'])->name('transaction_w_u_s_m_s/uplode');
+        Route::post('transaction_w_u_s_m_s/uplode', [App\Http\Controllers\Dashbored\TransactionWUSMSController::class, 'storeUplode'])->name('transaction_w_u_s_m_s/store_uplode');
+        Route::get('transaction_w_u_s_m_s/export', [App\Http\Controllers\Dashbored\TransactionWUSMSController::class, 'export'])->name('transaction_w_u_s_m_s/export');
+        Route::get('transaction_w_u_s_m_s/report/branche', [App\Http\Controllers\Dashbored\TransactionWUSMSController::class, 'generateReportView'])->name('transaction_w_u_s_m_s/report/branche');
+        Route::get('transaction_w_u_s_m_s/report/', [App\Http\Controllers\Dashbored\TransactionWUSMSController::class, 'generateReportViewAll'])->name('transaction_w_u_s_m_s/report');
+
+
             Route::get('/select-table', [App\Http\Controllers\DatabaseController::class, 'showTables'])->name('select-table');
             Route::post('/delete-table', [App\Http\Controllers\DatabaseController::class, 'deleteTable'])->name('delete-table');
             Route::post('/migrate-refresh-seed', [App\Http\Controllers\DatabaseController::class, 'migrateRefreshAndSeed'])->name('migrate-refresh-seed');

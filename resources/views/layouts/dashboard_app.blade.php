@@ -248,6 +248,28 @@
                  
                     </ul>
                 </li>
+
+                <li class="{{ Request::is('transaction_w_u_s_m_s*') ? 'current' : '' }} ">
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-cc-mastercard"></i><span>عمولة ارسال رسائل ويسترن يونيون</span>
+                    </span></a>
+              
+                    <ul class="sub-menu js__content" style="background-color: white;">
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_w_u_s_m_s') }}">عرض كافة عمولة ارسال رسائل ويسترن يونيون</span></a>
+                            </a>
+                        </li>
+                        <li>
+                                <a class="waves-effect" href="{{ route('transaction_w_u_s_m_s/report/branche') }}">تقرير حسب الفروع عمولة ارسال رسائل ويسترن يونيون </span></a>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="waves-effect" href="{{ route('transaction_w_u_s_m_s/report') }}">تقرير عمولة ارسال رسائل ويسترن يونيون</span></a>
+                        </a>
+                    </li>
+                 
+                    </ul>
+                </li>
                 <li class="{{ Request::is('transaction_card_issuing_fees*') || Request::is('transaction_incom_card_fees*') ? 'current' : '' }}">
 
                         <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon glyphicon glyphicon-credit-card"></i><span> عمولات بطاقات محلية   </span>
