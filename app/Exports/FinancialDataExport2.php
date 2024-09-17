@@ -20,6 +20,7 @@ class FinancialDataExport2 implements FromArray, WithHeadings, WithStyles
     {
         $data = [];
         $totals = [
+            'total_transaction_w_u_s_m_s' => 0,
             'total_transaction_account_opening_commissions' => 0,
             'total_transaction_master_card_issuing_fees' => 0,
             'total_transaction_master_card_charging_fees' => 0,
@@ -35,6 +36,8 @@ class FinancialDataExport2 implements FromArray, WithHeadings, WithStyles
         foreach ($this->months as $month) {
             $monthYearString = HelperC::year . "-" . $month;
             $month_year = HelperC::convertMonthYear($monthYearString);
+            $transaction_w_u_s_m_s=HelperC::get_transaction_w_u_s_m_s($month_year);
+
             $transaction_account_opening_commissions=HelperC::get_transaction_account_opening_commissions($month_year);
             $transaction_master_card_issuing_fees = HelperC::get_transaction_master_card_issuing_fees($month_year);
             $transaction_master_card_charging_fees = HelperC::get_transaction_master_card_charging_fees($month_year);
@@ -49,6 +52,8 @@ class FinancialDataExport2 implements FromArray, WithHeadings, WithStyles
             // Append row data
             $row = [
                 $month,
+                $transaction_w_u_s_m_s->total_amount ?? 0,
+
                 $transaction_account_opening_commissions->total_amount ?? 0,
                 $transaction_master_card_issuing_fees->total_amount ?? 0,
                 $transaction_master_card_charging_fees->total_amount ?? 0,
@@ -64,6 +69,8 @@ class FinancialDataExport2 implements FromArray, WithHeadings, WithStyles
             $data[] = $row;
 
             // Update totals
+            $totals['total_transaction_w_u_s_m_s'] += $transaction_w_u_s_m_s->total_amount ?? 0;
+
             $totals['total_transaction_account_opening_commissions'] += $transaction_account_opening_commissions->total_amount ?? 0;
 
             $totals['total_transaction_master_card_issuing_fees'] += $transaction_master_card_issuing_fees->total_amount ?? 0;
@@ -80,6 +87,8 @@ class FinancialDataExport2 implements FromArray, WithHeadings, WithStyles
         // Add total row
         $data[] = [
             'Total',
+            $totals['total_transaction_w_u_s_m_s'],
+
             $totals['total_transaction_account_opening_commissions'],
 
             $totals['total_transaction_master_card_issuing_fees'],
@@ -100,6 +109,8 @@ class FinancialDataExport2 implements FromArray, WithHeadings, WithStyles
     {
         return [
             'Month',
+            'عمولة ارسال رسائل ويسترن يونيون',
+
             'عمولة فتح حساب',
             'عمولة اصدار بطاقة ماستر كارد بلاتينيوم',
             'عمولة شحن بطاقة ماستر كارد',
@@ -133,6 +144,7 @@ class FinancialDataExport2 implements FromArray, WithHeadings, WithStyles
             'I' => '#,##0.000', 
             'J' => '#,##0.000', 
             'K' => '#,##0.000',
+            'L' => '#,##0.000',
         ];
     }
 }
