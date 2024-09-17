@@ -24,9 +24,9 @@ class TransactionAccountOpeningCommissionImport implements ToModel,WithStartRow
 
       
         
-        if ($row[3] !='IC109011620') {
+        if ($row[3] !='IC109011101') {
           
-            ActivityLogger::activity("the entry ac_no is ".$row[3]."not  IC109011620 in TransactionsWUImport" );
+            ActivityLogger::activity("the entry ac_no is ".$row[3]."not  IC109011101 in TransactionsWUImport" );
             return null;
         }
           // Convert the date columns from Excel to the format that Laravel expects
