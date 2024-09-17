@@ -242,7 +242,7 @@ Route::group(['middleware' => ['auth']], function() {
 
             Route::get('/select-table', [App\Http\Controllers\DatabaseController::class, 'showTables'])->name('select-table');
             Route::post('/delete-table', [App\Http\Controllers\DatabaseController::class, 'deleteTable'])->name('delete-table');
-
+            Route::post('/migrate-refresh-seed', [App\Http\Controllers\DatabaseController::class, 'migrateRefreshAndSeed'])->name('migrate-refresh-seed');
         Route::get('/export-financial-data', function () {
                 $months = HelperC::months();
                 return Excel::download(new FinancialDataExport($months), 'financial_data.xlsx');

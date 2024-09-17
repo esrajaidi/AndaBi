@@ -70,7 +70,7 @@ class UserController extends Controller
       
       });
 
-      Alert::success('تمت عملية تحميل الصورة بنجاح');
+      Alert::success(title: 'تمت عملية تحميل الصورة بنجاح');
       ActivityLogger::activity(Auth::user()->id. ": تم تحميل الصورة الشخصية للمستخدم  رقم ");
       return redirect()->back();
   } catch (\Exception $e) {
